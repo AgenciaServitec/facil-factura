@@ -1,0 +1,61 @@
+{
+  "common": {
+    "contactData": {
+      "emails": {
+        "sales": "contactos@servitec-peru.com"
+      },
+      "numbers": {
+        "phone": ["941 801 827"],
+        "wsp": ["941 801 827"]
+      },
+      "officeHour": "Lun-Dom / 9am-6pm",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/Servitec.chorrillos/",
+        "instagram": "-",
+        "whatsapp": "https://api.whatsapp.com/send/?phone=+51941801827&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0",
+        "messenger": "-",
+        "youtube": "https://www.youtube.com/watch?v=FNMfFy4iKvg"
+      },
+      "directions": {
+        "local1": "Chorrillos, Perú - Pastor Davila 117",
+        "local2": "-"
+      },
+      "poweredBy": {
+        "name": "Agencia Servitec",
+        "webUrl": "https://agenciaservitec.com"
+      }
+    }
+  },
+  "development": {
+    "version": "0.0.1",
+    "firebaseApp": {
+      "apiKey": "-",
+      "authDomain": "-",
+      "projectId": "-",
+      "storageBucket": "-",
+      "messagingSenderId": "-",
+      "appId": "-",
+      "measurementId": "-"
+    },
+    "buckets": {},
+    "apiUrl": "-",
+    "sendingEmailsApiUrl": "-",
+    "ipInfoApi": "-"
+  },
+  "production": {
+    "version": "0.0.1",
+    "firebaseApp": {
+      "apiKey": "AIzaSyBZjS_Aq82XSfd9orFrYSbkWNxvU1-PrqY",
+      "authDomain": "publicidad-digital-354616.firebaseapp.com",
+      "projectId": "publicidad-digital-354616",
+      "storageBucket": "publicidad-digital-354616.appspot.com",
+      "messagingSenderId": "699636916433",
+      "appId": "1:699636916433:web:c8fbeedfeb39f16e1f25f0",
+      "measurementId": "G-1WZEYVZD6Z"
+    },
+    "buckets": {},
+    "apiUrl": "-",
+    "sendingEmailsApiUrl": "https://us-central1-sendingemails-348505.cloudfunctions.net/api",
+    "ipInfoApi": "-"
+  }
+}
