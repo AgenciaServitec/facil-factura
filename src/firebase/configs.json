@@ -45,17 +45,17 @@
   "production": {
     "version": "0.0.1",
     "firebaseApp": {
-      "apiKey": "AIzaSyBZjS_Aq82XSfd9orFrYSbkWNxvU1-PrqY",
-      "authDomain": "publicidad-digital-354616.firebaseapp.com",
-      "projectId": "publicidad-digital-354616",
-      "storageBucket": "publicidad-digital-354616.appspot.com",
-      "messagingSenderId": "699636916433",
-      "appId": "1:699636916433:web:c8fbeedfeb39f16e1f25f0",
-      "measurementId": "G-1WZEYVZD6Z"
+      "apiKey": "-",
+      "authDomain": "-",
+      "projectId": "-",
+      "storageBucket": "-",
+      "messagingSenderId": "-",
+      "appId": "-",
+      "measurementId": "-"
     },
     "buckets": {},
     "apiUrl": "-",
-    "sendingEmailsApiUrl": "https://us-central1-sendingemails-348505.cloudfunctions.net/api",
+    "sendingEmailsApiUrl": "-",
     "ipInfoApi": "-"
   }
 }
