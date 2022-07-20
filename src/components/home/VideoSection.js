@@ -13,7 +13,7 @@ export const VideoSection = ({
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/ZXLsloLkXPI"
+        src="https://www.youtube.com/embed/ZXLsloLkXPI?autoplay=1"
         title="Publicidad digital"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
