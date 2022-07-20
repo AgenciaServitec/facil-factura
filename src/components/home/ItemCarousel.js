@@ -29,11 +29,11 @@ export const ItemCarousel = ({
               );
             }}
           >
-            <Button text="Cotizar" />
+            <Button text="Cotiza ahora" />
           </div>
         </div>
         <div className="second-content">
-          <img src={image} alt="Slider Servitec" />
+          <img src={image} alt="Slider Servitec" width="100%" height="100%" />
         </div>
       </div>
     </Container>
@@ -76,28 +76,30 @@ const Container = styled.div`
 
     .txt-items {
       width: 100%;
-      color: #fff;
+      color: #000;
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: start;
 
       h2 {
+        font-weight: 900;
         font-size: 2.3rem;
         line-height: 2.2rem;
-        color: #fff;
+        color: #000;
         ${mediaQuery.minTablet} {
-          font-size: 3.5rem;
+          font-size: 3.6rem;
           line-height: 3rem;
+          
         }
       }
 
       p {
         font-size: 1.3em;
         line-height: 1.5rem;
-        color: #fff;
+        color: #000;
         ${mediaQuery.minTablet} {
-          font-size: 1.7rem;
+          font-size: 1.5rem;
           line-height: 2rem;
         }
       }
@@ -116,8 +118,8 @@ const Container = styled.div`
     align-items: center;
 
     img {
-      width: 80%;
-      max-width: 23rem;
+      width: 90%;
+      max-width: 26rem;
       object-fit: contain;
       ${mediaQuery.minTablet} {
         width: 90%;
