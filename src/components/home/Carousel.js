@@ -1,48 +1,21 @@
 import React from "react";
 import AntCarousel from "antd/lib/carousel";
-import {
-  ServitecSlider1,
-  ServitecSlider2,
-  ServitecSlider3,
-  ServitecSlider4,
-} from "../../images";
+import {ImgCarousel1,} from "../../images";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { useDevice } from "../../hooks";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
-import { ItemCarousel } from "./ItemCarousel";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronLeft, faChevronRight,} from "@fortawesome/free-solid-svg-icons";
+import {useDevice} from "../../hooks";
+import {mediaQuery} from "../../styles/constants/mediaQuery";
+import {ItemCarousel} from "./ItemCarousel";
 
 const carouselItems = [
   {
-    title: "Redes Sociales",
-    description: "Atrae clientes donde esta tu publico objetivo",
-    image: ServitecSlider1,
-    bgColor: "#4cc2c0",
+    title: "Mejora la Administración de tu empresa",
+    description: "Servitec te ayudara a controlar tu inventario y analizar lo que vendes minuto a minuto.",
+    image: ImgCarousel1,
+    bgColor: "#fff",
   },
-  {
-    title: "SEO Posicionamiento en Motores de Busqueda",
-    description:
-      "(Search Engine Optimization) optimiza tu pagina web para que este en los primeros lugares",
-    image: ServitecSlider2,
-    bgColor: "#f15b26",
-  },
-  {
-    title: "Comunity manager",
-    description: "Clientes potenciales conectados en tus redes Sociales",
-    image: ServitecSlider3,
-    bgColor: "#3cb878",
-  },
-  {
-    title: "Publicidad digital en Google",
-    description:
-      "Utiliza y engrana todos las herramientas de google en tu campaña (SEO, SEM, Analytics, ADDS)",
-    image: ServitecSlider4,
-    bgColor: "#fcb03b",
-  },
+
 ];
 
 export const Carousel = ({
@@ -79,7 +52,7 @@ export const Carousel = ({
 const Container = styled.div`
   width: 100%;
   height: auto;
-
+  
   ${mediaQuery.minDesktop} {
     .ant-carousel .slick-prev,
     .ant-carousel .slick-next {

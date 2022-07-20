@@ -6,17 +6,17 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const buttonsType = {
   primary: {
-    background: "#2f2c2c",
+    background: "#01D5FF",
     border: "transparent",
     color: "#fff",
   },
   secondary: {
-    background: "#f15b26",
+    background: "#009FBF",
     border: "transparent",
     color: "#fff",
   },
   tertiary: {
-    background: "#4cc2c0",
+    background: "#2f2c2c",
     border: "transparent",
     color: "#fff",
   },
@@ -57,8 +57,8 @@ export const Button = ({
 const Container = styled.button`
   ${({ background, color, border, width }) => css`
     width: ${width};
-    padding: 0.5rem 1.5rem;
-    border-radius: 7rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 1rem;
     border: ${border};
     background: ${background};
     color: ${color};
@@ -91,6 +91,7 @@ const Container = styled.button`
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: 800;
       .item-icon {
         margin-right: 0.7rem;
       }
