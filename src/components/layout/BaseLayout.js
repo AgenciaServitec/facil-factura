@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { LogoServitec } from "../../images";
-import { useAnalyticsEventTracker, useDevice } from "../../hooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Drawer } from "./Drawer";
-import { Link } from "react-router-dom";
-import { Footer } from "./Footer";
-import { ButtonsFloating, WrapperComponent } from "../ui";
-import { useNavigate } from "react-router";
+import {ImgLogoFacturaFacil} from "../../images";
+import {useAnalyticsEventTracker, useDevice} from "../../hooks";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {Drawer} from "./Drawer";
+import {Link} from "react-router-dom";
+import {Footer} from "./Footer";
+import {ButtonsFloating, WrapperComponent} from "../ui";
+import {useNavigate} from "react-router";
 
 export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
   const { isMobile } = useDevice();
@@ -36,15 +36,15 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
         onSetVisibleDrawer={setVisibleDrawer}
         onClickVisibleFormContact={onClickVisibleFormContact}
       />
-      <div className="header">
+      <header className="header">
         <WrapperComponent>
           <>
             {isMobile ? (
               <div className="menu-mobile">
                 <div className="item-logo">
                   <img
-                    src={LogoServitec}
-                    alt="Publicidad google Logo"
+                    src={ImgLogoFacturaFacil}
+                    alt="Logo Servitec Facil Factura"
                     onClick={() => {
                       navigate("/");
                       eventGaClickLink(
@@ -66,8 +66,8 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                 <div className="logo-img">
                   <Link to="/">
                     <img
-                      src={LogoServitec}
-                      alt="Publicidad google Logo"
+                      src={ImgLogoFacturaFacil}
+                      alt="Logo Servitec Facil Factura"
                       onClick={() =>
                         eventGaClickLink(
                           "click-link-logo-publicidad-google",
@@ -77,7 +77,7 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                     />
                   </Link>
                 </div>
-                <div className="list">
+                <nav className="list">
                   <ul>
                     <span onClick={() => navigate("/")}>
                       <li>INICIO</li>
@@ -92,13 +92,13 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                       <li>CONTÁCTO</li>
                     </span>
                   </ul>
-                </div>
+                </nav>
               </div>
             )}
           </>
         </WrapperComponent>
-      </div>
-      <div className="body">{children}</div>
+      </header>
+      <main className="body">{children}</main>
       <Footer
         onEventGaClickIcon={eventGaClickIcon}
         onEventGaClickLink={eventGaClickLink}
@@ -113,17 +113,24 @@ const Container = styled.div`
   min-height: 100vh;
   height: auto;
   position: relative;
+  padding-top: 5rem;
 
   .header {
-    position: relative;
+    position: fixed;
+    z-index: 100;
     width: 100%;
-    max-width: 1250px;
+    //max-width: 1250px;
     height: auto;
     background: #fff;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem ;
+    padding-top: 1.5rem;
     display: grid;
     grid-area: auto;
+    box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);    
+    right: 0;
+    left: 0;
+    top: 0;
 
     .menu-list {
       display: flex;
