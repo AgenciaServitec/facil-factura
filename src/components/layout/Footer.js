@@ -21,7 +21,7 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
             <img src={LogoServitec} alt="Logo publicidad google" />
           </div>
           <div className="item-text">
-            <h1>Servitec publicidad digital en google</h1>
+            <h1>Servitec Facil Factura</h1>
             <div>
               <span>
                 Somos una empresa que brinda servicios informáticos de forma
@@ -197,11 +197,11 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
   </Container>
 );
 
-const Container = styled.div`
+const Container = styled.footer`
   width: 100%;
   height: auto;
   padding: 4rem 0 0 0;
-  background: #151414;
+  background: #093c6b;
   color: #fff;
   .item-logo-footer {
     margin: auto;
@@ -308,7 +308,7 @@ const Container = styled.div`
   .bottom-footer {
     width: 100%;
     padding: 1.5rem;
-    background: #121111;
+    background: #093c6b;
     div {
       width: 100%;
       text-align: center;
