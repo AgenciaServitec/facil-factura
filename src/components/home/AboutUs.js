@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { OffersServitec } from "../../images";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "../ui";
+import {ImgAbout} from "../../images";
+import {mediaQuery} from "../../styles/constants/mediaQuery";
+import {faCheck, faCircleCheck} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Button} from "../ui";
 
 export const AboutUs = ({
   onClickVisibleFormContact,
@@ -16,52 +16,45 @@ export const AboutUs = ({
         <div className="content">
           <div className="heading">
             <h2 className="title">
-              Ofrecemos una gama completa de servicios de marketing digital.
+              ÚNETE A NOSOTROS
             </h2>
           </div>
           <div className="description">
-            Somos una agencia con experiencia en todas las dimensiones del
-            marketing digital, utilizando estrategias, conociendo sus
-            necesidades, involucrándonos para los mejores resultados para sus
-            conversiones en gustos y preferencias de tu target.
+            NO ESPERES NI DUDES MAS Y EMPECEMOS CON TU SISTEMA DE FACTURACIÓN ELECTRÓNICA PARA TU EMPRESA.
           </div>
           <div className="list-about">
             <ul>
               <li>
-                <FontAwesomeIcon icon={faCheck} />
-                MOTORES DE BUSQUEDA
+                <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
+                Altas comisiones
               </li>
               <li>
-                <FontAwesomeIcon icon={faCheck} />
-                PALABRAS CLAVES
+                <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
+                Productos de calidad y con precios cómodos.
               </li>
               <li>
-                <FontAwesomeIcon icon={faCheck} />
-                META TAGS
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faCheck} />
-                CONTENIDO - ARQUITECTURA
+                <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
+                Capacitación con nuestros expertos en ventas
               </li>
             </ul>
           </div>
           <div className="button">
             <Button
-              text="Consigue una Cotización"
-              type="tertiary"
-              onClick={() => {
-                onEventGaClickButton(
-                  "click-boton-consigue-una-cotizacion",
-                  "Click boton consigue una cotizacion"
-                );
-                onClickVisibleFormContact(true);
-              }}
+                text="Consigue una Cotización"
+                type="secondary"
+                onClick={() => {
+                  onEventGaClickButton(
+                      "click-boton-consigue-una-cotizacion",
+                      "Click boton consigue una cotizacion"
+                  );
+                  onClickVisibleFormContact(true);
+                }}
             />
           </div>
         </div>
         <div className="content-img">
           <img
-            src={OffersServitec}
+            src={ImgAbout}
             alt="offers"
             className="image-bg"
             width="100%"
@@ -69,11 +62,12 @@ export const AboutUs = ({
           />
         </div>
       </div>
+
     </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: auto;
   background: #fff;
@@ -91,15 +85,16 @@ const Container = styled.div`
       grid-template-columns: 1fr 1fr;
     }
     .title {
-      color: rgba(0, 0, 0, 0.54);
-      font-weight: 400;
+      color: rgba(0, 0, 0, 0.94);
+      font-weight: 800;
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 2.4rem;
     }
     .description {
       color: #2f2c2c;
       max-width: 40rem;
       font-weight: 500;
+      font-size: 1.2rem;
     }
     .list-about {
       margin: 1rem 1.5rem;
@@ -121,7 +116,7 @@ const Container = styled.div`
       text-align: center;
 
       img {
-        width: 70%;
+        width: 90%;
         object-fit: contain;
       }
     }
