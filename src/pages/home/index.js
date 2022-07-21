@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AboutUs, Carousel, Services, VideoSection } from "../../components";
+import { AboutUs, Carousel, Services } from "../../components";
 import { FormContact, WrapperComponent } from "../../components/ui";
 
 export const Home = ({

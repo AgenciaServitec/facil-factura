@@ -11,6 +11,7 @@ import { faEnvelope, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { WrapperComponent } from "../ui";
 import { contactData } from "../../firebase";
+import { capitalize } from "lodash";
 
 export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
   <Container id="footer">
@@ -175,8 +176,8 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
         </div>
         <div className="bottom-footer">
           <div>
-            © Copyright 2022 - Servitec publicidad digital en google / Diseñado
-            con <FontAwesomeIcon icon={faHeart} color="red" /> por{" "}
+            © Copyright 2022 - {capitalize(contactData.title)} / Diseñado con{" "}
+            <FontAwesomeIcon icon={faHeart} color="red" /> por{" "}
             <a
               href={contactData.poweredBy.webUrl}
               target="_blank"

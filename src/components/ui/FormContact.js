@@ -78,18 +78,15 @@ export const FormContact = ({
   };
 
   const fetchSendEmail = async (contact) =>
-    await fetch(
-      `${currentConfig.sendingEmailsApiUrl}/publicidad-google/contact`,
-      {
-        method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin": null,
-          "content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(contact),
-      }
-    );
+    await fetch(`${currentConfig.sendingEmailsApiUrl}/others/contact`, {
+      method: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": null,
+        "content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(contact),
+    });
 
   const mapContactData = (formData) => ({
     contact: {

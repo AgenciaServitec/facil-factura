@@ -1,6 +1,7 @@
 {
   "common": {
     "contactData": {
+      "title": "servitec facil factura",
       "emails": {
         "sales": "contactos@servitec-peru.com"
       },
@@ -55,7 +56,7 @@
     },
     "buckets": {},
     "apiUrl": "-",
-    "sendingEmailsApiUrl": "-",
+    "sendingEmailsApiUrl": "https://us-central1-sendingemails-348505.cloudfunctions.net/api",
     "ipInfoApi": "-"
   }
 }

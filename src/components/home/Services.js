@@ -6,9 +6,6 @@ import {
   ImgFacturaService3,
   ImgFacturaService4,
   ImgFacturaService5,
-  SeoFour,
-  SeoOne,
-  SeoThree,
   SeoTwo,
 } from "../../images";
 import { mediaQuery } from "../../styles/constants/mediaQuery";

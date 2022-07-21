@@ -84,7 +84,7 @@ const Container = styled.div`
     border: 1px solid ${
       error ? theme.colors.error : theme.colors.gray
     } !important;
-    border-radius: 7rem;
+    border-radius: .5rem;
     animation: ${error && keyframes.shake} 340ms
       cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 

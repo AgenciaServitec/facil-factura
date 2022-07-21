@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {ImgAbout} from "../../images";
-import {mediaQuery} from "../../styles/constants/mediaQuery";
-import {faCheck, faCircleCheck} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Button} from "../ui";
+import { ImgAbout } from "../../images";
+import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "../ui";
 
 export const AboutUs = ({
   onClickVisibleFormContact,
