@@ -9,6 +9,8 @@ const currentEnvironment = includes(hostsProduction, hostName)
   ? "production"
   : "development";
 
+console.log(currentEnvironment);
+
 const currentConfig = configs[currentEnvironment];
 
 const common = configs.common;
