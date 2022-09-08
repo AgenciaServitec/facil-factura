@@ -78,7 +78,7 @@ export const FormContact = ({
   };
 
   const fetchSendEmail = async (contact) =>
-    await fetch(`${currentConfig.sendingEmailsApiUrl}/others/contact`, {
+    await fetch(`${currentConfig.sendingEmailsApiUrl}/facil-factura/contact`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": null,
@@ -100,7 +100,7 @@ export const FormContact = ({
       issue: formData.issue,
       message: formData.message,
       termsAndConditions: true,
-      hostname: window.location.hostname || "publicidadgoogle.site",
+      hostname: window.location.hostname || "factura.servitec.site",
     },
   });
 
