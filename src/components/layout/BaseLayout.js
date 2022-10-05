@@ -1,14 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import {ImgLogoFacturaFacil} from "../../images";
-import {useAnalyticsEventTracker, useDevice} from "../../hooks";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {Drawer} from "./Drawer";
-import {Link} from "react-router-dom";
-import {Footer} from "./Footer";
-import {ButtonsFloating, WrapperComponent} from "../ui";
-import {useNavigate} from "react-router";
+import { ImgLogoFacturaFacil } from "../../images";
+import { useAnalyticsEventTracker, useDevice } from "../../hooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Drawer } from "./Drawer";
+import { Link } from "react-router-dom";
+import { Footer } from "./Footer";
+import {
+  ButtonFloatingContact,
+  ButtonsFloating,
+  WrapperComponent,
+} from "../ui";
+import { useNavigate } from "react-router";
 
 export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
   const { isMobile } = useDevice();
@@ -104,6 +108,9 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
         onEventGaClickLink={eventGaClickLink}
       />
       <ButtonsFloating onEventGaClickButton={eventGaClickButton} />
+      <ButtonFloatingContact
+        onClickVisibleFormContact={onClickVisibleFormContact}
+      />
     </Container>
   );
 };
@@ -123,11 +130,11 @@ const Container = styled.div`
     height: auto;
     background: #fff;
     margin: auto;
-    padding: 1rem ;
+    padding: 1rem;
     padding-top: 1.5rem;
     display: grid;
     grid-area: auto;
-    box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);    
+    box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);
     right: 0;
     left: 0;
     top: 0;
