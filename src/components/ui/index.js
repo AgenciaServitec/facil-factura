@@ -15,3 +15,4 @@ export * from "./TextArea";
 export * from "./FormContact";
 export * from "./ButtonsFloating";
 export * from "./WrapperComponent";
+export * from "./ButtonFloatingContact";
