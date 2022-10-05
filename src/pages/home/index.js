@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AboutUs, Carousel, Services } from "../../components";
+import { AboutUs, Carousel, SectionPlans, Services } from "../../components";
 import { FormContact, WrapperComponent } from "../../components/ui";
 
 export const Home = ({
@@ -30,6 +30,7 @@ export const Home = ({
             onClickVisibleFormContact={onClickVisibleFormContact}
             onEventGaClickButton={onEventGaClickButton}
           />
+          <SectionPlans />
         </WrapperComponent>
       </Container>
       <FormContact
