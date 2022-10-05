@@ -15,10 +15,10 @@ export { default as ImgFacturaService2 } from "./others/img-factura2.webp";
 export { default as ImgFacturaService3 } from "./others/img-factura3.webp";
 export { default as ImgFacturaService4 } from "./others/img-factura4.webp";
 export { default as ImgFacturaService5 } from "./others/info-box10.webp";
-export { default as ImgPlan1 } from "./others/01-diseño.webp";
-export { default as ImgPlan2 } from "./others/02-diseño.webp";
-export { default as ImgPlan3 } from "./others/03-diseño.webp";
-export { default as ImgPlan4 } from "./others/04-diseño.webp";
+export { default as ImgPlan1 } from "./others/01-diseno.webp";
+export { default as ImgPlan2 } from "./others/02-diseno.webp";
+export { default as ImgPlan3 } from "./others/03-diseno.webp";
+export { default as ImgPlan4 } from "./others/04-diseno.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";
