@@ -48,7 +48,7 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
               }
             >
               <a
-                href="https://api.whatsapp.com/send/?phone=+51941801827&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=+51918824798&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -119,8 +119,12 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
                 )
               }
             >
-              <a href="tel:+51941801827" target="_blank" rel="noreferrer">
-                941 801 827
+              <a href="tel:+51972252744" target="_blank" rel="noreferrer">
+                972 252 744
+              </a>
+              <br />
+              <a href="tel:+51918824798" target="_blank" rel="noreferrer">
+                918 824 798
               </a>
               <p> Lun-Dom 9am-6pm</p>
             </div>
