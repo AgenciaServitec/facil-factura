@@ -37,7 +37,6 @@ export const FormContact = ({
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.number().required(),
-    issue: yup.string().required(),
     message: yup.string(),
   });
 
@@ -78,7 +77,7 @@ export const FormContact = ({
   };
 
   const fetchSendEmail = async (contact) =>
-    await fetch(`${currentConfig.sendingEmailsApiUrl}/facil-factura/contact`, {
+    await fetch(`${currentConfig.sendingEmailsApiUrl}/generic/contact`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": null,
@@ -97,10 +96,8 @@ export const FormContact = ({
         number: formData.phoneNumber,
         countryCode: formData.countryCode,
       },
-      issue: formData.issue,
       message: formData.message,
-      termsAndConditions: true,
-      hostname: window.location.hostname || "factura.servitec.site",
+      hostname: "factura.servitec.site",
     },
   });
 
@@ -194,23 +191,6 @@ export const FormContact = ({
               render={({ field: { onChange, value, name } }) => (
                 <InputNumber
                   label="Ingrese teléfono"
-                  name={name}
-                  value={value}
-                  onChange={onChange}
-                  error={error(name)}
-                  required={required(name)}
-                />
-              )}
-            />
-          </Col>
-          <Col span={24}>
-            <Controller
-              name="issue"
-              control={control}
-              defaultValue=""
-              render={({ field: { onChange, value, name } }) => (
-                <Input
-                  label="Ingrese asunto"
                   name={name}
                   value={value}
                   onChange={onChange}
