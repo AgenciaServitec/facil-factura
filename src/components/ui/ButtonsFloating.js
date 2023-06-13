@@ -4,10 +4,14 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import styled, { css } from "styled-components";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 
-export const ButtonsFloating = ({ onEventGaClickButton }) => (
-  <Container>
+export const ButtonsFloating = ({
+  onEventGaClickButton,
+  phoneNumber = "972252744",
+  bottom = "30%",
+}) => (
+  <Container bottom={bottom}>
     <a
-      href={`https://api.whatsapp.com/send/?phone=+51972252744&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0`}
+      href={`https://api.whatsapp.com/send/?phone=+51${phoneNumber}&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0`}
       target="_blank"
       rel="noreferrer"
     >
@@ -22,7 +26,7 @@ export const ButtonsFloating = ({ onEventGaClickButton }) => (
       >
         <div className="item-text">
           <div>Atención inmediata</div>
-          <div>972 252 744</div>
+          <div>{phoneNumber}</div>
         </div>
         <div className="item-icon">
           <FontAwesomeIcon icon={faWhatsapp} className="icon" />
@@ -35,7 +39,7 @@ export const ButtonsFloating = ({ onEventGaClickButton }) => (
 const Container = styled.div`
   position: fixed;
   right: 0;
-  bottom: 15%;
+  bottom: ${({ bottom }) => bottom};
   z-index: 998;
 `;
 
