@@ -48,7 +48,7 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
               }
             >
               <a
-                href="https://api.whatsapp.com/send/?phone=+51918824798&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=+51972252744&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0"
                 target="_blank"
                 rel="noreferrer"
               >
