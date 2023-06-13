@@ -119,12 +119,12 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
                 )
               }
             >
-              <a href="tel:+51972252744" target="_blank" rel="noreferrer">
-                972 252 744
+              <a href="tel:+51914052173" target="_blank" rel="noreferrer">
+                914 052 173
               </a>
               <br />
-              <a href="tel:+51918824798" target="_blank" rel="noreferrer">
-                918 824 798
+              <a href="tel:+51972252744" target="_blank" rel="noreferrer">
+                972 252 744
               </a>
               <p> Lun-Dom 9am-6pm</p>
             </div>
