@@ -7,11 +7,12 @@ import { mediaQuery } from "../../styles/constants/mediaQuery";
 export const ButtonsFloating = ({
   onEventGaClickButton,
   phoneNumber = "972252744",
+  message = "Hola+cuál+es+su+consulta",
   bottom = "30%",
 }) => (
   <Container bottom={bottom}>
     <a
-      href={`https://api.whatsapp.com/send/?phone=+51${phoneNumber}&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0`}
+      href={`https://api.whatsapp.com/send/?phone=+51${phoneNumber}&text=${message}&app_absent=0`}
       target="_blank"
       rel="noreferrer"
     >
