@@ -33,7 +33,13 @@ export const ItemCarousel = ({
           </div>
         </div>
         <div className="second-content">
-          <img src={image} alt="Slider Servitec" width="100%" height="100%" />
+          <img
+            src={image}
+            alt="Slider Servitec"
+            width="100%"
+            height="100%"
+            title="Slider Servitec"
+          />
         </div>
       </div>
     </Container>
@@ -90,7 +96,6 @@ const Container = styled.div`
         ${mediaQuery.minTablet} {
           font-size: 3.6rem;
           line-height: 3rem;
-          
         }
       }
 

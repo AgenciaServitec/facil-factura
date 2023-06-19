@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ItemServices = ({ img, title, content }) => {
   return (
     <Container>
-      <img src={img} width="100%" height="100%" alt={title} />
+      <img src={img} width="100%" height="100%" alt={title} title={title} />
       <h3>{title}</h3>
       <p>{content}</p>
     </Container>

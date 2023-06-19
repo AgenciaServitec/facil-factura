@@ -15,12 +15,11 @@ export const AboutUs = ({
       <div className="content-items">
         <div className="content">
           <div className="heading">
-            <h2 className="title">
-              ÚNETE A NOSOTROS
-            </h2>
+            <h2 className="title">ÚNETE A NOSOTROS</h2>
           </div>
           <div className="description">
-            NO ESPERES NI DUDES MAS Y EMPECEMOS CON TU SISTEMA DE FACTURACIÓN ELECTRÓNICA PARA TU EMPRESA.
+            NO ESPERES NI DUDES MAS Y EMPECEMOS CON TU SISTEMA DE FACTURACIÓN
+            ELECTRÓNICA PARA TU EMPRESA.
           </div>
           <div className="list-about">
             <ul>
@@ -40,15 +39,15 @@ export const AboutUs = ({
           </div>
           <div className="button">
             <Button
-                text="Consigue una Cotización"
-                type="secondary"
-                onClick={() => {
-                  onEventGaClickButton(
-                      "click-boton-consigue-una-cotizacion",
-                      "Click boton consigue una cotizacion"
-                  );
-                  onClickVisibleFormContact(true);
-                }}
+              text="Consigue una Cotización"
+              type="secondary"
+              onClick={() => {
+                onEventGaClickButton(
+                  "click-boton-consigue-una-cotizacion",
+                  "Click boton consigue una cotizacion"
+                );
+                onClickVisibleFormContact(true);
+              }}
             />
           </div>
         </div>
@@ -59,10 +58,10 @@ export const AboutUs = ({
             className="image-bg"
             width="100%"
             height="100%"
+            title="offers"
           />
         </div>
       </div>
-
     </Container>
   );
 };

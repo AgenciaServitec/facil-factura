@@ -13,10 +13,10 @@ export const SectionPlans = () => {
         </p>
       </div>
       <div className="plans">
-        <img src={ImgPlan1} alt="planes" />
-        <img src={ImgPlan2} alt="planes" />
-        <img src={ImgPlan3} alt="planes" />
-        <img src={ImgPlan4} alt="planes" />
+        <img src={ImgPlan1} alt="planes" title="planes" />
+        <img src={ImgPlan2} alt="planes" title="planes" />
+        <img src={ImgPlan3} alt="planes" title="planes" />
+        <img src={ImgPlan4} alt="planes" title="planes" />
       </div>
     </Container>
   );
