@@ -19,17 +19,12 @@
     <meta property="og:url" content="%PUBLIC_URL" />
     <meta property="og:image" content="%PUBLIC_URL%/favicon.ico" />
 
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11215674135"></script>
-
     <script>
-      if (window.location.pathname === "/contact-success") {
-        <!-- Google tag (gtag.js) -->
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'AW-11215674135');
-      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      gtag('config', 'AW-11215674135');
     </script>
 
     <!--
