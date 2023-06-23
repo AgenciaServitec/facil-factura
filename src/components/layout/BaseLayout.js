@@ -128,7 +128,7 @@ const Container = styled.div`
 
   .header {
     position: fixed;
-    z-index: 100;
+    z-index: 9999;
     width: 100%;
     //max-width: 1250px;
     height: auto;
