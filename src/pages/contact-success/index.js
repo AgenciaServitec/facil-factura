@@ -12,6 +12,14 @@ export const ContactSuccess = ({
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.head.innerHTML += `<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      gtag('config', 'AW-11215674135');
+    </script>`;
+  }, []);
+
+  useEffect(() => {
     onEventGaClickSuccessful(
       "successful-user-contact",
       "Successful user contact"
@@ -19,33 +27,35 @@ export const ContactSuccess = ({
   }, [onEventGaClickSuccessful]);
 
   return (
-    <Container>
-      <img
-        src={ImgCongratulation}
-        className="img-slider"
-        alt="Banner Servitec Site"
-        width="100%"
-        height="100%"
-      />
-      <div className="content-slide-txt">
-        <h1 className="title-banner">GRACIAS POR CONTACTARTE CON NOSOTROS</h1>
-        <br />
-        <h2>LE RESPONDEREMOS EN BREVE</h2>
-        <div className="item-button">
-          <Button
-            text="Regresar"
-            type="tertiary"
-            onClick={() => {
-              onEventGaClickButton(
-                "click-boton-regresar",
-                "Click boton regresar"
-              );
-              navigate("/");
-            }}
-          />
+    <>
+      <Container>
+        <img
+          src={ImgCongratulation}
+          className="img-slider"
+          alt="Banner Servitec Site"
+          width="100%"
+          height="100%"
+        />
+        <div className="content-slide-txt">
+          <h1 className="title-banner">GRACIAS POR CONTACTARTE CON NOSOTROS</h1>
+          <br />
+          <h2>LE RESPONDEREMOS EN BREVE</h2>
+          <div className="item-button">
+            <Button
+              text="Regresar"
+              type="tertiary"
+              onClick={() => {
+                onEventGaClickButton(
+                  "click-boton-regresar",
+                  "Click boton regresar"
+                );
+                navigate("/");
+              }}
+            />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 
