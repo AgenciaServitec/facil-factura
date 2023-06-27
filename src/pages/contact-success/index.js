@@ -11,13 +11,13 @@ export const ContactSuccess = ({
 }) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    document.head.innerHTML += `<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-      gtag('config', 'AW-11215674135');
-    </script>`;
-  }, []);
+  // useEffect(() => {
+  //   document.head.innerHTML += `<script>
+  //     window.dataLayer = window.dataLayer || [];
+  //     function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+  //     gtag('config', 'AW-11215674135');
+  //   </script>`;
+  // }, []);
 
   useEffect(() => {
     onEventGaClickSuccessful(
