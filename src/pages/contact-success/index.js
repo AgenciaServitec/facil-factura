@@ -93,7 +93,7 @@ const Container = styled.div`
   .content-slide-txt {
     position: absolute;
     color: #fff;
-    z-index: 500;
+    z-index: 50;
     width: 100%;
     bottom: 20%;
     text-align: center;
