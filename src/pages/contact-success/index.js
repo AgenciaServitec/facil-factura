@@ -11,8 +11,20 @@ export const ContactSuccess = ({
 }) => {
   const navigate = useNavigate();
 
+  const insertScript = (scriptString) => {
+    const scriptElement = document.createElement("script");
+    scriptElement.innerHTML = scriptString;
+    return document.head.appendChild(scriptElement);
+  };
+
   useEffect(() => {
-    location.reload();
+    const scriptElement = insertScript(` 
+          gtag('event', 'conversion', {'send_to': 'AW-11215674135/GngjCM2NlrMYEJe2huQp'});
+     `);
+
+    return () => {
+      scriptElement.remove();
+    };
   }, []);
 
   useEffect(() => {
