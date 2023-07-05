@@ -128,14 +128,12 @@ const Container = styled.div`
 
   .header {
     position: fixed;
-    z-index: 9999;
+    z-index: 100;
     width: 100%;
-    //max-width: 1250px;
     height: auto;
     background: #fff;
     margin: auto;
-    padding: 1rem;
-    padding-top: 1.5rem;
+    padding: 1.5em 1em 1em 1em;
     display: grid;
     grid-area: auto;
     box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);
