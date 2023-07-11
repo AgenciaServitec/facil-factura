@@ -17,7 +17,8 @@ export const ItemCarousel = ({
         <div className="first-content">
           <div className="txt-items">
             <h2>{title}</h2>
-            <p>{description}</p>
+            <span>{description}</span>
+            <br />
           </div>
           <div
             className="btn-item"
@@ -99,7 +100,7 @@ const Container = styled.div`
         }
       }
 
-      p {
+      span {
         font-size: 1.3em;
         line-height: 1.5rem;
         color: #000;
