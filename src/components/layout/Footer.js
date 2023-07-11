@@ -25,14 +25,12 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
             <h1>Servitec Facil Factura</h1>
             <div>
               <span>
-                Somos una empresa que brinda servicios informáticos de forma
-                integral en la asesoría y consultoría en hardware y software,
-                tanto para usuarios domésticos, negocios y empresas
-                corporativas. Prestamos nuestros servicios en forma altamente
-                personalizada, comprendiendo que cada empresa es única, creando
-                una solución a la medida de tus necesidades. Logrando
-                identificar y entender las necesidades de nuestros clientes para
-                ofrecerle la mejor solución.
+                Somos una empresa peruana que brinda servicios informáticos.
+                Contamos con el mejor Sistema de Facturación Electrónica
+                Verificado por SUNAT. Ofrecemos variedad de Planes,
+                Capacitaciones, Soporte Online. Nuestros servicios están
+                dirigidos a todas las empresas, sin importar su tamaño o rubro.
+                ¡Fácil, rápida y confiable!
               </span>
             </div>
           </div>
@@ -85,22 +83,6 @@ export const Footer = ({ onEventGaClickIcon, onEventGaClickLink }) => (
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faFacebook} />
-              </a>
-            </li>
-            <li
-              onClick={() =>
-                onEventGaClickIcon(
-                  "click-icon-youtube-FNMfFy4iKvg",
-                  "Click icon youtube https://youtu.be/FNMfFy4iKvg"
-                )
-              }
-            >
-              <a
-                href="https://youtu.be/FNMfFy4iKvg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faYoutube} />
               </a>
             </li>
           </ul>

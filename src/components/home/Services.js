@@ -49,7 +49,7 @@ export const Services = ({
           <ItemServices
             img={SeoTwo}
             title="Rápido y fácil de usar"
-            content="Ingresa a tu sistema desde cualquier dispositivo con acceso a internet y listo. ¡Ya puedes comenzar a facturar y vender!"
+            content="Optimiza tu negocio con nuestro sistema de facturación electrónica y control de inventario, todo en un solo software."
           />
         </div>
         <div className="button">
