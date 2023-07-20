@@ -7,7 +7,7 @@ import Col from "antd/lib/col";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useFormUtils } from "../../hooks";
+import { useDevice, useFormUtils } from "../../hooks";
 import { Input } from "./Input";
 import { Form } from "./Form";
 import { defaultTo } from "lodash";
@@ -19,7 +19,6 @@ import { notification } from "./notification";
 import { currentConfig } from "../../firebase";
 import { useNavigate } from "react-router";
 import { Button } from "./Button";
-import { useDevice } from "../../hooks";
 
 export const FormContact = ({
   visibleFormContact,
@@ -32,8 +31,7 @@ export const FormContact = ({
   const [loadingContact, setLoadingContact] = useState(false);
 
   const schema = yup.object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
+    firstName: yup.string(),
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.number().required(),
@@ -53,11 +51,6 @@ export const FormContact = ({
   const onSubmitFetchContacts = async (formData) => {
     try {
       setLoadingContact(true);
-
-      onEventGaClickButton(
-        "click-boton-enviar-formulario-contactanos",
-        "Click boton enviar de formulario contactanos"
-      );
 
       const contact = mapContactData(formData);
 
@@ -90,7 +83,7 @@ export const FormContact = ({
   const mapContactData = (formData) => ({
     contact: {
       firstName: formData.firstName,
-      lastName: formData.lastName,
+      lastName: "",
       email: formData.email,
       phone: {
         number: formData.phoneNumber,
@@ -111,7 +104,7 @@ export const FormContact = ({
     >
       <Form onSubmit={handleSubmit(onSubmitFetchContacts)}>
         <Row gutter={[16, 15]}>
-          <Col xs={24} sm={24} md={12}>
+          <Col xs={24} sm={24} md={24}>
             <Controller
               name="firstName"
               control={control}
@@ -128,23 +121,7 @@ export const FormContact = ({
               )}
             />
           </Col>
-          <Col xs={24} sm={24} md={12}>
-            <Controller
-              name="lastName"
-              control={control}
-              defaultValue=""
-              render={({ field: { onChange, value, name } }) => (
-                <Input
-                  label="Ingrese apellidos"
-                  name={name}
-                  value={value}
-                  onChange={onChange}
-                  error={error(name)}
-                  required={required(name)}
-                />
-              )}
-            />
-          </Col>
+
           <Col span={24}>
             <Controller
               name="email"
