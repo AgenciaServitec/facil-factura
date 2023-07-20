@@ -1,39 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
+import { animated } from "react-spring";
 import styled from "styled-components";
 import { ImgAbout } from "../../images";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../ui";
+import { useHorizontalSlideAnimation } from "../../hooks";
 
-export const AboutUs = ({
-  onClickVisibleFormContact,
-  onEventGaClickButton,
-}) => {
+export const AboutUs = ({ onClickVisibleFormContact }) => {
+  const elementRef = useRef(null);
+  const animationProps = useHorizontalSlideAnimation(elementRef);
+
   return (
     <Container id="about-us">
       <div className="content-items">
-        <div className="content">
+        <article className="content">
           <div className="heading">
             <h2 className="title">ÚNETE A NOSOTROS</h2>
           </div>
-          <div className="description">
+          <p className="description">
             NO ESPERES NI DUDES MAS Y EMPECEMOS CON TU SISTEMA DE FACTURACIÓN
             ELECTRÓNICA PARA TU EMPRESA.
-          </div>
+          </p>
           <div className="list-about">
             <ul>
               <li>
                 <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
-                Altas comisiones
+                <span>Altas comisiones</span>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
-                Productos de calidad y con precios cómodos.
+                <span>Productos de calidad y con precios cómodos.</span>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCircleCheck} color="#009FBF" />
-                Capacitación con nuestros expertos en ventas
+                <span>Capacitación con nuestros expertos en ventas</span>
               </li>
             </ul>
           </div>
@@ -41,26 +43,22 @@ export const AboutUs = ({
             <Button
               text="Consigue una Cotización"
               type="secondary"
-              onClick={() => {
-                onEventGaClickButton(
-                  "click-boton-consigue-una-cotizacion",
-                  "Click boton consigue una cotizacion"
-                );
-                onClickVisibleFormContact(true);
-              }}
+              onClick={() => onClickVisibleFormContact(true)}
             />
           </div>
-        </div>
-        <div className="content-img">
-          <img
+        </article>
+        <article className="content-img">
+          <animated.img
+            className="image-bg"
             src={ImgAbout}
             alt="offers"
-            className="image-bg"
-            width="100%"
-            height="100%"
             title="offers"
+            ref={elementRef}
+            style={{
+              ...animationProps,
+            }}
           />
-        </div>
+        </article>
       </div>
     </Container>
   );
@@ -113,9 +111,13 @@ const Container = styled.section`
     .content-img {
       margin-top: 1rem;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       img {
         width: 90%;
+        height: auto;
         object-fit: contain;
       }
     }
