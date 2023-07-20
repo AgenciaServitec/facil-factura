@@ -1,53 +1,31 @@
 import React from "react";
-import AntCarousel from "antd/lib/carousel";
 import { ImgCarousel1 } from "../../images";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { useDevice } from "../../hooks";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { ItemCarousel } from "./ItemCarousel";
 
-const carouselItems = [
-  {
-    title: "Mejora tu facturación de tu empresa",
-    description:
-      "Servitec te ayudara a facturar, controlar tu inventario y ventas minuto a minuto, de forma ilimitada.",
-    image: ImgCarousel1,
-    bgColor: "#fff",
-  },
-];
+const carouselItems = {
+  title: "Mejora tu facturación de tu empresa",
+  description:
+    "Servitec te ayudara a facturar, controlar tu inventario y ventas minuto a minuto, de forma ilimitada.",
+  image: ImgCarousel1,
+  bgColor: "#fff",
+};
 
 export const Carousel = ({
   onClickVisibleFormContact,
   onEventGaClickButton,
 }) => {
-  const { isMobile } = useDevice();
-
   return (
     <Container>
-      <AntCarousel
-        autoplay
-        autoplaySpeed={5 * 1000}
-        arrows={!isMobile}
-        prevArrow={<FontAwesomeIcon icon={faChevronLeft} />}
-        nextArrow={<FontAwesomeIcon icon={faChevronRight} />}
-      >
-        {carouselItems.map((carouselItem, index) => (
-          <ItemCarousel
-            key={index}
-            title={carouselItem.title}
-            description={carouselItem.description}
-            image={carouselItem.image}
-            bgColor={carouselItem.bgColor}
-            onClickVisibleFormContact={onClickVisibleFormContact}
-            onEventGaClickButton={onEventGaClickButton}
-          />
-        ))}
-      </AntCarousel>
+      <ItemCarousel
+        title={carouselItems.title}
+        description={carouselItems.description}
+        image={carouselItems.image}
+        bgColor={carouselItems.bgColor}
+        onClickVisibleFormContact={onClickVisibleFormContact}
+        onEventGaClickButton={onEventGaClickButton}
+      />
     </Container>
   );
 };
