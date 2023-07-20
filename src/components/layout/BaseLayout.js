@@ -110,7 +110,7 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
       <ButtonsFloating
         onEventGaClickButton={eventGaClickButton}
         bottom="15%"
-        message="Estoy+interesado"
+        message="Estoy+interesado+más+información"
       />
       <ButtonFloatingContact
         onClickVisibleFormContact={onClickVisibleFormContact}

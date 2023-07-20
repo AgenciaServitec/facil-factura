@@ -7,7 +7,7 @@ import { mediaQuery } from "../../styles/constants/mediaQuery";
 export const ButtonsFloating = ({
   onEventGaClickButton,
   phoneNumber = "972252744",
-  message = "Hola+cuál+es+su+consulta",
+  message = "Estoy+interesado",
   bottom = "30%",
 }) => (
   <Container bottom={bottom}>
