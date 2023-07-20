@@ -1,8 +1,15 @@
 import styled from "styled-components";
-import { ImgPlan1, ImgPlan2, ImgPlan3, ImgPlan4 } from "../../images";
+import { useRef } from "react";
+import { animated } from "react-spring";
+import { useOpacityAnimation } from "../../hooks";
+
 import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { ImgPlan1, ImgPlan2, ImgPlan3, ImgPlan4 } from "../../images";
 
 export const SectionPlans = () => {
+  const divRef = useRef(null);
+  const animationProps = useOpacityAnimation(divRef);
+
   return (
     <Container>
       <div className="first-content">
@@ -12,12 +19,19 @@ export const SectionPlans = () => {
           necesidades Escoja el plan que más le convenga
         </p>
       </div>
-      <div className="plans">
+
+      <animated.div
+        className="plans"
+        ref={divRef}
+        style={{
+          ...animationProps,
+        }}
+      >
         <img src={ImgPlan1} alt="planes" title="planes" />
         <img src={ImgPlan2} alt="planes" title="planes" />
         <img src={ImgPlan3} alt="planes" title="planes" />
         <img src={ImgPlan4} alt="planes" title="planes" />
-      </div>
+      </animated.div>
     </Container>
   );
 };
