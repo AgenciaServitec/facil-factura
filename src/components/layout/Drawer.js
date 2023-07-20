@@ -42,7 +42,7 @@ const ComponentDrawerAntd = styled(DrawerAntd)`
   color: #000;
 
   .ant-drawer-content-wrapper {
-    width: 100% !important;
+    width: 90% !important;
     ${mediaQuery.minTablet} {
       width: 40% !important;
     }
@@ -65,5 +65,6 @@ const MenuItem = styled.div`
     cursor: pointer;
     color: #000;
     font-size: 1.7rem;
+    font-weight: 700;
   }
 `;

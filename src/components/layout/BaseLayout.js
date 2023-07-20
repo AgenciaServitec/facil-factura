@@ -13,6 +13,7 @@ import {
   WrapperComponent,
 } from "../ui";
 import { useNavigate } from "react-router";
+import { mediaQuery } from "../../styles/constants/mediaQuery";
 
 export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
   const { isMobile } = useDevice();
@@ -62,7 +63,11 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                   className="icon-bar"
                   onClick={() => setVisibleDrawer(true)}
                 >
-                  <FontAwesomeIcon icon={faBars} size="2x" />
+                  <FontAwesomeIcon
+                    icon={faBars}
+                    size="2x"
+                    style={{ color: "#000" }}
+                  />
                 </div>
               </div>
             ) : (
@@ -124,11 +129,11 @@ const Container = styled.div`
   min-height: 100vh;
   height: auto;
   position: relative;
-  padding-top: 5rem;
+  ${mediaQuery.minDesktop} {
+    padding-top: 5rem;
+  }
 
   .header {
-    position: fixed;
-    z-index: 100;
     width: 100%;
     height: auto;
     background: #fff;
@@ -137,9 +142,13 @@ const Container = styled.div`
     display: grid;
     grid-area: auto;
     box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);
-    right: 0;
-    left: 0;
-    top: 0;
+    ${mediaQuery.minDesktop} {
+      position: fixed;
+      z-index: 100;
+      right: 0;
+      left: 0;
+      top: 0;
+    }
 
     .menu-list {
       display: flex;
@@ -196,7 +205,7 @@ const Container = styled.div`
         align-items: center;
         justify-content: start;
         img {
-          width: 65%;
+          width: 60%;
           max-width: 220px;
         }
       }
