@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useSpring } from "react-spring";
 
 const animationType = {
-  right: "-200%",
-  left: "200%",
+  right: "-100%",
+  left: "150%",
 };
 
 export const useHorizontalSlideAnimation = (elementRef, type = "left") => {

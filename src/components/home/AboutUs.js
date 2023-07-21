@@ -9,8 +9,8 @@ import { Button } from "../ui";
 import { useHorizontalSlideAnimation } from "../../hooks";
 
 export const AboutUs = ({ onClickVisibleFormContact }) => {
-  const elementRef = useRef(null);
-  const animationProps = useHorizontalSlideAnimation(elementRef);
+  // const elementRef = useRef(null);
+  // const animationProps = useHorizontalSlideAnimation(elementRef);
 
   return (
     <Container id="about-us">
@@ -48,15 +48,24 @@ export const AboutUs = ({ onClickVisibleFormContact }) => {
           </div>
         </article>
         <article className="content-img">
-          <animated.img
-            className="image-bg"
+          {/*<animated.img*/}
+          {/*  className="image-bg"*/}
+          {/*  src={ImgAbout}*/}
+          {/*  alt="offers"*/}
+          {/*  title="offers"*/}
+          {/*  ref={elementRef}*/}
+          {/*  style={{*/}
+          {/*    ...animationProps,*/}
+          {/*  }}*/}
+          {/*/>*/}
+          <img
             src={ImgAbout}
             alt="offers"
+            className="image-bg"
+            width="100%"
+            height="100%"
             title="offers"
-            ref={elementRef}
-            style={{
-              ...animationProps,
-            }}
+          />
           />
         </article>
       </div>
@@ -114,6 +123,7 @@ const Container = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
 
       img {
         width: 90%;
