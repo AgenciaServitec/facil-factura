@@ -66,7 +66,6 @@ export const AboutUs = ({ onClickVisibleFormContact }) => {
             height="100%"
             title="offers"
           />
-          />
         </article>
       </div>
     </Container>
