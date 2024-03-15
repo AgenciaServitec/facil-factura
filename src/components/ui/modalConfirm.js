@@ -1,15 +1,5 @@
 import Modal from "antd/lib/modal";
 
-// interface Props {
-//     centered?: boolean;
-//     title?: string;
-//     okText?: string;
-//     cancelText?: string;
-//     okButtonProps?: BaseButtonProps;
-//     onOk?: () => void;
-//     content?: string;
-// }
-
 export const modalConfirm = ({
   centered = true,
   title = "¿Estás seguro de que quieres eliminar?",

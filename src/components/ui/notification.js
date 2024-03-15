@@ -1,17 +1,5 @@
 import notificationAntd from "antd/lib/notification";
 
-// type Type = "error" | "success" | "info" | "warning" | "open" | "close";
-//
-// interface NotificationProps {
-//     type: Type;
-//     title?: string;
-//     description?: string;
-//     placement?: NotificationPlacement;
-//     duration?: number;
-//     key?: string;
-//     icon?: React.ReactNode;
-// }
-
 export const notification = ({
   type,
   title,

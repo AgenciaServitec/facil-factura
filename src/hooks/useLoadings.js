@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-// type Loading = Record<string, boolean>;
-//
-// type Return = [boolean, (loading: Loading) => void, (loading: boolean) => void];
-
 export const useLoadings = (initialLoadings = {}) => {
   const [loadings, setLoadings] = useState(initialLoadings);
 

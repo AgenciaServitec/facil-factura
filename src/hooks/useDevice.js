@@ -1,12 +1,6 @@
 import { useMemo, useState } from "react";
 import { breakPoints } from "../styles/constants/breakPoints";
 
-// interface Return {
-//   currentScreenWidth: number;
-//   currentScreenHeight: number;
-//   isMobile: boolean;
-// }
-
 export const useDevice = () => {
   const [currentScreenWidth, setCurrentScreenWidth] = useState(
     window.innerWidth

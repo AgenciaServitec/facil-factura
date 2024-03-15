@@ -1,4 +1,3 @@
-// export { default as Upload } from "./Upload";
 export * from "./component-container";
 
 export * from "./Button";

@@ -6,30 +6,6 @@ import { SelectOption } from "./SelectOption";
 import { lighten } from "polished";
 import styled, { css } from "styled-components";
 
-// export type SelectValue = string;
-//
-// type SelectFilterOption = (
-//   inputValue: SelectValue,
-//   optionLabel: string
-// ) => boolean;
-
-// type SelectOnChange = (value?: SelectValue) => void;
-
-// interface Props {
-//   name?: string;
-//   value?: SelectValue;
-//   required?: boolean;
-//   error?: FormError;
-//   label?: string;
-//   variant?: "outlined" | "filled";
-//   disabled?: boolean;
-//   allowClear?: boolean;
-//   children?: JSX.Element[];
-//   onChange?: SelectOnChange;
-//   filterOption?: SelectFilterOption;
-//   mode?: "multiple" | "tags";
-// }
-
 const defaultFilterOption = (inputValue, optionLabel) =>
   defaultTo(optionLabel, "").toUpperCase().indexOf(inputValue.toUpperCase()) ===
   0;
@@ -44,7 +20,6 @@ export const Select = ({
   label,
   children,
   variant = "outlined",
-  allowClear,
   filterOption = (inputValue, optionLabel) =>
     defaultFilterOption(inputValue, optionLabel),
   options = [],
@@ -70,7 +45,6 @@ export const Select = ({
           error={error}
           onChange={(event) => onChange && onChange(event.target.value)}
           value={value}
-          defaultValue={value}
           placeholder={placeholder}
         >
           {placeholder && <option hidden>{placeholder}</option>}
@@ -83,7 +57,6 @@ export const Select = ({
         </StyledSelectMobile>
       ) : (
         <AntSelect
-          allowClear={disabled ? false : allowClear}
           bordered={false}
           disabled={disabled}
           value={value}

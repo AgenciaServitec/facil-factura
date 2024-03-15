@@ -2,15 +2,6 @@ import React from "react";
 import InputAntd from "antd/lib/input";
 import { ComponentContainer } from "./component-container";
 
-// interface Props {
-//   value?: string | number;
-//   required?: boolean;
-//   error?: FormError;
-//   label?: string;
-//   variant?: "outlined" | "filled";
-//   disabled?: boolean;
-// }
-
 export const TextArea = ({
   value,
   required,
