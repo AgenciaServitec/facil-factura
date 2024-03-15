@@ -74,4 +74,4 @@ const global = css`
   }
 `;
 
-export const GlobalStyles = createGlobalStyle(global);
+export const GlobalStyle = createGlobalStyle(global);

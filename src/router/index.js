@@ -2,26 +2,15 @@ import { Route, Routes } from "react-router-dom";
 import { BaseLayout } from "../components";
 import { Home, Page404, ContactSuccess } from "../pages";
 
-export const Router = ({
-  onClickVisibleFormContact,
-  visibleFormContact,
-  onEventGaClickButton,
-  onEventGaClickVideos,
-  onEventGaClickSuccessful,
-}) => {
+export const Router = () => {
   return (
     <Routes>
       <Route
         exact
-        path="/"
+        path="?"
         element={
-          <BaseLayout onClickVisibleFormContact={onClickVisibleFormContact}>
-            <Home
-              onClickVisibleFormContact={onClickVisibleFormContact}
-              visibleFormContact={visibleFormContact}
-              onEventGaClickButton={onEventGaClickButton}
-              onEventGaClickVideos={onEventGaClickVideos}
-            />
+          <BaseLayout>
+            <Home />
           </BaseLayout>
         }
       />
@@ -30,10 +19,7 @@ export const Router = ({
         path="/contact-success"
         element={
           <BaseLayout>
-            <ContactSuccess
-              onEventGaClickButton={onEventGaClickButton}
-              onEventGaClickSuccessful={onEventGaClickSuccessful}
-            />
+            <ContactSuccess />
           </BaseLayout>
         }
       />

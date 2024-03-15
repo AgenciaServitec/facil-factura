@@ -1,22 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ImgCongratulation } from "../../images";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { Button } from "../../components/ui";
 import { useNavigate } from "react-router";
 
-export const ContactSuccess = ({
-  onEventGaClickButton,
-  onEventGaClickSuccessful,
-}) => {
+export const ContactSuccess = () => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    onEventGaClickSuccessful(
-      "successful-user-contact",
-      "Successful user contact"
-    );
-  }, [onEventGaClickSuccessful]);
 
   return (
     <>
@@ -36,13 +26,7 @@ export const ContactSuccess = ({
             <Button
               text="Regresar"
               type="tertiary"
-              onClick={() => {
-                onEventGaClickButton(
-                  "click-boton-regresar",
-                  "Click boton regresar"
-                );
-                navigate("/");
-              }}
+              onClick={() => navigate("/")}
             />
           </div>
         </div>

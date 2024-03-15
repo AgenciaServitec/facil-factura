@@ -1,7 +1,11 @@
 {
-  "name": "factuacion-electronica",
+  "name": "facil-factura",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
@@ -15,18 +19,19 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.15.2",
     "dayjs": "^1.11.10",
-    "firebase": "8.4.2",
+    "firebase": "^10.6.0",
     "lodash": "^4.17.21",
     "polished": "^4.2.2",
     "query-string": "^7.1.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-firebase-hooks": "^3.0.3",
     "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.9.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
+    "react-multi-carousel": "^2.8.4",
+    "react-router": "^6.14.1",
+    "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.2",
     "styled-components": "^5.3.5",
@@ -47,11 +52,10 @@
     "deploy:functions": "firebase deploy --only functions",
     "deploy:api": "firebase deploy --only functions:api",
     "firebase:emulators": "firebase emulators:start",
-    "cypress:open": "cypress open",
-    "cypress:check": "cypress run --browser chrome --spec 'cypress/integration/*'",
     "eslint:check": "eslint src",
     "type:check": "tsc --noEmit",
-    "prettier:check": "prettier . --check"
+    "prettier:check": "prettier . -c",
+    "prettier:write": "prettier . -w"
   },
   "eslintConfig": {
     "extends": [

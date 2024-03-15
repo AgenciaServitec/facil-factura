@@ -1,7 +1,7 @@
 {
   "common": {
     "contactData": {
-      "title": "servitec facil factura",
+      "title": "Facil factura - servitec",
       "emails": {
         "sales": "contactos@servitec-peru.com"
       },
@@ -12,10 +12,9 @@
       "officeHour": "Lun-Dom / 9am-6pm",
       "socialLinks": {
         "facebook": "https://www.facebook.com/Servitec.chorrillos/",
-        "instagram": "-",
         "whatsapp": "https://api.whatsapp.com/send/?phone=+51941801827&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0",
-        "messenger": "-",
-        "youtube": "https://www.youtube.com/watch?v=FNMfFy4iKvg"
+        "tiktok": "https://www.youtube.com/watch?v=FNMfFy4iKvg",
+        "instagram": "-"
       },
       "directions": {
         "local1": "Chorrillos, Perú - Pastor Davila 117",
@@ -25,6 +24,9 @@
         "name": "Agencia Servitec",
         "webUrl": "https://agenciaservitec.com"
       }
+    },
+    "googleAnalytics": {
+      "measurementId": "G-*"
     }
   },
   "development": {
@@ -56,7 +58,7 @@
     },
     "buckets": {},
     "apiUrl": "-",
-    "sendingEmailsApiUrl": "https://us-central1-sendingemails-348505.cloudfunctions.net/api",
+    "sendingEmailsApiUrl": "https://api-servitecsales.web.app",
     "ipInfoApi": "-"
   }
 }
