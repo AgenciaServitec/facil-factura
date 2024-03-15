@@ -2,16 +2,6 @@ import React from "react";
 import InputAntd from "antd/lib/input";
 import { ComponentContainer } from "./component-container";
 
-// interface Props {
-//   value?: string;
-//   required?: boolean;
-//   hidden?: boolean;
-//   error?: FormError;
-//   label?: string;
-//   variant?: "outlined" | "filled";
-//   disabled?: boolean;
-// }
-
 export const Input = ({
   value,
   required = false,

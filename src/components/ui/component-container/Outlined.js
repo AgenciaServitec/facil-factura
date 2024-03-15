@@ -8,18 +8,6 @@ import { lighten, tint } from "polished";
 
 const { Text } = Typography;
 
-// interface Props {
-//   value?: string | number | boolean | Record<string, unknown> | Moment;
-//   required?: boolean;
-//   hidden?: boolean;
-//   error?: FormError;
-//   label?: string;
-//   disabled?: boolean;
-//   componentId?: string;
-//   children?: React.ReactNode;
-//   animation?: boolean;
-// }
-
 export const Outlined = ({
   value,
   required,

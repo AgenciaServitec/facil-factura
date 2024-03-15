@@ -21,11 +21,6 @@ export const Home = ({
             onClickVisibleFormContact={onClickVisibleFormContact}
             onEventGaClickButton={onEventGaClickButton}
           />
-          {/*<VideoSection*/}
-          {/*  onClickVisibleFormContact={onClickVisibleFormContact}*/}
-          {/*  onEventGaClickButton={onEventGaClickButton}*/}
-          {/*  onEventGaClickVideos={onEventGaClickVideos}*/}
-          {/*/>*/}
           <Services
             onClickVisibleFormContact={onClickVisibleFormContact}
             onEventGaClickButton={onEventGaClickButton}

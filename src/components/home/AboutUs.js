@@ -6,12 +6,8 @@ import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../ui";
-import { useHorizontalSlideAnimation } from "../../hooks";
 
 export const AboutUs = ({ onClickVisibleFormContact }) => {
-  // const elementRef = useRef(null);
-  // const animationProps = useHorizontalSlideAnimation(elementRef);
-
   return (
     <Container id="about-us">
       <div className="content-items">
@@ -48,16 +44,6 @@ export const AboutUs = ({ onClickVisibleFormContact }) => {
           </div>
         </article>
         <article className="content-img">
-          {/*<animated.img*/}
-          {/*  className="image-bg"*/}
-          {/*  src={ImgAbout}*/}
-          {/*  alt="offers"*/}
-          {/*  title="offers"*/}
-          {/*  ref={elementRef}*/}
-          {/*  style={{*/}
-          {/*    ...animationProps,*/}
-          {/*  }}*/}
-          {/*/>*/}
           <img
             src={ImgAbout}
             alt="offers"

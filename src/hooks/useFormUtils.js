@@ -1,20 +1,6 @@
 import { useEffect } from "react";
 import { get, isEmpty, toNumber } from "lodash";
 
-// interface Props {
-//   errors?: FieldErrors;
-//   schema: yup.AnyObjectSchema;
-// }
-
-// type Tests = { name: string; params: Record<string, unknown> }[];
-
-// interface Return {
-//   error: (name: string) => undefined | Record<string, unknown>;
-//   required: (name: string) => boolean;
-//   eventInputNumber: (e: React.ChangeEvent<HTMLInputElement>) => number | null;
-//   eventCheckbox: (e: CheckboxChangeEvent) => boolean;
-// }
-
 export const useFormUtils = ({ errors, schema }) => {
   useEffect(() => {
     !isEmpty(errors) && scrollIntoError();
