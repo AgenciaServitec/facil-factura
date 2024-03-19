@@ -2,21 +2,15 @@ import { css, createGlobalStyle } from "styled-components";
 import { mediaQuery } from "../constants/mediaQuery";
 
 const global = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
-    font-size: 16px;
-    background: #fff;
-    font-family: "MontserratRegular", serif;
   }
 
   h1,

@@ -108,18 +108,15 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
         </WrapperComponent>
       </header>
       <main className="body">{children}</main>
-      <Footer
-        onEventGaClickIcon={eventGaClickIcon}
-        onEventGaClickLink={eventGaClickLink}
-      />
-      <ButtonsFloating
-        onEventGaClickButton={eventGaClickButton}
-        bottom="15%"
-        message="Estoy+interesado+más+información"
-      />
-      <ButtonFloatingContact
-        onClickVisibleFormContact={onClickVisibleFormContact}
-      />
+      <Footer />
+      {/*<ButtonsFloating*/}
+      {/*  onEventGaClickButton={eventGaClickButton}*/}
+      {/*  bottom="15%"*/}
+      {/*  message="Estoy+interesado+más+información"*/}
+      {/*/>*/}
+      {/*<ButtonFloatingContact*/}
+      {/*  onClickVisibleFormContact={onClickVisibleFormContact}*/}
+      {/*/>*/}
     </Container>
   );
 };

@@ -6,23 +6,14 @@
         "sales": "contactos@servitec-peru.com"
       },
       "numbers": {
-        "phone": ["941 801 827"],
-        "wsp": ["941 801 827"]
+        "phone": ["972 252 744"],
+        "wsp": ["972 252 744"]
       },
-      "officeHour": "Lun-Dom / 9am-6pm",
       "socialLinks": {
-        "facebook": "https://www.facebook.com/Servitec.chorrillos/",
-        "whatsapp": "https://api.whatsapp.com/send/?phone=+51941801827&text=Estoy+interesado+en+su+producto+%2F+servicio&app_absent=0",
-        "tiktok": "https://www.youtube.com/watch?v=FNMfFy4iKvg",
+        "facebook": "https://www.facebook.com/facilfactura",
+        "whatsapp": "https://api.whatsapp.com/send/?phone=+51972252744&text=Quiero+más+información+sobre+el+sistema+de+facturación+electrónica+por+favor&app_absent=0",
+        "tiktok": "https://www.tiktok.com/@facilfactura",
         "instagram": "-"
-      },
-      "directions": {
-        "local1": "Chorrillos, Perú - Pastor Davila 117",
-        "local2": "-"
-      },
-      "poweredBy": {
-        "name": "Agencia Servitec",
-        "webUrl": "https://agenciaservitec.com"
       }
     },
     "googleAnalytics": {
