@@ -19,8 +19,12 @@ export { default as ImgPlan1 } from "./webp/01-diseno.webp";
 export { default as ImgPlan2 } from "./webp/02-diseno.webp";
 export { default as ImgPlan3 } from "./webp/03-diseno.webp";
 export { default as ImgPlan4 } from "./webp/04-diseno.webp";
+export { default as MovilRight } from "./webp/movil-right.webp";
+export { default as MovilLeft } from "./webp/movil-left.webp";
+export { default as BannerPhones } from "./webp/banner-phones.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";
 export * from "./svg/Email";
 export * from "./svg/Location";
+export * from "./svg/CurvedLineBackground";

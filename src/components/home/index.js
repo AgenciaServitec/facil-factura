@@ -5,3 +5,4 @@ export * from "../layout/Footer";
 export * from "./VideoSection";
 export * from "./ItemServices";
 export * from "./SectionPlans";
+export * from "./SectionFirst";

@@ -8,6 +8,7 @@ import { Drawer } from "./Drawer";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
 import {
+  Button,
   ButtonFloatingContact,
   ButtonsFloating,
   WrapperComponent,
@@ -88,20 +89,20 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                 </div>
                 <nav className="list">
                   <ul>
-                    <span onClick={() => navigate("/")}>
-                      <li>INICIO</li>
-                    </span>
-                    <a href="#about-us">
-                      <li>NOSOTROS</li>
-                    </a>
-                    <a href="#services">
-                      <li>SERVICIOS</li>
-                    </a>
-                    <span onClick={() => onClickVisibleFormContact()}>
-                      <li>CONTÁCTO</li>
-                    </span>
+                    <li>
+                      <span onClick={() => navigate("/")}>Inicio</span>
+                    </li>
+                    <li>
+                      <a href="#">Nosotros</a>
+                    </li>
+                    <li>
+                      <a href="#">Servicios</a>
+                    </li>
                   </ul>
                 </nav>
+                <button onClick={() => onClickVisibleFormContact()}>
+                  Contácto
+                </button>
               </div>
             )}
           </>
@@ -126,68 +127,77 @@ const Container = styled.div`
   min-height: 100vh;
   height: auto;
   position: relative;
+  overflow: hidden;
   ${mediaQuery.minDesktop} {
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
   }
 
   .header {
     width: 100%;
-    height: auto;
-    background: #fff;
-    margin: auto;
-    padding: 1.5em 1em 1em 1em;
-    display: grid;
-    grid-area: auto;
-    box-shadow: 0 6px 8px 0 rgb(12 0 46 / 6%);
+    background-color: transparent;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
     ${mediaQuery.minDesktop} {
-      position: fixed;
-      z-index: 100;
+      position: absolute;
+      z-index: 700;
       right: 0;
       left: 0;
       top: 0;
+      padding: 3em 2em;
     }
 
     .menu-list {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       .logo-img {
-        width: 40%;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
         img {
-          width: 14rem;
+          width: 150px;
         }
       }
 
       .list {
-        width: 60%;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        border-radius: 2em;
+        padding: 0.625em 1em;
+        background-color: #fff;
+        box-shadow: 0 1px 3px 0 #ccc;
         ul {
           list-style: none;
           display: flex;
-          justify-content: space-around;
           align-items: center;
+          gap: 2rem;
           padding: 0;
           margin: 0;
-          li {
+          a,
+          span {
             color: #000;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease-in-out;
-            margin-left: 1.5rem;
+            text-decoration: none;
+            transition-duration: 0.3s;
+          }
+          a:hover,
+          span:hover {
             cursor: pointer;
+            color: #23d3f9;
           }
-          li:hover {
-            color: #4cc2c0;
-            border-bottom: 2px solid #4cc2c0;
-            transition: all 0.3s ease-in-out;
-          }
+        }
+      }
+
+      button {
+        background-image: linear-gradient(to right, #23d3f9 100%, #23d3f9);
+        border: none;
+        border-radius: 2em;
+        color: #23d3f9;
+        color: #fff;
+        padding: 0.625em 3.5em;
+        transition: background-image 0.3s ease-in-out;
+
+        &:hover {
+          background-image: linear-gradient(120deg, #02578b 25%, #23d3f9);
+          cursor: pointer;
         }
       }
     }
@@ -195,8 +205,8 @@ const Container = styled.div`
     .menu-mobile {
       width: 100%;
       color: #000;
-      display: grid;
-      grid-template-columns: 85% 1fr;
+      display: flex;
+      justify-content: space-between;
       .item-logo {
         display: flex;
         align-items: center;

@@ -15,7 +15,7 @@ export const Drawer = ({
       title={null}
       placement="right"
       onClose={() => onSetVisibleDrawer(false)}
-      visible={visibleDrawer}
+      open={visibleDrawer}
     >
       <MenuItem onClick={() => onSetVisibleDrawer(false)}>
         <span onClick={() => navigate("/")}>Inicio</span>
