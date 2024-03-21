@@ -1,38 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { AboutUs, Carousel, SectionPlans, Services } from "../../components";
+import {
+  AboutUs,
+  Carousel,
+  SectionFirst,
+  SectionPlans,
+  Services,
+} from "../../components";
 import { FormContact, WrapperComponent } from "../../components/ui";
 
-export const Home = ({
-  onClickVisibleFormContact,
-  visibleFormContact,
-  onEventGaClickButton,
-  onEventGaClickVideos,
-}) => {
+export const Home = ({}) => {
   return (
     <>
       <Container>
-        <Carousel
-          onClickVisibleFormContact={onClickVisibleFormContact}
-          onEventGaClickButton={onEventGaClickButton}
-        />
-        <WrapperComponent>
-          <AboutUs
-            onClickVisibleFormContact={onClickVisibleFormContact}
-            onEventGaClickButton={onEventGaClickButton}
-          />
-          <Services
-            onClickVisibleFormContact={onClickVisibleFormContact}
-            onEventGaClickButton={onEventGaClickButton}
-          />
-          <SectionPlans />
-        </WrapperComponent>
+        <SectionFirst />
       </Container>
-      <FormContact
-        visibleFormContact={visibleFormContact}
-        onClickVisibleFormContact={onClickVisibleFormContact}
-        onEventGaClickButton={onEventGaClickButton}
-      />
     </>
   );
 };
