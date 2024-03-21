@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ImgLogoFacturaFacil } from "../../images";
-import { useAnalyticsEventTracker, useDevice } from "../../hooks";
+import { useDevice } from "../../hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Drawer } from "./Drawer";
