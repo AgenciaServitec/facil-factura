@@ -7,7 +7,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Drawer } from "./Drawer";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-import { WrapperComponent } from "../ui";
+import { Button, WrapperComponent } from "../ui";
 import { useNavigate } from "react-router";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 
@@ -74,9 +74,14 @@ export const BaseLayout = ({ children }) => {
                     </li>
                   </ul>
                 </nav>
-                <button onClick={() => onClickVisibleFormContact()}>
+                <Button
+                  type="primary"
+                  shape="round"
+                  size="large"
+                  style={{ padding: "0 1em" }}
+                >
                   Contácto
-                </button>
+                </Button>
               </div>
             )}
           </>
@@ -102,9 +107,6 @@ const Container = styled.div`
   height: auto;
   position: relative;
   overflow: hidden;
-  ${mediaQuery.minDesktop} {
-    /* padding-top: 5rem; */
-  }
 
   .header {
     width: 100%;
@@ -128,7 +130,7 @@ const Container = styled.div`
 
       .logo-img {
         img {
-          width: 150px;
+          width: 10em;
         }
       }
 
@@ -157,21 +159,6 @@ const Container = styled.div`
             cursor: pointer;
             color: #23d3f9;
           }
-        }
-      }
-
-      button {
-        background-image: linear-gradient(to right, #23d3f9 100%, #23d3f9);
-        border: none;
-        border-radius: 2em;
-        color: #23d3f9;
-        color: #fff;
-        padding: 0.625em 3.5em;
-        transition: background-image 0.3s ease-in-out;
-
-        &:hover {
-          background-image: linear-gradient(120deg, #02578b 25%, #23d3f9);
-          cursor: pointer;
         }
       }
     }

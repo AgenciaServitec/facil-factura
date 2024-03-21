@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionFirst } from "../../components";
+import { SectionFirst } from "./SectionFirst";
 import { SimplePlans, WrapperComponent } from "../../components/ui";
 
 export const Home = () => {
