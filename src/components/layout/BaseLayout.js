@@ -7,33 +7,17 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Drawer } from "./Drawer";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-import {
-  Button,
-  ButtonFloatingContact,
-  ButtonsFloating,
-  WrapperComponent,
-} from "../ui";
+import { WrapperComponent } from "../ui";
 import { useNavigate } from "react-router";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 
-export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
+export const BaseLayout = ({ children }) => {
   const { isMobile } = useDevice();
   const navigate = useNavigate();
 
   const [visibleDrawer, setVisibleDrawer] = useState(false);
 
-  const gaEventTrackerButtons = useAnalyticsEventTracker("Buttons");
-  const gaEventTrackerIcons = useAnalyticsEventTracker("Icons");
-  const gaEventTrackerLinks = useAnalyticsEventTracker("Links");
-
-  const eventGaClickButton = (action, label) =>
-    gaEventTrackerButtons(action, label);
-
-  const eventGaClickIcon = (action, label) =>
-    gaEventTrackerIcons(action, label);
-
-  const eventGaClickLink = (action, label) =>
-    gaEventTrackerLinks(action, label);
+  const onClickVisibleFormContact = () => setVisibleDrawer(!visibleDrawer);
 
   return (
     <Container>
@@ -53,10 +37,6 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                     alt="Logo Servitec Facil Factura"
                     onClick={() => {
                       navigate("/");
-                      eventGaClickLink(
-                        "click-link-logo-publicidad-google",
-                        "Click link logo publicidad google"
-                      );
                     }}
                   />
                 </div>
@@ -78,12 +58,6 @@ export const BaseLayout = ({ children, onClickVisibleFormContact }) => {
                     <img
                       src={ImgLogoFacturaFacil}
                       alt="Logo Servitec Facil Factura"
-                      onClick={() =>
-                        eventGaClickLink(
-                          "click-link-logo-publicidad-google",
-                          "Click link logo publicidad google"
-                        )
-                      }
                     />
                   </Link>
                 </div>

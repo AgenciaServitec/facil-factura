@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "./Button";
+import { Button } from "./index";
 
 export const ButtonFloatingContact = ({ onClickVisibleFormContact }) => {
   return (
     <Container>
-      <Button
-        text="Contáctanos"
-        type="secondary"
-        onClick={() => {
-          onClickVisibleFormContact(true);
-        }}
-      />
+      <Button type="secondary" onClick={() => onClickVisibleFormContact(true)}>
+        Contáctanos
+      </Button>
     </Container>
   );
 };

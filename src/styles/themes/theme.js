@@ -38,11 +38,12 @@ export const theme = {
     xxx_large: "1.8em",
   },
   colors: {
-    primary: "#5ad8fa",
-    secondary: "#297ab8",
-    tertiary: "#093c6b",
+    primary: "#00D7FF",
+    secondary: "#0078B9",
+    tertiary: "#053B63",
+    quaternary: "#B6E6EE",
 
-    font1: "rgb(2,10,14)",
+    font1: "rgb(5,22,30)",
     font2: "rgb(40,48,63)",
     font3: "rgb(132, 142, 156)",
 

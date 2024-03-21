@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import ModalAntd from "antd/lib/modal/Modal";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
-import Row from "antd/lib/row";
-import Col from "antd/lib/col";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useDevice, useFormUtils } from "../../hooks";
-import { Input } from "./Input";
-import { Form } from "./Form";
 import { defaultTo } from "lodash";
 import { phoneCodes } from "../../data-list";
-import { Select } from "./Select";
-import { InputNumber } from "./InputNumber";
-import { TextArea } from "./TextArea";
-import { notification } from "./notification";
-import { currentConfig } from "../../firebase";
+import { currentConfig } from "../../config";
 import { useNavigate } from "react-router";
-import { Button } from "./Button";
+import {
+  Button,
+  Col,
+  Form,
+  Input,
+  InputNumber,
+  Modal,
+  notification,
+  Row,
+  Select,
+  TextArea,
+} from "./index";
 
 export const FormContact = ({
   visibleFormContact,
@@ -235,7 +237,7 @@ const ModalBackground = css`
   color: ${({ theme }) => theme.colors.font2};
 `;
 
-const ModalComponent = styled(ModalAntd)`
+const ModalComponent = styled(Modal)`
   position: relative;
   min-width: 100vw;
   min-height: 100vh;
