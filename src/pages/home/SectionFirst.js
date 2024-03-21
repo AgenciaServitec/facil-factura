@@ -1,21 +1,39 @@
 import styled from "styled-components";
 import { CurvedLineBackground, BannerPhones } from "../../images";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { Button } from "../../components";
 
 export const SectionFirst = () => {
   return (
     <Container>
-      <CurvedLineBackground />
+      <CurvedLineBackground
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      />
       <div className="banner">
         <div className="banner__text">
-          <h1>Mejora tu facturación de tu empresa</h1>
+          <h1>Facturación Electrónica para emprendedores, desde S/50,00</h1>
           <p>
             Servitec te ayudara a facturar, controlar tu inventario y ventas
             minuto a minuto, de forma ilimitada.
           </p>
-          <div>
-            <button>Planes</button>
-            <button>Demo</button>
+          <div className="button_wrapper">
+            <Button
+              type="primary"
+              shape="round"
+              size="large"
+              style={{ padding: "0 2em" }}
+            >
+              Planes
+            </Button>
+            <Button shape="round" size="large" style={{ padding: "0 2em" }}>
+              Demo
+            </Button>
           </div>
         </div>
         <img src={BannerPhones} alt="" className="bannerPhones" />
@@ -26,7 +44,7 @@ export const SectionFirst = () => {
 
 const Container = styled.section`
   width: 100%;
-  min-height: 60vh;
+  min-height: 70vh;
   position: relative;
 
   ${mediaQuery.minTablet} {
@@ -72,11 +90,13 @@ const Container = styled.section`
       padding: 2em 0 0;
       z-index: 400;
       h1 {
+        max-width: 90%;
         font-size: 1.8em;
         line-height: 1.2;
         margin: 0;
         ${mediaQuery.minDesktop} {
-          font-size: 4em;
+          max-width: 60%;
+          font-size: 3.5em;
         }
       }
       p {
@@ -91,7 +111,7 @@ const Container = styled.section`
     }
     img {
       width: 90%;
-      max-width: 850px;
+      max-width: 45rem;
       position: absolute;
       left: 50%;
       bottom: 0;
@@ -100,23 +120,7 @@ const Container = styled.section`
     }
   }
 
-  button {
-    padding: 0.625em 3.5em;
-    border-radius: 2em;
-    border: none;
-    &:first-child {
-      background-image: linear-gradient(to right, #23d3f9 100%, #23d3f9);
-      color: #fff;
-      &:hover {
-        background-image: linear-gradient(120deg, #02578b 25%, #23d3f9);
-      }
-    }
-    &:last-child {
-      background-color: #fff;
-      border: 1px solid #000;
-    }
-    &:hover {
-      cursor: pointer;
-    }
+  .button_wrapper {
+    margin-top: 1em;
   }
 `;
