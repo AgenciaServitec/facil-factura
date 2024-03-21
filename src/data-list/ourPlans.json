@@ -1,0 +1,182 @@
+[
+  {
+    "id": "micro",
+    "name": "Micro",
+    "tag": {
+      "value": "-S/118.80",
+      "type": "warning"
+    },
+    "titleLegend": "100% Digital",
+    "prices": {
+      "value": "29.90",
+      "priceByYear": "240"
+    },
+    "benefitsList": [
+      {
+        "type": "check",
+        "value": "200 Comprobantes/mes",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Notas de venta ilimitadas",
+        "bold": true
+      },
+      {
+        "type": "cross",
+        "value": "Sin Ticketera \uD83D\uDDA8\uFE0F",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Inventario",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Reportes",
+        "bold": false
+      },
+      {
+        "type": "plus",
+        "value": "Todas las demás funciones",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "id": "emprende",
+    "name": "Emprende",
+    "tag": {
+      "value": "-S/118.80",
+      "type": "warning"
+    },
+    "titleLegend": "100% Digital",
+    "prices": {
+      "value": "39,90",
+      "priceByYear": "240"
+    },
+    "benefitsList": [
+      {
+        "type": "check",
+        "value": "200 Comprobantes/mes",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Notas de venta ilimitadas",
+        "bold": true
+      },
+      {
+        "type": "cross",
+        "value": "Sin Ticketera \uD83D\uDDA8\uFE0F",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Inventario",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Reportes",
+        "bold": false
+      },
+      {
+        "type": "plus",
+        "value": "Todas las demás funciones",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "id": "plan-control",
+    "name": "Plan Control",
+    "tag": {
+      "value": "-S/118.80",
+      "type": "warning"
+    },
+    "titleLegend": "100% Digital",
+    "prices": {
+      "value": "49,90",
+      "priceByYear": "240"
+    },
+    "benefitsList": [
+      {
+        "type": "check",
+        "value": "200 Comprobantes/mes",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Notas de venta ilimitadas",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Con Ticketera* \uD83D\uDDA8\uFE0F",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Inventario",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Reportes",
+        "bold": false
+      },
+      {
+        "type": "plus",
+        "value": "Todas las demás funciones",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "id": "planes-top",
+    "name": "Planes Top",
+    "tag": {
+      "value": "-S/118.80",
+      "type": "warning"
+    },
+    "titleLegend": "100% Digital",
+    "prices": {
+      "value": "59,90",
+      "priceByYear": "240"
+    },
+    "benefitsList": [
+      {
+        "type": "check",
+        "value": "200 Comprobantes/mes",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Notas de venta ilimitadas",
+        "bold": true
+      },
+      {
+        "type": "check",
+        "value": "Con Ticketera* \uD83D\uDDA8\uFE0F",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Inventario",
+        "bold": false
+      },
+      {
+        "type": "check",
+        "value": "Reportes",
+        "bold": false
+      },
+      {
+        "type": "plus",
+        "value": "Todas las demás funciones",
+        "bold": false
+      }
+    ]
+  }
+]

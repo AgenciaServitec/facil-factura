@@ -30,7 +30,9 @@ export const ItemCarousel = ({
               );
             }}
           >
-            <Button text="Cotiza ahora" />
+            <Button type="primary" size="large">
+              Cotiza ahora
+            </Button>
           </div>
         </div>
         <div className="second-content">

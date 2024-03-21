@@ -2,6 +2,12 @@ import { css, createGlobalStyle } from "styled-components";
 import { mediaQuery } from "../constants/mediaQuery";
 
 const global = css`
+  @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+  * {
+    font-family: "Lato", sans-serif !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -11,6 +17,20 @@ const global = css`
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    background: #fff;
+  }
+
+  .strong {
+    font-weight: bold;
+    &-sm {
+      font-weight: 700;
+    }
+    &-md {
+      font-weight: 800;
+    }
+    &-lg {
+      font-weight: 900;
+    }
   }
 
   h1,
@@ -19,8 +39,7 @@ const global = css`
   h4,
   h5,
   h6 {
-    font-family: "MontserratRegular", serif;
-    line-height: 2.3rem;
+    margin: 0;
   }
 
   h1 {
@@ -59,12 +78,6 @@ const global = css`
   h5 {
     font-size: 1rem;
     font-weight: bold;
-  }
-
-  h1,
-  h2,
-  h3 {
-    line-height: 2.7rem;
   }
 `;
 
