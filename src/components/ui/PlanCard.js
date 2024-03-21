@@ -97,7 +97,7 @@ const Container = styled.div`
     min-width: 12em;
     height: auto;
     background: ${planType === "normal"
-      ? "#fafafa"
+      ? theme.colors.light
       : lighten(0.11, theme.colors.quaternary)};
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     padding: 1em;
