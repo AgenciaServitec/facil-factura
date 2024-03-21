@@ -2,14 +2,11 @@
   {
     "id": "micro",
     "name": "Micro",
-    "tag": {
-      "value": "-S/118.80",
-      "type": "warning"
-    },
+    "type": "normal",
+
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "29.90",
-      "priceByYear": "240"
+      "value": "29.90"
     },
     "benefitsList": [
       {
@@ -47,19 +44,16 @@
   {
     "id": "emprende",
     "name": "Emprende",
-    "tag": {
-      "value": "-S/118.80",
-      "type": "warning"
-    },
+    "type": "normal",
+
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "39,90",
-      "priceByYear": "240"
+      "value": "39,90"
     },
     "benefitsList": [
       {
         "type": "check",
-        "value": "200 Comprobantes/mes",
+        "value": "400 Comprobantes/mes",
         "bold": true
       },
       {
@@ -92,19 +86,19 @@
   {
     "id": "plan-control",
     "name": "Plan Control",
+    "type": "popular",
     "tag": {
-      "value": "-S/118.80",
-      "type": "warning"
+      "value": "+ POPULAR",
+      "type": "success"
     },
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "49,90",
-      "priceByYear": "240"
+      "value": "49,90"
     },
     "benefitsList": [
       {
         "type": "check",
-        "value": "200 Comprobantes/mes",
+        "value": "500 Comprobantes/mes",
         "bold": true
       },
       {
@@ -135,21 +129,18 @@
     ]
   },
   {
-    "id": "planes-top",
-    "name": "Planes Top",
-    "tag": {
-      "value": "-S/118.80",
-      "type": "warning"
-    },
+    "id": "plan-pro",
+    "name": "Plan PRO",
+    "type": "normal",
+
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "59,90",
-      "priceByYear": "240"
+      "value": "59,90"
     },
     "benefitsList": [
       {
         "type": "check",
-        "value": "200 Comprobantes/mes",
+        "value": "+650 Comprobantes/mes",
         "bold": true
       },
       {

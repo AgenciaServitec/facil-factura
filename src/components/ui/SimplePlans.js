@@ -46,7 +46,7 @@ const Container = styled.div`
     padding: 0 1em;
     margin-bottom: 2.5em;
     h2 {
-      font-size: 2.7em;
+      font-size: 2.5em;
       margin-bottom: 0.2em;
       font-weight: 700;
     }
@@ -63,10 +63,10 @@ const Container = styled.div`
       list-style: none;
       padding: 0;
       margin: 0;
-      width: 80%;
+      width: 87%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-      gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+      gap: 1.5em;
       .li-item {
         display: grid;
         place-items: center;
