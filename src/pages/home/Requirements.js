@@ -8,60 +8,67 @@ import {
 import styled, { css } from "styled-components";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { rgba } from "polished";
+import { WrapperComponent } from "../../components";
 
 export const Requirements = () => {
   return (
     <Container>
-      <div className="requirements">
-        <div className="requirements__title">
-          <h2>¿Requisitos? ¡Solo 3! 👇🏼</h2>
+      <WrapperComponent>
+        <div className="requirements">
+          <div className="requirements__title">
+            <h2>¿Requisitos? ¡Solo 3! 👇🏼</h2>
+          </div>
+          <ul className="requirements__list">
+            <li className="requirements__list__list-item">
+              <div className="item__icon">
+                <div className="one_circle">
+                  <div className="two_circle">
+                    <FontAwesomeIcon
+                      icon={faIdCard}
+                      size="1x"
+                      className="icon"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="item__text">
+                <h3>RUC activo</h3>
+                <p>Ya sea RUC 10 o 20 💪🏼</p>
+              </div>
+            </li>
+            <li className="requirements__list__list-item">
+              <div className="item__icon">
+                <div className="one_circle">
+                  <div className="two_circle">
+                    <FontAwesomeIcon
+                      icon={faMobileAlt}
+                      size="1x"
+                      className="icon"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="item__text">
+                <h3>Un Celular</h3>
+                <p>O una Computadora 💻</p>
+              </div>
+            </li>
+            <li className="requirements__list__list-item">
+              <div className="item__icon">
+                <div className="one_circle">
+                  <div className="two_circle">
+                    <FontAwesomeIcon icon={faWifi} size="1x" className="icon" />
+                  </div>
+                </div>
+              </div>
+              <div className="item__text">
+                <h3>Acceso a internet</h3>
+                <p>Para sincronizar tu información 😉</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul className="requirements__list">
-          <li className="requirements__list__list-item">
-            <div className="item__icon">
-              <div className="one_circle">
-                <div className="two_circle">
-                  <FontAwesomeIcon icon={faIdCard} size="1x" className="icon" />
-                </div>
-              </div>
-            </div>
-            <div className="item__text">
-              <h3>RUC activo</h3>
-              <p>Ya sea RUC 10 o 20 💪🏼</p>
-            </div>
-          </li>
-          <li className="requirements__list__list-item">
-            <div className="item__icon">
-              <div className="one_circle">
-                <div className="two_circle">
-                  <FontAwesomeIcon
-                    icon={faMobileAlt}
-                    size="1x"
-                    className="icon"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="item__text">
-              <h3>Un Celular</h3>
-              <p>O una Computadora 💻</p>
-            </div>
-          </li>
-          <li className="requirements__list__list-item">
-            <div className="item__icon">
-              <div className="one_circle">
-                <div className="two_circle">
-                  <FontAwesomeIcon icon={faWifi} size="1x" className="icon" />
-                </div>
-              </div>
-            </div>
-            <div className="item__text">
-              <h3>Acceso a internet</h3>
-              <p>Para sincronizar tu información 😉</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+      </WrapperComponent>
     </Container>
   );
 };

@@ -49,8 +49,8 @@ export const PrincipalSection = () => {
 const Container = styled.section`
   width: 100%;
   min-height: 70vh;
+  height: auto;
   position: relative;
-
   ${mediaQuery.minTablet} {
     min-height: 80vh;
   }
@@ -91,8 +91,11 @@ const Container = styled.section`
       align-items: center;
       gap: 1em;
       text-align: center;
-      padding: 2em 0 0;
+      padding: 5em 0 0 0;
       z-index: 400;
+      ${mediaQuery.minDesktop} {
+        padding: 2em 0 0;
+      }
       h1 {
         max-width: 90%;
         font-size: 1.8em;

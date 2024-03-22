@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ImgLogoFacturaFacil } from "../../images";
 import { useDevice } from "../../hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,13 +47,13 @@ export const BaseLayout = ({ children }) => {
                   <FontAwesomeIcon
                     icon={faBars}
                     size="2x"
-                    style={{ color: "#000" }}
+                    style={{ color: "#000", fontSize: "1.7em" }}
                   />
                 </div>
               </div>
             ) : (
               <div className="menu-list">
-                <div className="logo-img">
+                <div className="logo-wrapper">
                   <Link to="/">
                     <img
                       src={ImgLogoFacturaFacil}
@@ -61,7 +61,7 @@ export const BaseLayout = ({ children }) => {
                     />
                   </Link>
                 </div>
-                <nav className="list">
+                <nav className="list-wrapper">
                   <ul>
                     <li>
                       <span onClick={() => navigate("/")}>Inicio</span>
@@ -74,14 +74,16 @@ export const BaseLayout = ({ children }) => {
                     </li>
                   </ul>
                 </nav>
-                <Button
-                  type="primary"
-                  shape="round"
-                  size="large"
-                  style={{ padding: "0 1em" }}
-                >
-                  Contácto
-                </Button>
+                <div className="btn-wrapper">
+                  <Button
+                    type="primary"
+                    shape="round"
+                    size="large"
+                    style={{ padding: "0 1.7em" }}
+                  >
+                    Contácto
+                  </Button>
+                </div>
               </div>
             )}
           </>
@@ -102,95 +104,107 @@ export const BaseLayout = ({ children }) => {
 };
 
 const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  height: auto;
-  position: relative;
-  overflow: hidden;
+  ${({ theme }) => css`
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
 
-  .header {
-    width: 100%;
-    background-color: transparent;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    ${mediaQuery.minDesktop} {
+    .header {
+      width: 100%;
+      background-color: transparent;
+      padding: 0.8em 1em;
       position: absolute;
       z-index: 700;
       right: 0;
       left: 0;
       top: 0;
-      padding: 3em 2em;
-    }
-
-    .menu-list {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .logo-img {
-        img {
-          width: 10em;
-        }
+      ${mediaQuery.minDesktop} {
+        padding: 1.3em 2em;
       }
 
-      .list {
-        display: flex;
+      .menu-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         align-items: center;
-        border-radius: 2em;
-        padding: 0.625em 1em;
-        background-color: #fff;
-        box-shadow: 0 1px 3px 0 #ccc;
-        ul {
-          list-style: none;
+
+        .logo-wrapper {
           display: flex;
           align-items: center;
-          gap: 2rem;
-          padding: 0;
-          margin: 0;
-          a,
-          span {
-            color: #000;
-            text-decoration: none;
-            transition-duration: 0.3s;
-          }
-          a:hover,
-          span:hover {
-            cursor: pointer;
-            color: #23d3f9;
+          justify-content: start;
+          img {
+            width: 12em;
+            height: auto;
+            object-fit: contain;
           }
         }
-      }
-    }
 
-    .menu-mobile {
-      width: 100%;
-      color: #000;
-      display: flex;
-      justify-content: space-between;
-      .item-logo {
+        .list-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 2em;
+          padding: 0.7em 1em;
+          background-color: #fff;
+          box-shadow: 0 1px 3px 0 #ccc;
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            li {
+              min-width: 7em;
+              text-align: center;
+              a,
+              span {
+                color: #000;
+                text-decoration: none;
+                transition-duration: 0.3s;
+              }
+              a:hover,
+              span:hover {
+                cursor: pointer;
+                color: ${theme.colors.primary};
+              }
+            }
+          }
+        }
+        .btn-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+        }
+      }
+
+      .menu-mobile {
+        width: 100%;
+        color: #000;
         display: flex;
-        align-items: center;
-        justify-content: start;
-        img {
-          width: 60%;
-          max-width: 220px;
+        justify-content: space-between;
+        .item-logo {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          img {
+            width: 60%;
+            max-width: 220px;
+          }
+        }
+
+        .icon-bar {
+          width: auto;
+          height: 100%;
+          padding: 0.7rem 0.1rem 0.7rem 1.7rem;
         }
       }
-
-      .icon-bar {
-        width: auto;
-        height: 100%;
-        padding: 0.7rem 0.1rem 0.7rem 1.7rem;
-      }
     }
-  }
 
-  .footer {
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    background: black;
-    color: #fff;
-  }
+    //.body {
+    //  padding-top: 3em;
+    //}
+  `}
 `;
