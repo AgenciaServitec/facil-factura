@@ -17,7 +17,7 @@ export const PrincipalSection = () => {
       />
       <div className="banner">
         <div className="banner__text">
-          <h1>Facturación Electrónica para emprendedores, desde S/50,00</h1>
+          <h1>Facturación Electrónica para emprendedores, desde S/50</h1>
           <p>
             Dile adiós a los talonarios y a la complicada web SUNAT, solo con un
             par de clics podrás emitir los comprobantes más solicitados.
@@ -27,11 +27,11 @@ export const PrincipalSection = () => {
               type="primary"
               shape="round"
               size="large"
-              style={{ padding: "0 2em" }}
+              style={{ padding: "0 3em" }}
             >
               Planes
             </Button>
-            <Button shape="round" size="large" style={{ padding: "0 2em" }}>
+            <Button shape="round" size="large" style={{ padding: "0 3em" }}>
               Demo
             </Button>
           </div>
@@ -48,7 +48,7 @@ export const PrincipalSection = () => {
 
 const Container = styled.section`
   width: 100%;
-  min-height: 70vh;
+  min-height: 75vh;
   height: auto;
   position: relative;
   ${mediaQuery.minTablet} {
