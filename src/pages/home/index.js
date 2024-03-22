@@ -11,7 +11,7 @@ export const Home = () => {
       <PrincipalSection />
       <Requirements />
       <SimplePlans />
-        <FrequentlyQuestions />
+      <FrequentlyQuestions />
     </Container>
   );
 };

@@ -78,7 +78,7 @@ export const PlanCard = ({ plan }) => {
       </div>
       <div className="footer-card">
         <Button type="primary" size="middle">
-          Solicitar Demo GRATIS
+          Solicitar PLAN
         </Button>
       </div>
       <div className="bottom-footer">

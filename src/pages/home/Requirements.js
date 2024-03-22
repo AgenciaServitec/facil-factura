@@ -91,16 +91,18 @@ const Container = styled.div`
         list-style: none;
         padding: 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 2em;
+        gap: 3em;
         width: 97%;
         margin: auto;
         ${mediaQuery.minTablet} {
+          gap: 7em;
           width: 75%;
         }
         &__list-item {
           min-width: 10em;
+          max-width: 13em;
           .item__icon {
             display: grid;
             place-items: center;

@@ -202,9 +202,5 @@ const Container = styled.div`
         }
       }
     }
-
-    //.body {
-    //  padding-top: 3em;
-    //}
   `}
 `;
