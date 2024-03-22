@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionFirst } from "./SectionFirst";
-import { SimplePlans, WrapperComponent } from "../../components/ui";
+import { PrincipalSection } from "./PrincipalSection";
+import { SimplePlans } from "../../components";
+import { Requirements } from "./Requirements";
 
 export const Home = () => {
   return (
-    <>
-      <Container>
-        <SectionFirst />
-        <WrapperComponent>
-          <SimplePlans />
-        </WrapperComponent>
-      </Container>
-    </>
+    <Container>
+      <PrincipalSection />
+      <Requirements />
+      <SimplePlans />
+    </Container>
   );
 };
 

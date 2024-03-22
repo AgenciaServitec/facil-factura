@@ -55,6 +55,6 @@ export const theme = {
     black: "#090B0D",
     white: "#EAECEF",
     dark: "#090B0D",
-    light: "#d7d8d9",
+    light: "#fafafa",
   },
 };

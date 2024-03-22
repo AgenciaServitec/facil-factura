@@ -3,7 +3,7 @@ import { CurvedLineBackground, BannerPhones } from "../../images";
 import { mediaQuery } from "../../styles/constants/mediaQuery";
 import { Button } from "../../components";
 
-export const SectionFirst = () => {
+export const PrincipalSection = () => {
   return (
     <Container>
       <CurvedLineBackground
@@ -19,8 +19,8 @@ export const SectionFirst = () => {
         <div className="banner__text">
           <h1>Facturación Electrónica para emprendedores, desde S/50,00</h1>
           <p>
-            Servitec te ayudara a facturar, controlar tu inventario y ventas
-            minuto a minuto, de forma ilimitada.
+            Dile adiós a los talonarios y a la complicada web SUNAT, solo con un
+            par de clics podrás emitir los comprobantes más solicitados.
           </p>
           <div className="button_wrapper">
             <Button
@@ -36,7 +36,11 @@ export const SectionFirst = () => {
             </Button>
           </div>
         </div>
-        <img src={BannerPhones} alt="" className="bannerPhones" />
+        <img
+          src={BannerPhones}
+          alt="facil factura en celular"
+          className="bannerPhones"
+        />
       </div>
     </Container>
   );
@@ -45,8 +49,8 @@ export const SectionFirst = () => {
 const Container = styled.section`
   width: 100%;
   min-height: 70vh;
+  height: auto;
   position: relative;
-
   ${mediaQuery.minTablet} {
     min-height: 80vh;
   }
@@ -87,8 +91,11 @@ const Container = styled.section`
       align-items: center;
       gap: 1em;
       text-align: center;
-      padding: 2em 0 0;
+      padding: 5em 0 0 0;
       z-index: 400;
+      ${mediaQuery.minDesktop} {
+        padding: 2em 0 0;
+      }
       h1 {
         max-width: 90%;
         font-size: 1.8em;

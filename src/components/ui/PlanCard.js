@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 import { Button, Tag } from "../ui";
+import { lighten } from "polished";
 
 export const PlanCard = ({ plan }) => {
   const getIconType = (type) => {
@@ -44,7 +45,7 @@ export const PlanCard = ({ plan }) => {
   };
 
   return (
-    <Container>
+    <Container planType={plan.type}>
       <div className="top-header">
         <div className="card-title">
           <h3 className="strong-sm">{plan.name}</h3>
@@ -61,7 +62,7 @@ export const PlanCard = ({ plan }) => {
           {plan?.prices && <h3>S/ {plan.prices.value}</h3>}
           <span>/mes</span>
         </div>
-        {plan?.prices && (
+        {plan?.prices?.priceByYear && (
           <div className="legend-item">{`Pago total: S/${plan.prices.priceByYear} /año`}</div>
         )}
       </div>
@@ -91,14 +92,17 @@ export const PlanCard = ({ plan }) => {
 };
 
 const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, planType = "normal" }) => css`
     width: 100%;
-    min-width: 10em;
+    min-width: 12em;
     height: auto;
-    background: #fafafa;
+    background: ${planType === "normal"
+      ? theme.colors.light
+      : lighten(0.11, theme.colors.quaternary)};
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     padding: 1em;
     border-radius: 0.7em;
+    font-size: 17px;
 
     .top-header {
       display: grid;
@@ -145,8 +149,8 @@ const Container = styled.div`
         gap: 0.3em;
 
         h3 {
-          font-size: 1.6em;
-          font-weight: bold;
+          font-size: 1.7em;
+          font-weight: 900;
           color: ${theme.colors.font1};
         }
       }
@@ -170,8 +174,8 @@ const Container = styled.div`
         li {
           display: grid;
           gap: 0.8em;
-          grid-template-columns: 0.8em 1fr;
-          font-size: 0.8em;
+          grid-template-columns: 0.9em 1fr;
+          font-size: 0.83em;
           text-align: left;
 
           .icon {
