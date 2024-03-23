@@ -10,7 +10,8 @@ import {
   Radio,
   Modal,
   Tag,
-  Collapse
+  Collapse,
+  Carousel
 } from "antd";
 
 export {
@@ -25,7 +26,8 @@ export {
   Radio,
   Modal,
   Tag,
-  Collapse
+  Collapse,
+  Carousel
 };
 // ANTD COMPONENTS
 export * from "./Title";
