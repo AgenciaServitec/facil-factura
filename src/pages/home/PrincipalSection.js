@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { CurvedLineBackground, BannerPhones } from "../../images";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles/mediaQuery";
 import { Button } from "../../components";
+import { useNavigate } from "react-router";
 
 export const PrincipalSection = () => {
+  const navigate = useNavigate();
+
+  const onNavigateGoTo = (pathname = "/") => navigate(pathname);
+
   return (
     <Container>
       <CurvedLineBackground
@@ -28,6 +33,7 @@ export const PrincipalSection = () => {
               shape="round"
               size="large"
               style={{ padding: "0 3em" }}
+              onClick={() => onNavigateGoTo("/request-plan")}
             >
               COMENZAR
             </Button>

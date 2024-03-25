@@ -17,7 +17,7 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles";
 import { contactData } from "../../config";
 
 export const Footer = () => (

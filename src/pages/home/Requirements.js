@@ -6,7 +6,7 @@ import {
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles/mediaQuery";
 import { rgba } from "polished";
 import { WrapperComponent } from "../../components";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PrincipalSection } from "./PrincipalSection";
-import { SimplePlans } from "../../components";
+import { HomePagePlans } from "./HomePagePlans";
 import { Requirements } from "./Requirements";
 import { FrequentlyQuestions } from "./FrequentlyQuestions";
 import { SummaryApp } from "./SummaryApp";
@@ -13,6 +13,7 @@ export const Home = () => {
       <Requirements />
       <SimplePlans />
       <SummaryApp />
+      <HomePagePlans />
       <FrequentlyQuestions />
     </Container>
   );

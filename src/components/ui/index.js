@@ -48,5 +48,5 @@ export * from "./FormContact";
 export * from "./ButtonsFloating";
 export * from "./WrapperComponent";
 export * from "./ButtonFloatingContact";
-export * from "./SimplePlans";
+export * from "./Plans";
 export * from "./PlanCard";

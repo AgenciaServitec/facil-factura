@@ -1,6 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { BaseLayout } from "../components";
-import { Home, Page404, ContactSuccess } from "../pages";
+import {
+  Home,
+  Page404,
+  ContactSuccess,
+  RequestPlanIntegration,
+} from "../pages";
 
 export const Router = () => {
   return (
@@ -11,6 +16,15 @@ export const Router = () => {
         element={
           <BaseLayout>
             <Home />
+          </BaseLayout>
+        }
+      />
+      <Route
+        exact
+        path="/request-plan"
+        element={
+          <BaseLayout>
+            <RequestPlanIntegration />
           </BaseLayout>
         }
       />

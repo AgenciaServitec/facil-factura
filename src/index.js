@@ -18,6 +18,7 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
+          fontSize: 16,
           colorPrimary: theme.colors.primary,
           colorInfo: theme.colors.primary,
           colorTextBase: theme.colors.font2,
@@ -32,6 +33,11 @@ root.render(
             fontSizeHeading5: 14,
             colorTextHeading: theme.colors.font1,
             colorText: theme.colors.font2,
+            algorithm: true,
+          },
+          Input: {
+            controlHeightLG: 53,
+            lineHeight: 2.8,
             algorithm: true,
           },
         },

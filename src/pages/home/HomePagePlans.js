@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { PlanCard } from "./PlanCard";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { Plans, WrapperComponent } from "../../components";
+import { mediaQuery } from "../../styles/mediaQuery";
 import { ourPlans } from "../../data-list";
-import { WrapperComponent } from "./WrapperComponent";
 
-export const SimplePlans = () => {
+export const HomePagePlans = () => {
   return (
     <Container>
       <WrapperComponent>
@@ -14,13 +13,7 @@ export const SimplePlans = () => {
             <p>Sin contratos ni límites de montos a facturar.</p>
           </div>
           <div className="planes-wrapper">
-            <ul className="cards-list">
-              {(ourPlans || []).map((plan, index) => (
-                <li key={index} className="li-item">
-                  <PlanCard plan={plan} />
-                </li>
-              ))}
-            </ul>
+            <Plans plans={ourPlans} />
           </div>
           <div className="legend-plans">
             <p>
@@ -65,19 +58,6 @@ const Container = styled.div`
       margin-bottom: 2em;
       display: grid;
       place-items: center;
-      .cards-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 87%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-        gap: 1.5em;
-        .li-item {
-          display: grid;
-          place-items: center;
-        }
-      }
     }
     .legend-plans {
       p {
