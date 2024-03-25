@@ -1,13 +1,29 @@
 import React from "react";
 import { PlanCard } from "./PlanCard";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
-export const Plans = ({ plans = [] }) => {
+export const Plans = ({
+  type = "info",
+  plans = [],
+  planType,
+  onSetPlanType,
+}) => {
+  const navigate = useNavigate();
+
+  const onNavigateGoTo = (pathname = "/") => navigate(pathname);
+
   return (
     <Container>
       {plans.map((plan, index) => (
         <li key={index} className="li-item">
-          <PlanCard plan={plan} />
+          <PlanCard
+            type={type}
+            plan={plan}
+            planType={planType}
+            onSetPlanType={onSetPlanType}
+            onNavigateGoTo={onNavigateGoTo}
+          />
         </li>
       ))}
     </Container>

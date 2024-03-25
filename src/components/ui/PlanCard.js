@@ -8,9 +8,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 import { Button, Tag } from "../ui";
-import { lighten } from "polished";
+import { lighten, rgba } from "polished";
+import { Link } from "react-router-dom";
+import { setLocalField } from "../../utils";
 
-export const PlanCard = ({ plan }) => {
+export const PlanCard = ({
+  type,
+  plan,
+  planType,
+  onSetPlanType,
+  onNavigateGoTo,
+}) => {
   const getIconType = (type) => {
     switch (type) {
       case "check":
@@ -44,8 +52,15 @@ export const PlanCard = ({ plan }) => {
     }
   };
 
+  const isSelectedPlan = planType === plan.id;
+
+  const onPlanRequest = (plan) => {
+    setLocalField("plan", plan);
+    onNavigateGoTo(`/request-plan?planType=${plan.id}`);
+  };
+
   return (
-    <Container planType={plan.type}>
+    <Container type={type} planType={plan.type} isSelectedPlan={isSelectedPlan}>
       <div className="top-header">
         <div className="card-title">
           <h3 className="strong-sm">{plan.name}</h3>
@@ -77,14 +92,32 @@ export const PlanCard = ({ plan }) => {
         </ul>
       </div>
       <div className="footer-card">
-        <Button type="primary" size="middle">
-          Solicitar PLAN
-        </Button>
+        {type === "selection" ? (
+          !isSelectedPlan && (
+            <Button
+              type="primary"
+              size="middle"
+              onClick={() => onSetPlanType(plan.id)}
+            >
+              Seleccionar
+            </Button>
+          )
+        ) : (
+          <Button
+            type="primary"
+            size="middle"
+            onClick={() => onPlanRequest(plan)}
+          >
+            Solicitar PLAN
+          </Button>
+        )}
       </div>
       <div className="bottom-footer">
         <div className="description-item">
           <FontAwesomeIcon icon={faPlus} className="icon" />
-          <p>Más detalles del Plan</p>
+          <Link to={`/plans-detail?planType=${plan.id}`}>
+            Más detalles del Plan
+          </Link>
         </div>
       </div>
     </Container>
@@ -92,8 +125,9 @@ export const PlanCard = ({ plan }) => {
 };
 
 const Container = styled.div`
-  ${({ theme, planType = "normal" }) => css`
+  ${({ theme, planType = "normal", isSelectedPlan = false }) => css`
     width: 100%;
+    min-height: 26em;
     min-width: 12em;
     height: auto;
     background: ${planType === "normal"
@@ -103,6 +137,14 @@ const Container = styled.div`
     padding: 1em;
     border-radius: 0.7em;
     font-size: 17px;
+    border: 1.3px solid transparent;
+    color: ${theme.colors.font1};
+
+    ${isSelectedPlan &&
+    css`
+      background: ${rgba(theme.colors.success, 0.3)};
+      border: 1.3px solid ${theme.colors.success};
+    `}
 
     .top-header {
       display: grid;
@@ -111,15 +153,17 @@ const Container = styled.div`
 
       .card-title {
         display: flex;
+        align-items: center;
         h3 {
           font-size: 1.4em;
           font-weight: 600;
-          color: ${theme.colors.font1};
+          color: inherit;
         }
 
         .tag {
+          height: 2.1em;
           font-size: 0.6em;
-          display: grid;
+          display: flex;
           place-items: center;
           padding: 0.1em 0.5em;
           margin: 0.5em;
@@ -151,7 +195,7 @@ const Container = styled.div`
         h3 {
           font-size: 1.7em;
           font-weight: 900;
-          color: ${theme.colors.font1};
+          color: inherit;
         }
       }
 
@@ -208,6 +252,10 @@ const Container = styled.div`
         .icon {
           font-size: 1.1em;
           font-weight: 800;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
         }
       }
     }

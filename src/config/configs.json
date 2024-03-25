@@ -33,7 +33,7 @@
     },
     "buckets": {},
     "apiUrl": "-",
-    "sendingEmailsApiUrl": "-",
+    "servitecSalesApiUrl": "https://api-servitecsales.web.app",
     "ipInfoApi": "-"
   },
   "production": {
@@ -49,7 +49,7 @@
     },
     "buckets": {},
     "apiUrl": "-",
-    "sendingEmailsApiUrl": "https://api-servitecsales.web.app",
+    "servitecSalesApiUrl": "https://api-servitecsales.web.app",
     "ipInfoApi": "-"
   }
 }
