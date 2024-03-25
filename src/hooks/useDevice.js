@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { breakPoints } from "../styles/constants/breakPoints";
+import { breakPoints } from "../styles/breakPoints";
 
 export const useDevice = () => {
   const [currentScreenWidth, setCurrentScreenWidth] = useState(

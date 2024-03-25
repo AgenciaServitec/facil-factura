@@ -10,7 +10,7 @@ import {
   Radio,
   Modal,
   Tag,
-  Collapse
+  Collapse,
 } from "antd";
 
 export {
@@ -25,7 +25,7 @@ export {
   Radio,
   Modal,
   Tag,
-  Collapse
+  Collapse,
 };
 // ANTD COMPONENTS
 export * from "./Title";
@@ -46,5 +46,5 @@ export * from "./FormContact";
 export * from "./ButtonsFloating";
 export * from "./WrapperComponent";
 export * from "./ButtonFloatingContact";
-export * from "./SimplePlans";
+export * from "./Plans";
 export * from "./PlanCard";

@@ -1,12 +1,22 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { capitalize, get, isEmpty, startCase, toString } from "lodash";
-import { classNames } from "../../../styles";
-import { keyframes } from "../../../styles/constants/keyframes";
+import { capitalize, isEmpty, startCase, toString } from "lodash";
+import { classNames, keyframes } from "../../../styles";
 import Typography from "antd/lib/typography";
-import { lighten, tint } from "polished";
+import { darken, lighten } from "polished";
 
 const { Text } = Typography;
+
+// interface Props {
+//   value?: string | number | boolean | Record<string, unknown> | Moment;
+//   required?: boolean;
+//   error?: FormError;
+//   label?: string;
+//   disabled?: boolean;
+//   componentId?: string;
+//   children?: React.ReactNode;
+//   animation?: boolean;
+// }
 
 export const Filled = ({
   value,
@@ -18,72 +28,68 @@ export const Filled = ({
   componentId,
   animation = true,
   disabled = false,
-}) => (
-  <>
-    <Container
-      value={typeof value === "object" ? !isEmpty(value) : !!toString(value)}
-      className={classNames({ "scroll-error-anchor": error })}
-      error={error}
-      disabled={disabled}
-      required={required}
-      hidden={hidden}
-      animation={animation}
-    >
-      <div className="item-wrapper">{children}</div>
-      <label htmlFor={componentId} className="item-label">
-        {label}
-      </label>
-    </Container>
-    {error && (
-      <Error error={error}>
-        {capitalize(startCase(get(error, "message")))}
-      </Error>
-    )}
-  </>
-);
+  helperText,
+}) => {
+  return (
+    <>
+      <Container
+        hasValue={
+          typeof value === "object" ? !isEmpty(value) : !!toString(value)
+        }
+        className={classNames({ "scroll-error-anchor": error })}
+        error={error}
+        disabled={disabled}
+        required={required}
+        hidden={hidden}
+        animation={animation}
+      >
+        <div className="item-wrapper">{children}</div>
+        <label htmlFor={componentId} className="item-label">
+          {label}
+        </label>
+      </Container>
+      {helperText && (
+        <Error error={error}>{capitalize(startCase(helperText))}</Error>
+      )}
+    </>
+  );
+};
 
 const labelAnimate = css`
-  padding: 2px 0 0 5px;
-  top: 4px;
+  padding: 0 5px;
+  border-radius: ${({ theme }) => theme.border_radius.xx_small};
+  top: -11px;
   left: 6px;
   bottom: auto;
-  text-transform: capitalize;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.font2};
-  font-size: 0.8em;
-  letter-spacing: 0.01em;
-  font-family: inherit;
+  font-size: ${({ theme }) => theme.font_sizes.x_small};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Container = styled.div`
-  ${({
-    theme,
-    error,
-    required,
-    disabled,
-    value,
-    animation,
-    hidden,
-    bgColor,
-  }) => css`
-  position: relative;
-  width: inherit;
-  border-radius: .7rem;
-  background: ${disabled ? theme.colors.gray2 : bgColor || theme.colors.white};
-  border: 1px solid
-    ${error ? theme.colors.error : theme.colors.gray};
-  animation: ${error && keyframes.shake} 340ms
+  ${({ theme, error, required, disabled, hasValue, animation, hidden }) => css`
+    position: relative;
+    width: inherit;
+    background: ${disabled ? theme.colors.disabled : theme.colors.white};
+    border: ${
+      error
+        ? `1px solid ${theme.colors.error}`
+        : `1px solid ${theme.colors.dark}`
+    };
+    border-radius: ${theme.border_radius.xx_small};
+    animation: ${error && keyframes.shake} 340ms
     cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 
-  &:hover,
-  &:focus-within {
-    border-color: ${
-      error
-        ? theme.colors.error
-        : disabled
-        ? theme.colors.gray
-        : lighten(0.1, theme.colors.primary)
-    };}
+    &:hover,
+    &:focus-within {
+      border-color: ${
+        error
+          ? theme.colors.error
+          : disabled
+          ? darken(0.2, theme.colors.disabled)
+          : darken(0.1, theme.colors.primary)
+      };
+    }
 
     .item-label,
     .item-label:after {
@@ -91,23 +97,9 @@ const Container = styled.div`
         error
           ? theme.colors.error
           : disabled
-          ? theme.colors.gray
-          : lighten(0.1, theme.colors.primary)
+          ? lighten(0.3, theme.colors.black)
+          : lighten(0.1, theme.colors.black)
       };
-    }
-  }
-
-  &:focus-within {
-    ${
-      error
-        ? css`
-            border-color: ${theme.colors.error};
-            box-shadow: 0 0 0 2px ${tint(0.85, theme.colors.error)};
-          `
-        : css`
-            border-color: ${lighten(0.1, theme.colors.primary)};
-            box-shadow: 0 0 0 2px ${tint(0.85, theme.colors.primary)};
-          `
     }
   }
 
@@ -121,8 +113,8 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     background-color: transparent;
-    color: ${error ? theme.colors.error : theme.colors.body};
-    font-size: 1rem;
+    color: ${error ? theme.colors.error : theme.colors.font2};
+    font-size: ${theme.font_sizes.small};
     transition: all ease-in-out 150ms, opacity 150ms;
 
     ${
@@ -134,16 +126,16 @@ const Container = styled.div`
 
     ${!animation && labelAnimate};
 
-    ${value && labelAnimate};
-    
+    ${hasValue && labelAnimate};
+
     ${
       required &&
       css`
         ::after {
           display: inline-block;
           margin-left: 0.2rem;
-          color: ${error ? theme.colors.error : theme.colors.body};
-          font-size: 1rem;
+          color: ${error ? theme.colors.error : theme.colors.font2};
+          font-size: ${theme.font_sizes.small};
           line-height: 1;
           content: "*";
         }
@@ -158,16 +150,16 @@ const Container = styled.div`
         error
           ? theme.colors.error
           : disabled
-          ? theme.colors.body
-          : lighten(0.1, theme.colors.primary)
+          ? darken(0.2, theme.colors.disabled)
+          : darken(0.1, theme.colors.primary)
       };
     }
-    
+
     &:focus-within + .item-label,
     &:-webkit-autofill + .item-label {
       ${labelAnimate};
-      
-      color: ${error ? theme.colors.error : lighten(0.1, theme.colors.primary)};
+
+      color: ${error ? theme.colors.error : darken(0.1, theme.colors.primary)};
 
       ${
         error &&
@@ -178,7 +170,7 @@ const Container = styled.div`
 
       &:after {
         color: ${
-          error ? theme.colors.error : lighten(0.1, theme.colors.primary)
+          error ? theme.colors.error : darken(0.1, theme.colors.primary)
         };
       }
     }
@@ -186,7 +178,7 @@ const Container = styled.div`
     input:-webkit-autofill {
       -webkit-text-fill-color: #fff;
       ${
-        value &&
+        hasValue &&
         css`
           -webkit-text-fill-color: ${({ theme }) => theme.colors.primary};
         `
@@ -196,7 +188,7 @@ const Container = styled.div`
         -webkit-text-fill-color: ${({ theme }) => theme.colors.primary};
       }
     }
-    
+
     //Styles default
     .ant-input-number,
     .ant-picker,
@@ -216,13 +208,13 @@ const Container = styled.div`
       border-left: 1px solid #d9d9d9;
     }
   }
-`}
+  `}
 `;
 
 const Error = styled(Text)`
   ${({ error, theme }) => css`
     color: ${theme.colors.error};
-    font-size: 0.7rem;
+    font-size: ${({ theme }) => theme.font_sizes.x_small};
     ${error &&
     css`
       animation: ${keyframes.shake} 340ms;

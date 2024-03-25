@@ -3,7 +3,7 @@ import { Collapse, WrapperComponent } from "../../components";
 import { theme, Col, Row } from "antd";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles/mediaQuery";
 
 export const FrequentlyQuestions = () => {
   const { token } = theme.useToken();

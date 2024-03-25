@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ImgCongratulation } from "../../images";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles/mediaQuery";
 import { Button } from "../../components/ui";
 import { useNavigate } from "react-router";
 

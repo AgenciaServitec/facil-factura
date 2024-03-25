@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Button, WrapperComponent } from "../ui";
 import { useNavigate } from "react-router";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { mediaQuery } from "../../styles";
 
 export const BaseLayout = ({ children }) => {
   const { isMobile } = useDevice();
@@ -19,8 +19,10 @@ export const BaseLayout = ({ children }) => {
 
   const onClickVisibleFormContact = () => setVisibleDrawer(!visibleDrawer);
 
+  const isAbsoluteHeader = window.location.pathname === "/";
+
   return (
-    <Container>
+    <Container isAbsoluteHeader={isAbsoluteHeader}>
       <Drawer
         visibleDrawer={visibleDrawer}
         onSetVisibleDrawer={setVisibleDrawer}
@@ -104,7 +106,7 @@ export const BaseLayout = ({ children }) => {
 };
 
 const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, isAbsoluteHeader }) => css`
     width: 100vw;
     min-height: 100vh;
     height: auto;
@@ -115,7 +117,7 @@ const Container = styled.div`
       width: 100%;
       background-color: transparent;
       padding: 0.8em 1em;
-      position: absolute;
+      position: ${isAbsoluteHeader ? "absolute" : "relative"};
       z-index: 700;
       right: 0;
       left: 0;

@@ -13,6 +13,7 @@ export const Input = ({
   disabled,
   animation,
   bgColor,
+  size = null,
   ...props
 }) => {
   const Container = ComponentContainer[variant];
@@ -31,7 +32,7 @@ export const Input = ({
       <InputAntd
         bordered={false}
         autoComplete="chrome-off"
-        size={isMobile ? "middle" : "large"}
+        size={size ? size : isMobile ? "middle" : "large"}
         placeholder=""
         value={value}
         disabled={disabled}

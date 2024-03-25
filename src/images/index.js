@@ -22,6 +22,7 @@ export { default as ImgPlan4 } from "./webp/04-diseno.webp";
 export { default as MovilRight } from "./webp/movil-right.webp";
 export { default as MovilLeft } from "./webp/movil-left.webp";
 export { default as BannerPhones } from "./webp/banner-phones.webp";
+export { default as Contact } from "./webp/contact.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";
