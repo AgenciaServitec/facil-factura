@@ -10,9 +10,9 @@ export const Home = () => {
   return (
     <Container>
       <PrincipalSection />
+      <SummaryApp />
       <Requirements />
       <HomePagePlans />
-      <SummaryApp />
       <FrequentlyQuestions />
     </Container>
   );
