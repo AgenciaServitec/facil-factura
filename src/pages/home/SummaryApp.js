@@ -1,18 +1,9 @@
 import { WrapperComponent } from "../../components";
 import styled, { css } from "styled-components";
 import { summaryData } from "../../data-list";
-import { mediaQuery } from "../../styles";
 import { CarouselSummaryApp } from "./CarouselSummaryApp";
 import { ItemSummaryApp } from "./ItemSummaryApp";
 import { ItemSummaryAppTwo } from "./ItemSummaryAppTwo";
-
-const contentStyle = {
-  height: "100px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
 
 export const SummaryApp = () => {
   return (
@@ -27,7 +18,7 @@ export const SummaryApp = () => {
             {summaryData.map(
               ({ tag, title, description, items, images, reverse }) => {
                 return (
-                  <div className="carousel-item">
+                  <>
                     {reverse ? (
                       <ItemSummaryApp
                         key={tag}
@@ -47,7 +38,7 @@ export const SummaryApp = () => {
                         images={images}
                       />
                     )}
-                  </div>
+                  </>
                 );
               }
             )}
@@ -77,12 +68,6 @@ const Container = styled.section`
           font-size: 1.2em;
           font-weight: 500;
         }
-      }
-    }
-
-    .carousel-item {
-      ${mediaQuery.minTablet} {
-        padding-bottom: 0 0 1em 0;
       }
     }
 
