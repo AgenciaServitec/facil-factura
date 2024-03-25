@@ -15,7 +15,7 @@ firebase.initializeApp(currentConfig.firebaseApp);
 const firestore = firebase.firestore();
 // const storage = firebase.storage();
 
-const { apiUrl, iubiSalesApiUrl } = currentConfig;
+const { apiUrl, servitecSalesApiUrl } = currentConfig;
 
 console.log(currentEnvironment, ":", currentConfig.version);
 
@@ -26,5 +26,5 @@ export {
   contactData,
   firestore,
   apiUrl,
-  iubiSalesApiUrl,
+  servitecSalesApiUrl,
 };

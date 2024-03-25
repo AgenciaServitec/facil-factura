@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +7,12 @@ import { Step3Complete } from "../../images";
 import { mediaQuery } from "../../styles";
 
 export const Complete = ({ onNavigateGoTo }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      onNavigateGoTo("/");
+    }, 3000);
+  }, []);
+
   return (
     <Container>
       <div className="complete">
@@ -29,7 +35,7 @@ export const Complete = ({ onNavigateGoTo }) => {
             placeItems: "center",
           }}
           icon={<FontAwesomeIcon icon={faHome} size="large" />}
-          onClick={() => onNavigateGoTo()}
+          onClick={() => onNavigateGoTo("/")}
         >
           Ir a inicio
         </Button>

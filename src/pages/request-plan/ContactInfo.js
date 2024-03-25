@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { Button, Form, Input, InputNumber, Select } from "../../components";
+import {
+  Button,
+  Checkbox,
+  Form,
+  Input,
+  InputNumber,
+  Select,
+} from "../../components";
 import { phoneCodes } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -12,8 +19,10 @@ import { useDevice, useFormUtils } from "../../hooks";
 import { Contact } from "../../images";
 import { mediaQuery } from "../../styles";
 import { darken } from "polished";
+import { Link } from "react-router-dom";
+import { servitecSalesApiUrl } from "../../firebase";
 
-export const ContactInfo = ({ onSetStepNumber }) => {
+export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
   const { isMobile } = useDevice();
 
   const [loadingContact, setLoadingContact] = useState(false);
@@ -24,6 +33,7 @@ export const ContactInfo = ({ onSetStepNumber }) => {
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
     message: yup.string(),
+    acceptTermsAndConditions: yup.boolean().required(),
   });
 
   const {
@@ -36,10 +46,61 @@ export const ContactInfo = ({ onSetStepNumber }) => {
 
   const { required, error } = useFormUtils({ errors, schema });
 
-  const onSubmitRequestSend = (formData) => {
-    console.log({ formData });
-    onSetStepNumber(2);
+  const onSubmitRequestSend = async (formData) => {
+    try {
+      setLoadingContact(true);
+
+      const contact = mapContactData(formData);
+
+      const response = await fetchSendEmail(contact);
+
+      if (!response.ok) throw new Error(response.statusText);
+
+      resetContactForm();
+
+      onSetStepNumber(2);
+    } catch (e) {
+      console.error("ErrorSaveBenefit: ", e);
+      notification({ type: "error" });
+    } finally {
+      setLoadingContact(false);
+    }
   };
+
+  const mapContactData = (formData) => ({
+    contact: {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: {
+        number: formData.phoneNumber,
+        countryCode: formData.countryCode,
+      },
+      message: formData.message,
+      termsAndConditions: formData?.acceptTermsAndConditions || true,
+      hostname: window.location.hostname || "facturacion-electronica.com",
+    },
+  });
+
+  const fetchSendEmail = async (contact) =>
+    await fetch(`${servitecSalesApiUrl}/generic/contact`, {
+      method: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": null,
+        "content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(contact),
+    });
+
+  const resetContactForm = () =>
+    reset({
+      fullName: "",
+      email: "",
+      countryCode: "+51",
+      phoneNumber: "",
+      message: "",
+      acceptTermsAndConditions: true,
+    });
 
   return (
     <Container>
@@ -51,6 +112,31 @@ export const ContactInfo = ({ onSetStepNumber }) => {
           <img src={Contact} alt="facil factura" />
         </div>
         <div className="content__step__form">
+          {!!selectedPlan && (
+            <div className="plan-summary">
+              <div className="title">
+                <strong>Plan seleccionado:</strong>
+              </div>
+              <div className="card-summary">
+                <div className="card-summary__item">
+                  <div>{selectedPlan.name}</div>
+                  <div>
+                    <span>{selectedPlan.titleLegend}</span>
+                  </div>
+                </div>
+                <div className="card-summary__item">
+                  <div>
+                    S/ {selectedPlan.prices.value} <span>/mes</span>
+                  </div>
+                  <div>
+                    <Link to={`/plans-detail?planType=${selectedPlan.id}`}>
+                      Ver detalle del Plan
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="form-wrapper">
             <Form onSubmit={handleSubmit(onSubmitRequestSend)}>
               <Row gutter={[16, 15]}>
@@ -61,7 +147,7 @@ export const ContactInfo = ({ onSetStepNumber }) => {
                     defaultValue=""
                     render={({ field: { onChange, value, name } }) => (
                       <Input
-                        label="Ingrese nombres"
+                        label="Ingrese nombres y apellidos"
                         size="large"
                         name={name}
                         value={value}
@@ -130,6 +216,26 @@ export const ContactInfo = ({ onSetStepNumber }) => {
                     )}
                   />
                 </Col>
+                <Col span={24}>
+                  <p className="item-checkbox">
+                    <Controller
+                      name="acceptTermsAndConditions"
+                      control={control}
+                      defaultValue=""
+                      render={({ field: { onChange, value, name } }) => (
+                        <Checkbox
+                          name={name}
+                          checked={value}
+                          onChange={onChange}
+                          error={error(name)}
+                          required={required(name)}
+                        >
+                          Acepto los términos y condiciones.
+                        </Checkbox>
+                      )}
+                    />
+                  </p>
+                </Col>
                 <Col xs={24} sm={24} md={24} lg={10}>
                   <Button
                     block
@@ -141,6 +247,7 @@ export const ContactInfo = ({ onSetStepNumber }) => {
                     }}
                     icon={<FontAwesomeIcon icon={faArrowLeft} size="large" />}
                     onClick={() => onSetStepNumber(0)}
+                    disabled={loadingContact}
                   >
                     Regresar
                   </Button>
@@ -159,7 +266,6 @@ export const ContactInfo = ({ onSetStepNumber }) => {
                     margin="0"
                     htmlType="submit"
                     loading={loadingContact}
-                    disabled={loadingContact}
                   >
                     Continuar
                   </Button>
@@ -194,7 +300,7 @@ const Container = styled.div`
       gap: 1em;
       ${mediaQuery.minTablet} {
         width: 70%;
-        grid-template-columns: 47% 1fr;
+        grid-template-columns: 50% 1fr;
       }
       .image-wrapper {
         padding: 1em;
@@ -204,12 +310,52 @@ const Container = styled.div`
         }
         img {
           width: 100%;
-          max-width: 27em;
+          max-width: 30em;
           height: auto;
           object-fit: contain;
         }
       }
       &__form {
+        .plan-summary {
+          .title {
+            margin-bottom: 0.5em;
+          }
+          .card-summary {
+            background: ${darken(0.03, theme.colors.light)};
+            padding: 1em 1.8em;
+            border-radius: 1em;
+            display: flex;
+            margin-bottom: 1em;
+            &__item {
+              width: 50%;
+              height: auto;
+              display: grid;
+              justify-content: center;
+              font-size: 1.3em;
+              font-weight: 700;
+              gap: 0.2em;
+              span {
+                font-size: 0.7em;
+                font-weight: 400;
+              }
+            }
+            &__item:first-child {
+              justify-content: start;
+            }
+            &__item:last-child {
+              justify-content: end;
+              a {
+                color: ${theme.colors.primary};
+                font-size: 0.6em;
+                font-weight: 500;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
         .form-wrapper {
           background: ${darken(0.03, theme.colors.light)};
           padding: 1em 1.8em;
