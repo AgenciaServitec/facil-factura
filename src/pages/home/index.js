@@ -11,9 +11,8 @@ export const Home = () => {
     <Container>
       <PrincipalSection />
       <Requirements />
-      <SimplePlans />
-      <SummaryApp />
       <HomePagePlans />
+      <SummaryApp />
       <FrequentlyQuestions />
     </Container>
   );

@@ -1,13 +1,10 @@
 import { WrapperComponent } from "../../components";
 import styled, { css } from "styled-components";
-import { summaryApp } from "../../data-list";
-import { theme } from "../../styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { MovilPrueba } from "../../images";
-import { mediaQuery } from "../../styles/constants/mediaQuery";
+import { summaryData } from "../../data-list";
+import { mediaQuery } from "../../styles";
 import { CarouselSummaryApp } from "./CarouselSummaryApp";
 import { ItemSummaryApp } from "./ItemSummaryApp";
+import { ItemSummaryAppTwo } from "./ItemSummaryAppTwo";
 
 const contentStyle = {
   height: "100px",
@@ -22,19 +19,38 @@ export const SummaryApp = () => {
     <Container>
       <WrapperComponent>
         <div className="content">
+          <div className="content__title">
+            <h2>Tu gestión empresarial 📱</h2>
+            <span>(ahora al alcance de un clic en tu PC y en tu móvil)</span>
+          </div>
           <CarouselSummaryApp autoplay>
-            {summaryApp.map(({ tag, title, description, items }) => {
-              return (
-                <div className="carousel-item">
-                  <ItemSummaryApp
-                    tag={tag}
-                    title={title}
-                    description={description}
-                    items={items}
-                  />
-                </div>
-              );
-            })}
+            {summaryData.map(
+              ({ tag, title, description, items, images, reverse }) => {
+                return (
+                  <div className="carousel-item">
+                    {reverse ? (
+                      <ItemSummaryApp
+                        key={tag}
+                        tag={tag}
+                        title={title}
+                        description={description}
+                        items={items}
+                        images={images}
+                      />
+                    ) : (
+                      <ItemSummaryAppTwo
+                        key={tag}
+                        tag={tag}
+                        title={title}
+                        description={description}
+                        items={items}
+                        images={images}
+                      />
+                    )}
+                  </div>
+                );
+              }
+            )}
           </CarouselSummaryApp>
         </div>
       </WrapperComponent>
@@ -48,58 +64,49 @@ const Container = styled.section`
     .content {
       width: 90%;
       margin: 0 auto;
+      padding: 2em 0;
+
+      &__title {
+        text-align: center;
+        margin-bottom: 2em;
+        h2 {
+          font-size: 2.7em;
+          font-weight: 700;
+        }
+        span {
+          font-size: 1.2em;
+          font-weight: 500;
+        }
+      }
     }
 
     .carousel-item {
-      /* min-height: 80vh; */
-      &__content {
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-        padding: 1em;
-        ${mediaQuery.minTablet} {
-          flex-direction: row;
+      ${mediaQuery.minTablet} {
+        padding-bottom: 0 0 1em 0;
+      }
+    }
+
+    .ant-carousel .slick-dots-bottom {
+      bottom: -2em;
+    }
+
+    .slick-dots {
+      margin: 1.5rem auto 2rem auto;
+      li.slick-active {
+        width: auto !important;
+        button {
+          background-color: ${theme.colors.primary};
         }
       }
-      &__text {
-        color: ${theme.colors.font2};
-        height: 23em;
-        flex: 1 1 0;
-        ${mediaQuery.minTablet} {
-          height: auto;
+      li {
+        width: auto !important;
+        margin: 0 7px;
+        button {
+          width: 14px !important;
+          height: 14px !important;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.5);
         }
-
-        h3 {
-          font-size: 1.5em;
-          font-weight: 700;
-          line-height: 1.2;
-          margin: 0;
-          color: ${theme.colors.tertiary};
-          margin: 0.8em 0;
-
-          ${mediaQuery.minDesktop} {
-            font-size: 3em;
-          }
-        }
-
-        ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-      }
-
-      &__image {
-        background-color: ${theme.colors.light};
-        background-color: #fff;
-        border-radius: 1em;
-        padding: 1em 1em 0;
-        flex: 1 1 0;
-      }
-
-      img {
-        width: 60%;
-        margin: 0 auto;
       }
     }
   `}

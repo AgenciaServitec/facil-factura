@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 
-export const ItemSummaryApp = ({ tag, title, description, items, images }) => {
+export const ItemSummaryAppTwo = ({
+  tag,
+  title,
+  description,
+  items,
+  images,
+}) => {
   return (
     <Container>
       <div className="item-carousel-text">
@@ -49,7 +55,7 @@ const Container = styled.section`
     gap: 1em;
     padding: 1em;
     ${mediaQuery.minTablet} {
-      flex-direction: row;
+      flex-direction: row-reverse;
       gap: 2em;
     }
 

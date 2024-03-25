@@ -1,6 +1,6 @@
 export { default as phoneCodes } from "./phoneCodes.json";
 export { default as ourPlans } from "./ourPlans.json";
-export { default as summaryApp } from "./summaryApp.json";
+export * from "./summaryApp";
 
 //Example PLAN
 //{
