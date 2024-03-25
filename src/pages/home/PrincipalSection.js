@@ -54,7 +54,7 @@ export const PrincipalSection = () => {
 
 const Container = styled.section`
   width: 100%;
-  min-height: 75vh;
+  min-height: 85vh;
   height: auto;
   position: relative;
   ${mediaQuery.minTablet} {
@@ -136,6 +136,9 @@ const Container = styled.section`
   }
 
   .button_wrapper {
-    margin-top: 1em;
+    margin-top: .9em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 `;

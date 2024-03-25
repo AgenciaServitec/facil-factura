@@ -23,6 +23,11 @@ export { default as MovilRight } from "./webp/movil-right.webp";
 export { default as MovilLeft } from "./webp/movil-left.webp";
 export { default as BannerPhones } from "./webp/banner-phones.webp";
 export { default as Contact } from "./webp/contact.webp";
+export { default as MovilPrueba } from "./webp/movil-half.png";
+export { default as MobileReceipts } from "./webp/mobile-receipts.webp";
+export { default as MobileInventory } from "./webp/mobile-inventory.webp";
+export { default as MobileReports } from "./webp/mobile-reports.webp";
+export { default as MobileFunctions } from "./webp/mobile-functions.webp";
 export { default as Step3Complete } from "./webp/complete.webp";
 
 // -------SVG-------

@@ -4,6 +4,7 @@ import { PrincipalSection } from "./PrincipalSection";
 import { HomePagePlans } from "./HomePagePlans";
 import { Requirements } from "./Requirements";
 import { FrequentlyQuestions } from "./FrequentlyQuestions";
+import { SummaryApp } from "./SummaryApp";
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <PrincipalSection />
       <Requirements />
       <HomePagePlans />
+      <SummaryApp />
       <FrequentlyQuestions />
     </Container>
   );
