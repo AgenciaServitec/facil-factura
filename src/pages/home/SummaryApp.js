@@ -1,18 +1,9 @@
 import { WrapperComponent } from "../../components";
 import styled, { css } from "styled-components";
 import { summaryData } from "../../data-list";
-import { mediaQuery } from "../../styles";
 import { CarouselSummaryApp } from "./CarouselSummaryApp";
 import { ItemSummaryApp } from "./ItemSummaryApp";
 import { ItemSummaryAppTwo } from "./ItemSummaryAppTwo";
-
-const contentStyle = {
-  height: "100px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
 
 export const SummaryApp = () => {
   return (

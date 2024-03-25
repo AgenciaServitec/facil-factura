@@ -1,18 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import { Button, Plans } from "../../components";
+import { Button, notification, Plans } from "../../components";
 import { ourPlans } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export const PlanSelect = ({ onSetStepNumber }) => {
+export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
+  const onRequestContinue = () => {
+    if (!planType)
+      return notification({
+        type: "warning",
+        title: "Para continuar",
+        description: "Seleciona tu PLAN ideal",
+      });
+
+    onSetStepNumber(1);
+  };
+
   return (
     <Container>
       <div className="request-plan__title">
-        <h2>Solicitar mi PLAN</h2>
+        <h2>Selecciona tu PLAN ideal</h2>
       </div>
       <div className="request-plan__plans">
-        <Plans plans={ourPlans} />
+        <Plans
+          type="selection"
+          plans={ourPlans}
+          planType={planType}
+          onSetPlanType={onSetPlanType}
+        />
       </div>
       <div className="btn-wrapper">
         <Button
@@ -23,7 +39,7 @@ export const PlanSelect = ({ onSetStepNumber }) => {
             placeItems: "center",
           }}
           icon={<FontAwesomeIcon icon={faArrowRight} size="large" />}
-          onClick={() => onSetStepNumber(1)}
+          onClick={() => onRequestContinue()}
         >
           Continuar
         </Button>

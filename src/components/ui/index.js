@@ -50,3 +50,4 @@ export * from "./WrapperComponent";
 export * from "./ButtonFloatingContact";
 export * from "./Plans";
 export * from "./PlanCard";
+export * from "./Checkbox";

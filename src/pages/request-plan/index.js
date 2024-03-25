@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Steps, WrapperComponent, Button } from "../../components";
+import { Steps, WrapperComponent } from "../../components";
 import {
-  faArrowLeft,
-  faArrowRight,
   faCheckCircle,
   faFileLines,
   faPhoneAlt,
@@ -14,20 +12,45 @@ import { ContactInfo } from "./ContactInfo";
 import { mediaQuery } from "../../styles";
 import { useNavigate } from "react-router";
 import { Complete } from "./Complete";
+import { useQueryString } from "../../hooks";
+import { ourPlans } from "../../data-list";
 
 export const RequestPlanIntegration = () => {
   const navigate = useNavigate();
+  const [planType, setPlanType] = useQueryString("planType", "");
+
   const [stepNumber, setStepNumber] = useState(0);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  useEffect(() => {
+    const _plan = (ourPlans || []).find((plan) => plan.id === planType) || null;
+
+    if (_plan) {
+      setSelectedPlan(_plan);
+    }
+  }, [planType]);
 
   const onNavigateGoTo = (pathname = "/") => navigate(pathname);
-  const onSetStepNumber = (number = 1) => setStepNumber(number);
+  const onSetStepNumber = (number = 0) => setStepNumber(number);
+  const onSetPlanType = (planType) => setPlanType(planType);
 
   const showByTypeStep = () => {
     switch (stepNumber) {
       case 0:
-        return <PlanSelect onSetStepNumber={onSetStepNumber} />;
+        return (
+          <PlanSelect
+            planType={planType}
+            onSetPlanType={onSetPlanType}
+            onSetStepNumber={onSetStepNumber}
+          />
+        );
       case 1:
-        return <ContactInfo onSetStepNumber={onSetStepNumber} />;
+        return (
+          <ContactInfo
+            selectedPlan={selectedPlan}
+            onSetStepNumber={onSetStepNumber}
+          />
+        );
       case 2:
         return <Complete onNavigateGoTo={onNavigateGoTo} />;
       default:
