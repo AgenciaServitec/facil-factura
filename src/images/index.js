@@ -28,6 +28,7 @@ export { default as MobileReceipts } from "./webp/mobile-receipts.webp";
 export { default as MobileInventory } from "./webp/mobile-inventory.webp";
 export { default as MobileReports } from "./webp/mobile-reports.webp";
 export { default as MobileFunctions } from "./webp/mobile-functions.webp";
+export { default as Step3Complete } from "./webp/complete.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";

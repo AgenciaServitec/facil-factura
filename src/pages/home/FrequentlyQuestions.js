@@ -182,10 +182,10 @@ const Container = styled.section`
         padding-bottom: 1em;
       }
 
-      .response_question{
-        font-size: .9em;
+      .response_question {
+        font-size: 0.9em;
         font-weight: 400;
-        color: ${theme.colors.font2}
+        color: ${theme.colors.font2};
       }
     }
   `}

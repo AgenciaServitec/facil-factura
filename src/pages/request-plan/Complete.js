@@ -2,16 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { Step3Complete } from "../../images";
+import { mediaQuery } from "../../styles";
 
 export const Complete = ({ onNavigateGoTo }) => {
   return (
     <Container>
-      <div className="complete__title">
-        <h2>
-          !Solicitud completada exitosamente, en breve nos comunicaremos con
-          usted!
-        </h2>
+      <div className="complete">
+        <div className="complete__title">
+          <h2>
+            ¡Solicitud completada exitosamente, en breve nos comunicaremos con
+            usted!
+          </h2>
+        </div>
+        <div className="complete__image">
+          <img src={Step3Complete} alt="Completado exitosamente" width={400} />
+        </div>
       </div>
       <div className="btn-wrapper">
         <Button
@@ -21,7 +28,7 @@ export const Complete = ({ onNavigateGoTo }) => {
             display: "flex",
             placeItems: "center",
           }}
-          icon={<FontAwesomeIcon icon={faArrowRight} size="large" />}
+          icon={<FontAwesomeIcon icon={faHome} size="large" />}
           onClick={() => onNavigateGoTo()}
         >
           Ir a inicio
@@ -33,12 +40,38 @@ export const Complete = ({ onNavigateGoTo }) => {
 
 const Container = styled.div`
   padding: 2em 1em;
-  .complete__title {
-    text-align: center;
-    margin-bottom: 2em;
-    h2 {
-      font-weight: 700;
-      font-size: 1.8em;
+  .complete {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    &__title {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      margin-bottom: 2em;
+      width: 100%;
+      ${mediaQuery.minTablet} {
+        width: 25em;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 2em;
+      }
+    }
+    &__image {
+      width: 100%;
+      display: grid;
+      place-items: center;
+      ${mediaQuery.minMobile} {
+        width: 30em;
+      }
+      img {
+        width: 100%;
+        ${mediaQuery.minMobile} {
+          width: 23em;
+        }
+      }
     }
   }
   .btn-wrapper {
