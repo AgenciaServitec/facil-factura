@@ -23,6 +23,7 @@ export { default as MovilRight } from "./webp/movil-right.webp";
 export { default as MovilLeft } from "./webp/movil-left.webp";
 export { default as BannerPhones } from "./webp/banner-phones.webp";
 export { default as Contact } from "./webp/contact.webp";
+export { default as Step3Complete } from "./webp/complete.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";
