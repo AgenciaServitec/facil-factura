@@ -6,7 +6,7 @@ import {
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
-import { mediaQuery } from "../../styles/mediaQuery";
+import { mediaQuery } from "../../styles";
 import { rgba } from "polished";
 import { WrapperComponent } from "../../components";
 
@@ -77,15 +77,17 @@ const Container = styled.div`
   ${({ theme }) => css`
     width: 100%;
     height: auto;
-    padding: 5em 1em;
+    padding: 3em 1em;
     background: ${theme.colors.light};
     .requirements {
       margin: auto;
       &__title {
-        font-size: 1.7em;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 2em;
+        h2 {
+          font-size: 2.5em;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 2em;
+        }
       }
       &__list {
         list-style: none;

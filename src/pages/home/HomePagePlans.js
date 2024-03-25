@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Plans, WrapperComponent } from "../../components";
-import { mediaQuery } from "../../styles/mediaQuery";
+import { mediaQuery } from "../../styles";
 import { ourPlans } from "../../data-list";
 
 export const HomePagePlans = () => {
