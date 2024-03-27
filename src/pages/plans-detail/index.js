@@ -11,8 +11,8 @@ export const PlansDetail = () => {
   return (
     <Container>
       <WrapperComponent>
+        <HomePagePlans />
         <div className="content">
-          <HomePagePlans />
           <PlanDetailsTable planType={planType} />
         </div>
       </WrapperComponent>
@@ -22,6 +22,8 @@ export const PlansDetail = () => {
 
 const Container = styled.section`
   ${({ theme }) => css`
+    padding: 3em 0;
+
     .content {
       width: 90%;
       margin: 0 auto;
