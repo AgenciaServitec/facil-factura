@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CurvedLineBackground, BannerPhones } from "../../images";
-import { mediaQuery } from "../../styles/mediaQuery";
+import { mediaQuery } from "../../styles";
 import { Button } from "../../components";
 import { useNavigate } from "react-router";
 
@@ -136,7 +136,7 @@ const Container = styled.section`
   }
 
   .button_wrapper {
-    margin-top: .9em;
+    margin-top: 0.9em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

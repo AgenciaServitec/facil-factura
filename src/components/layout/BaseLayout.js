@@ -107,7 +107,7 @@ export const BaseLayout = ({ children }) => {
 
 const Container = styled.div`
   ${({ theme, isAbsoluteHeader }) => css`
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     height: auto;
     position: relative;
