@@ -9,6 +9,9 @@ export const PrincipalSection = () => {
 
   const onNavigateGoTo = (pathname = "/") => navigate(pathname);
 
+  const onNavigateGoToDemoLink = () =>
+    window.open("https://facilfactura.pe/facturacion/registro", "_blank");
+
   return (
     <Container>
       <CurvedLineBackground
@@ -37,7 +40,12 @@ export const PrincipalSection = () => {
             >
               COMENZAR
             </Button>
-            <Button shape="round" size="large" style={{ padding: "0 3em" }}>
+            <Button
+              shape="round"
+              size="large"
+              style={{ padding: "0 3em" }}
+              onClick={() => onNavigateGoToDemoLink()}
+            >
               Ver Demo
             </Button>
           </div>
