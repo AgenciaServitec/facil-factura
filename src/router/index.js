@@ -5,6 +5,7 @@ import {
   Page404,
   ContactSuccess,
   RequestPlanIntegration,
+  PlansDetail,
 } from "../pages";
 
 export const Router = () => {
@@ -34,6 +35,15 @@ export const Router = () => {
         element={
           <BaseLayout>
             <ContactSuccess />
+          </BaseLayout>
+        }
+      />
+      <Route
+        exact
+        path="/plans-detail"
+        element={
+          <BaseLayout>
+            <PlansDetail />
           </BaseLayout>
         }
       />

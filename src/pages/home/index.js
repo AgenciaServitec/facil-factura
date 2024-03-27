@@ -13,7 +13,6 @@ export const Home = () => {
       <SummaryApp />
       <Requirements />
       <HomePagePlans />
-      <SummaryApp />
       <FrequentlyQuestions />
     </Container>
   );
