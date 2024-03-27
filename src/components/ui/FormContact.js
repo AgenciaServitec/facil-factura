@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import { mediaQuery } from "../../styles/mediaQuery";
+import styled from "styled-components";
+import { mediaQuery } from "../../styles";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useDevice, useFormUtils } from "../../hooks";
-import { defaultTo } from "lodash";
 import { phoneCodes } from "../../data-list";
 import { currentConfig } from "../../config";
-import { useNavigate } from "react-router";
 import {
   Button,
   Col,
@@ -21,19 +19,18 @@ import {
   Select,
   TextArea,
 } from "./index";
+import { lighten } from "polished";
 
 export const FormContact = ({
   visibleFormContact,
   onClickVisibleFormContact,
-  onEventGaClickButton,
 }) => {
   const { isMobile } = useDevice();
-  const navigate = useNavigate();
 
   const [loadingContact, setLoadingContact] = useState(false);
 
   const schema = yup.object({
-    firstName: yup.string(),
+    fullName: yup.string().required(),
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.number().required(),
@@ -44,6 +41,7 @@ export const FormContact = ({
     formState: { errors },
     handleSubmit,
     control,
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -60,9 +58,9 @@ export const FormContact = ({
 
       if (!response.ok) throw new Error(response.statusText);
 
+      onClickVisibleFormContact(false);
+      resetContactData(false);
       notification({ type: "success", title: "Enviado exitosamente" });
-
-      navigate("/contact-success");
     } catch (e) {
       console.log("Error email send:", e);
       notification({ type: "error", placement: "topLeft" });
@@ -72,7 +70,7 @@ export const FormContact = ({
   };
 
   const fetchSendEmail = async (contact) =>
-    await fetch(`${currentConfig.sendingEmailsApiUrl}/generic/contact`, {
+    await fetch(`${currentConfig.servitecSalesApiUrl}/emails/contact`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": null,
@@ -84,8 +82,7 @@ export const FormContact = ({
 
   const mapContactData = (formData) => ({
     contact: {
-      firstName: formData.firstName,
-      lastName: "",
+      fullName: formData.fullName,
       email: formData.email,
       phone: {
         number: formData.phoneNumber,
@@ -96,9 +93,18 @@ export const FormContact = ({
     },
   });
 
+  const resetContactData = () =>
+    reset({
+      fullName: "",
+      email: "",
+      countryCode: "+51",
+      phoneNumber: "",
+      message: "",
+    });
+
   return (
     <ModalComponent
-      title={<h3 style={{ margin: "0" }}>CONTÁCTANOS</h3>}
+      title={<h3 style={{ margin: "0" }}>Contáctanos</h3>}
       visible={visibleFormContact}
       onOk={() => onClickVisibleFormContact()}
       onCancel={() => onClickVisibleFormContact()}
@@ -108,12 +114,12 @@ export const FormContact = ({
         <Row gutter={[16, 15]}>
           <Col xs={24} sm={24} md={24}>
             <Controller
-              name="firstName"
+              name="fullName"
               control={control}
               defaultValue=""
               render={({ field: { onChange, value, name } }) => (
                 <Input
-                  label="Ingrese nombres"
+                  label="Ingrese nombres y apellidos"
                   name={name}
                   value={value}
                   onChange={onChange}
@@ -123,7 +129,6 @@ export const FormContact = ({
               )}
             />
           </Col>
-
           <Col span={24}>
             <Controller
               name="email"
@@ -196,46 +201,24 @@ export const FormContact = ({
               )}
             />
           </Col>
-          <Col xs={24} sm={24} md={24} lg={10}>
+          <Col span={24}>
             <Button
               type="primary"
               width="100%"
               margin="0"
               block
-              onClick={() => {
-                onClickVisibleFormContact();
-                onEventGaClickButton(
-                  "click-boton-cancelar-de-formulario-contactanos",
-                  "Click boton cancelar de formulario contactanos"
-                );
-              }}
-              disabled={loadingContact}
-              text="Cancelar"
-            />
-          </Col>
-          <Col xs={24} sm={24} md={24} lg={14}>
-            <Button
-              type="secondary"
-              width="100%"
-              margin="0"
-              block
+              size="large"
               htmlType="submit"
               loading={loadingContact}
-              disabled={loadingContact}
-              text="Enviar"
-            />
+            >
+              Enviar
+            </Button>
           </Col>
         </Row>
       </Form>
     </ModalComponent>
   );
 };
-
-const ModalBackground = css`
-  background-color: ${({ backgroundModal, theme }) =>
-    defaultTo(backgroundModal, theme.colors.tertiary)};
-  color: ${({ theme }) => theme.colors.font2};
-`;
 
 const ModalComponent = styled(Modal)`
   position: relative;
@@ -257,16 +240,18 @@ const ModalComponent = styled(Modal)`
     top: 2vh;
   }
   .ant-modal-content {
-    position: absolute;
-    inset: 0;
-    ${ModalBackground};
+    border-radius: 1.2em;
+    background-color: ${({ theme }) => lighten(0.09, theme.colors.quaternary)};
+    color: ${({ theme }) => theme.colors.font2};
 
     .ant-modal-header {
-      ${ModalBackground};
-      border-bottom: 1px solid #53575a;
+      background-color: inherit;
 
       .ant-modal-title {
+        text-align: center;
         color: ${({ theme }) => theme.colors.font1};
+        font-weight: 800;
+        font-size: 1.3em;
         h2 {
           margin: 0;
         }
@@ -278,7 +263,7 @@ const ModalComponent = styled(Modal)`
     }
 
     .ant-modal-body {
-      ${ModalBackground};
+      background-color: inherit;
     }
   }
 `;
