@@ -12,6 +12,7 @@ import {
   Tag,
   Collapse,
   Carousel,
+  Table
 } from "antd";
 
 export {
@@ -28,6 +29,7 @@ export {
   Tag,
   Collapse,
   Carousel,
+  Table
 };
 // ANTD COMPONENTS
 export * from "./Title";
