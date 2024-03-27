@@ -5,7 +5,7 @@ import { ourPlans } from "../../data-list";
 
 export const HomePagePlans = () => {
   return (
-    <Container>
+    <Container id="plans">
       <WrapperComponent>
         <div className="plans">
           <div className="title-items">
