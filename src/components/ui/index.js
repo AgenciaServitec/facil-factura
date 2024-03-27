@@ -11,7 +11,7 @@ import {
   Modal,
   Tag,
   Collapse,
-  Carousel
+  Carousel,
 } from "antd";
 
 export {
@@ -27,7 +27,7 @@ export {
   Modal,
   Tag,
   Collapse,
-  Carousel
+  Carousel,
 };
 // ANTD COMPONENTS
 export * from "./Title";

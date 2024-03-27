@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CurvedLineBackground, BannerPhones } from "../../images";
-import { mediaQuery } from "../../styles/mediaQuery";
+import { mediaQuery } from "../../styles";
 import { Button } from "../../components";
 import { useNavigate } from "react-router";
 
@@ -8,6 +8,9 @@ export const PrincipalSection = () => {
   const navigate = useNavigate();
 
   const onNavigateGoTo = (pathname = "/") => navigate(pathname);
+
+  const onNavigateGoToDemoLink = () =>
+    window.open("https://facilfactura.pe/facturacion/registro", "_blank");
 
   return (
     <Container>
@@ -37,7 +40,12 @@ export const PrincipalSection = () => {
             >
               COMENZAR
             </Button>
-            <Button shape="round" size="large" style={{ padding: "0 3em" }}>
+            <Button
+              shape="round"
+              size="large"
+              style={{ padding: "0 3em" }}
+              onClick={() => onNavigateGoToDemoLink()}
+            >
               Ver Demo
             </Button>
           </div>
@@ -136,7 +144,7 @@ const Container = styled.section`
   }
 
   .button_wrapper {
-    margin-top: .9em;
+    margin-top: 0.9em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

@@ -18,7 +18,7 @@ export const summaryData = [
       "Notas de Venta",
     ],
     images: [MobileReceipts],
-    reverse: true
+    reverse: true,
   },
   {
     tag: "inventario",
@@ -32,7 +32,7 @@ export const summaryData = [
       "Calculadora de IGV",
     ],
     images: [MobileInventory],
-    reverse: false
+    reverse: false,
   },
   {
     tag: "reportes",
@@ -46,7 +46,7 @@ export const summaryData = [
       "Reporte para el Contador",
     ],
     images: [MobileReports],
-    reverse: true
+    reverse: true,
   },
   {
     tag: "+ funcionalidades",
@@ -60,6 +60,6 @@ export const summaryData = [
       "Personalización de comprobantes",
     ],
     images: [MobileFunctions],
-    reverse: false
+    reverse: false,
   },
 ];

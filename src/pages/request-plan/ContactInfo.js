@@ -7,6 +7,7 @@ import {
   Input,
   InputNumber,
   Select,
+  notification,
 } from "../../components";
 import { phoneCodes } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,7 +33,6 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
-    message: yup.string(),
     acceptTermsAndConditions: yup.boolean().required(),
   });
 
@@ -40,6 +40,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     formState: { errors },
     handleSubmit,
     control,
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -68,21 +69,25 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
   };
 
   const mapContactData = (formData) => ({
-    contact: {
+    request: {
       fullName: formData.fullName,
       email: formData.email,
       phone: {
         number: formData.phoneNumber,
         countryCode: formData.countryCode,
       },
-      message: formData.message,
+      plan: {
+        id: selectedPlan.id,
+        name: selectedPlan.name,
+        price: selectedPlan.prices.value,
+      },
       termsAndConditions: formData?.acceptTermsAndConditions || true,
       hostname: window.location.hostname || "facturacion-electronica.com",
     },
   });
 
   const fetchSendEmail = async (contact) =>
-    await fetch(`${servitecSalesApiUrl}/generic/contact`, {
+    await fetch(`${servitecSalesApiUrl}/emails/request`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": null,
@@ -98,7 +103,6 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
       email: "",
       countryCode: "+51",
       phoneNumber: "",
-      message: "",
       acceptTermsAndConditions: true,
     });
 
