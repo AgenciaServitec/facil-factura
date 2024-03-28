@@ -52,7 +52,7 @@ export const Header = ({ isMobile, onNavigateGoTo, onSetVisibleDrawer }) => {
                     <span onClick={() => onNavigateGoTo("/")}>Inicio</span>
                   </li>
                   <li>
-                    <a href="#plans">Planes</a>
+                    <Link to="/plans-detail">Planes</Link>
                   </li>
                   <li>
                     <a href="#service">Servicio</a>

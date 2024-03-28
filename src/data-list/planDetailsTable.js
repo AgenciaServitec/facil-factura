@@ -18,9 +18,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: 200,
       emprende: 400,
       planControl: 500,
-      bacan: 650,
-      super: 800,
-      mega: 1200,
+      planPro: 650
     },
     {
       key: "2",
@@ -29,9 +27,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: "Ilimitado",
       emprende: "Ilimitado",
       planControl: "Ilimitado",
-      bacan: "Ilimitado",
-      super: "Ilimitado",
-      mega: "Ilimitado",
+      planPro: "Ilimitado"
     },
     {
       key: "3",
@@ -46,9 +42,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: false,
       emprende: false,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
     {
       key: "4",
@@ -63,9 +57,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
     {
       key: "5",
@@ -80,9 +72,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
     {
       key: "6",
@@ -97,9 +87,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
     {
       key: "7",
@@ -113,9 +101,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
     {
       key: "8",
@@ -131,9 +117,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      bacan: true,
-      super: true,
-      mega: true,
+      planPro: true
     },
   ];
   const columns = [
@@ -182,29 +166,13 @@ export const PlanDetailsTable = ({ planType }) => {
       render: (_) => includeBenefit(_),
     },
     {
-      title: "Bacán",
-      dataIndex: "bacan",
-      key: "bacan",
+      title: "Plan Pro",
+      dataIndex: "planPro",
+      key: "plan-pro",
       align: "center",
-      className: planType === "bacan" ? "cell-bg" : "inherit",
+      className: planType === "plan-pro" ? "cell-bg" : "inherit",
       render: (_) => includeBenefit(_),
-    },
-    {
-      title: "Súper",
-      dataIndex: "super",
-      key: "super",
-      align: "center",
-      className: planType === "super" ? "cell-bg" : "inherit",
-      render: (_) => includeBenefit(_),
-    },
-    {
-      title: "Mega",
-      dataIndex: "mega",
-      key: "mega",
-      align: "center",
-      className: planType === "mega" ? "cell-bg" : "inherit",
-      render: (_) => includeBenefit(_),
-    },
+    }
   ];
 
   const includeBenefit = (cellValue = false) => {
