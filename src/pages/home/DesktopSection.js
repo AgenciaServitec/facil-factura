@@ -8,7 +8,7 @@ export const DesktopSection = () => {
     <Container>
       <WrapperComponent>
         <div className="content">
-          <img src={ScreenDesktop} alt="" />
+          <img src={ScreenDesktop} alt="Imagen de la vista de Facil Factura en una computadora." />
         </div>
       </WrapperComponent>
     </Container>
