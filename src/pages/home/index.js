@@ -6,6 +6,7 @@ import { Requirements } from "./Requirements";
 import { FrequentlyQuestions } from "./FrequentlyQuestions";
 import { SummaryApp } from "./SummaryApp";
 import { DesktopSection } from "./DesktopSection";
+import { BrandsSection } from "./BrandsSection";
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       <Requirements />
       <HomePagePlans />
       <FrequentlyQuestions />
+      <BrandsSection />
     </Container>
   );
 };
