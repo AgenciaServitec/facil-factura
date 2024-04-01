@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Brand1, Brand2, Brand3, Brand4 } from "../../images";
 import { WrapperComponent } from "../../components";
 import { mediaQuery } from "../../styles";
@@ -35,27 +35,29 @@ export const BrandsSection = () => {
 };
 
 const Container = styled.section`
-  background-color: #FAFAFA;
-  padding: 3em 0;
-  .content {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1em;
-    > div {
-      width: 9em;
-      ${mediaQuery.minDesktop} {
-        width: 14em;
-      }
-      img {
-        width: 100%;
-      }
-      .image-shadow {
-        filter: drop-shadow(0 0 0 black);
+  ${({ theme }) => css`
+    background-color: ${theme.colors.light};
+    padding: 3em 0;
+    .content {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      > div {
+        width: 9em;
+        ${mediaQuery.minDesktop} {
+          width: 14em;
+        }
+        img {
+          width: 100%;
+        }
+        .image-shadow {
+          filter: drop-shadow(0 0 0 black);
+        }
       }
     }
-  }
+  `}
 `;
