@@ -30,6 +30,10 @@ export { default as MobileReports } from "./webp/mobile-reports.webp";
 export { default as MobileFunctions } from "./webp/mobile-functions.webp";
 export { default as Step3Complete } from "./webp/complete.webp";
 export { default as ScreenDesktop } from "./webp/screen-desktop.webp";
+export { default as Brand1 } from "./webp/brand-alvillantas.webp";
+export { default as Brand2 } from "./webp/brand-hankook-alvillantas.webp";
+export { default as Brand3 } from "./webp/brand-servitec-peru.webp";
+export { default as Brand4 } from "./webp/brand-servitec-software.webp";
 
 // -------SVG-------
 export * from "./svg/Phone";
