@@ -10,7 +10,7 @@ export const summaryData = [
     tag: "comprobantes",
     title: "Boletas, Facturas y más ¡en segundos!",
     description:
-      "Dile adiós a los talonarios y a la complicada web SUNAT, solo con un par de clics podrás emitir los comprobantes más solicitados.",
+      "Despídete de los talonarios y de la compleja página web SUNAT, con solo unos clics podrás generar los comprobantes más necesarios.",
     items: [
       "Boletas y Facturas",
       "Guías de Remisión",
@@ -22,9 +22,9 @@ export const summaryData = [
   },
   {
     tag: "inventario",
-    title: "Controla el stock de tus productos",
+    title: "Administra el inventario de tus productos",
     description:
-      "¿Te ha pasado que no sabías cuántos artículos te quedaban?… ¡Eso nunca más! Con el Control de inventario sabrás el detalle de tu stock en todo momento.",
+      "¿Alguna vez te has preguntado cuántos productos te quedan?… ¡No más! Con el Control de existencias conocerás el detalle de tu inventario en todo momento.",
     items: [
       "Catálogo de productos",
       "Lector de códigos de barra",
@@ -36,9 +36,9 @@ export const summaryData = [
   },
   {
     tag: "reportes",
-    title: "Mantente al día con tus ventas",
+    title: "Mantente informado sobre tus ventas",
     description:
-      "Nuestra gran variedad de reportes te ayudarán a controlar los ingresos de tu emprendimiento.",
+      "Nuestra amplia gama de informes te permitirá supervisar los ingresos de tu negocio.",
     items: [
       "Reporte de Ventas",
       "Reporte de Inventario",
@@ -49,10 +49,10 @@ export const summaryData = [
     reverse: true,
   },
   {
-    tag: "+ funcionalidades",
-    title: "Ahorro, ahorro y más ahorro",
+    tag: "características",
+    title: "Ahorra tiempo y dinero",
     description:
-      "¡Olvídate de sistemas y equipos adiciones! Aquí tenemos mucho más para ti sin costo adicional.",
+      "¡Despídete de sistemas y equipos adicionales! Aquí encontrarás mucho más sin costo extra.",
     items: [
       "Cotizaciones",
       "Registro de gastos",

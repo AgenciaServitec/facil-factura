@@ -9,8 +9,8 @@ export const HomePagePlans = () => {
       <WrapperComponent>
         <div className="plans">
           <div className="title-items">
-            <h2>Planes que crecen contigo 🤝🏼</h2>
-            <p>Sin contratos ni límites de montos a facturar.</p>
+            <h2>Planes que evolucionan contigo 🤝🏼</h2>
+            <p>Sin compromisos ni restricciones de cantidad para tus ventas.</p>
           </div>
           <div className="planes-wrapper">
             <Plans plans={ourPlans} />
