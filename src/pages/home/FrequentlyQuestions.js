@@ -12,37 +12,35 @@ export const FrequentlyQuestions = () => {
     [
       {
         key: "1",
-        label: "¿Puedo afiliarme teniendo RUS?",
+        label: "¿Puedo afiliarme teniendo RUC?",
         children: (
           <p className="response_question">
-            ¡Por supuesto! Todo RUC activo, y en cualquier régimen, puede
-            trabajar con nosotros.
+            ¡Claro que sí! Si tienes un RUC activo, independientemente del
+            régimen al que pertenezcas, puedes unirte a nuestra plataforma.
           </p>
         ),
         style: panelStyle,
       },
       {
         key: "2",
-        label: "¿Llegan a todo el Perú?",
+        label: "¿Se puede utilizar el servicio fuera de Lima Metropolitana?",
         children: (
           <p className="response_question">
-            ¡Sí! pero ten en cuenta que los planes mostrados en esta página solo
-            aplican para Lima Metropolitana, Arequipa Ciudad, Cusco Ciudad y
-            Huancayo. Si te encuentras en otra ubicación puedes ver los Planes
-            que tenemos para ti desde aquí.
+            En este momento, nuestros servicios están disponibles únicamente en
+            la zona de Lima Metropolitana.
           </p>
         ),
         style: panelStyle,
       },
       {
         key: "3",
-        label: "¿Puedo usar su servicio desde mi computadora?",
+        label: "¿Puedo acceder a su servicio desde mi computadora?",
         children: (
           <p className="response_question">
-            ¡Claro que sí! Si bien el uso preferido de los emprendedores es
-            desde la aplicación móvil, también podrás trabajar con tu
-            computadora sin problemas. Además, toda tu información se
-            sincronizará en tiempo real.
+            ¡Absolutamente! Aunque muchos emprendedores prefieren utilizar
+            nuestra aplicación móvil, también puedes acceder y trabajar desde tu
+            computadora sin ningún problema. Además, toda la información que
+            ingreses se sincronizará en tiempo real.
           </p>
         ),
         style: panelStyle,
@@ -54,22 +52,22 @@ export const FrequentlyQuestions = () => {
         label: "¿Ya no necesitaré un contador?",
         children: (
           <p className="response_question">
-            Nuestra APP reemplaza y simplifica el tedioso sistema de emisión
-            manual (o portal de SUNAT). Pero igualmente deberás realizar tus
-            declaraciones, y para eso te enviaremos cada mes un reporte especial
-            para tu contador.
+            Nuestra aplicación simplifica y automatiza el proceso de emisión de
+            comprobantes, pero aún necesitarás realizar tus declaraciones. Para
+            ayudarte con esto, te enviaremos un reporte especial cada mes que
+            podrás entregar a tu contador.
           </p>
         ),
         style: panelStyle,
       },
       {
         key: "5",
-        label: "¿Hay DSCTO si me suscribo por todo un año?",
+        label: "¿Ofrecen descuentos si me suscribo por un año completo?",
         children: (
           <p className="response_question">
-            ¡Claro que sí! Si decides suscribirte por todo un año tendrás un
-            descuento de S/50 de tu cuota de activación, además del descuento de
-            hasta S/198.80 que se aplica en los Planes anuales.
+            ¡Sí, claro! Si decides suscribirte por un año completo, recibirás un
+            descuento de S/50 en tu cuota de activación, además de los
+            descuentos de hasta S/198.80 que se aplican a los planes anuales.
           </p>
         ),
         style: panelStyle,
@@ -79,9 +77,9 @@ export const FrequentlyQuestions = () => {
         label: "¿Mis comprobantes serán enviados a SUNAT?",
         children: (
           <p className="response_question">
-            ¡Así es! Las boletas y facturas que emitas a través de nuestra APP
-            serán enviadas automáticamente a SUNAT. Además, si realizas alguna
-            anulación, esta también será comunicada.
+            ¡Exactamente! Todos los comprobantes que emitas a través de nuestra
+            aplicación serán enviados automáticamente a SUNAT. Además, cualquier
+            anulación que realices también será comunicada automáticamente.
           </p>
         ),
         style: panelStyle,

@@ -7,6 +7,7 @@ import { FrequentlyQuestions } from "./FrequentlyQuestions";
 import { SummaryApp } from "./SummaryApp";
 import { DesktopSection } from "./DesktopSection";
 import { BrandsSection } from "./BrandsSection";
+import { VerifiedSection } from "./VerifiedSection";
 
 export const Home = () => {
   return (
@@ -16,8 +17,9 @@ export const Home = () => {
       <SummaryApp />
       <Requirements />
       <HomePagePlans />
-      <FrequentlyQuestions />
       <BrandsSection />
+      <FrequentlyQuestions />
+      <VerifiedSection />
     </Container>
   );
 };
