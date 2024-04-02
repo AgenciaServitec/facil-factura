@@ -26,8 +26,8 @@ export const FrequentlyQuestions = () => {
         label: "¿Se puede utilizar el servicio fuera de Lima Metropolitana?",
         children: (
           <p className="response_question">
-            En este momento, nuestros servicios están disponibles únicamente en
-            la zona de Lima Metropolitana.
+            Si se puede usar el servicio en cualquier lugar , solo es necesario
+            un dispositivo con internet.
           </p>
         ),
         style: panelStyle,
