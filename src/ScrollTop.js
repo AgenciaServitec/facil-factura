@@ -5,7 +5,7 @@ export const ScrollTop = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.location.pathname !== "/plans-detail" && window.scrollTo(0, 0);
   }, [location]);
 
   return children;
