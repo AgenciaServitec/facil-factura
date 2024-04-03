@@ -39,7 +39,7 @@ root.render(
             controlHeightLG: 53,
             lineHeight: 2.8,
             algorithm: true,
-          },
+          }
         },
       }}
     >
