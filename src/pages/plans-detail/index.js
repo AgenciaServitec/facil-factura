@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import { HomePagePlans } from "../home/HomePagePlans";
-import { PlanDetailsTable, planDetailsTable } from "../../data-list";
-import { Table, WrapperComponent } from "../../components";
+import { PlanDetailsTable } from "../../data-list";
+import { WrapperComponent } from "../../components";
 import styled, { css } from "styled-components";
 import { mediaQuery } from "../../styles";
-import { useQueryString } from "../../hooks";
+import { useQuery } from "../../hooks";
 
 export const PlansDetail = () => {
-  const [planType] = useQueryString("planType", "");
+  const { planType } = useQuery();
+
+  useEffect(() => {
+    const tablePlan = document.getElementById("plan-details-table");
+    planType && tablePlan.scrollIntoView({ behavior: "smooth" });
+  }, [planType]);
 
   return (
     <Container>
@@ -43,7 +49,10 @@ const Container = styled.section`
     .ant-table-tbody {
       .ant-table-row {
         &:hover .ant-table-cell {
-          background-color: transparent !important;
+          background-color: transparent;
+        }
+        &:hover .cell-bg {
+          background-color: ${theme.colors.quaternary};
         }
       }
       .cell-bg {

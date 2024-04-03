@@ -1,7 +1,6 @@
 import { isBoolean } from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
-import styled, { css } from "styled-components";
 import { Table } from "../components";
 
 export const PlanDetailsTable = ({ planType }) => {
@@ -18,7 +17,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: 200,
       emprende: 400,
       planControl: 500,
-      planPro: 650
+      planPro: 650,
     },
     {
       key: "2",
@@ -27,7 +26,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: "Ilimitado",
       emprende: "Ilimitado",
       planControl: "Ilimitado",
-      planPro: "Ilimitado"
+      planPro: "Ilimitado",
     },
     {
       key: "3",
@@ -42,7 +41,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: false,
       emprende: false,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
     {
       key: "4",
@@ -57,7 +56,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
     {
       key: "5",
@@ -72,7 +71,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
     {
       key: "6",
@@ -87,7 +86,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
     {
       key: "7",
@@ -101,7 +100,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
     {
       key: "8",
@@ -117,7 +116,7 @@ export const PlanDetailsTable = ({ planType }) => {
       micro: true,
       emprende: true,
       planControl: true,
-      planPro: true
+      planPro: true,
     },
   ];
   const columns = [
@@ -128,14 +127,14 @@ export const PlanDetailsTable = ({ planType }) => {
       align: "start",
       render: (_, plan) => {
         return (
-          <WrapperCell className="plan-cell">
+          <div className="plan-cell">
             <p className="plan-cell__title">{plan.comparacionDePlanes[0]}</p>
             <ul className="plan-cell__description">
               {plan.comparacionDePlanes.slice(1).map((item) => (
                 <li>{item}</li>
               ))}
             </ul>
-          </WrapperCell>
+          </div>
         );
       },
     },
@@ -172,13 +171,13 @@ export const PlanDetailsTable = ({ planType }) => {
       align: "center",
       className: planType === "plan-pro" ? "cell-bg" : "inherit",
       render: (_) => includeBenefit(_),
-    }
+    },
   ];
 
   const includeBenefit = (cellValue = false) => {
     if (isBoolean(cellValue))
       return (
-        <WrapperCell>
+        <div>
           {cellValue ? (
             <FontAwesomeIcon
               icon={faCheck}
@@ -192,15 +191,19 @@ export const PlanDetailsTable = ({ planType }) => {
               className="icon"
             />
           )}
-        </WrapperCell>
+        </div>
       );
-    return <WrapperCell className="item-cell">{cellValue}</WrapperCell>;
+    return <div className="item-cell">{cellValue}</div>;
   };
 
-  const WrapperCell = styled.div`
-    ${({ theme }) => css`
-    `}
-  `;
-
-  return <Table columns={columns} dataSource={dataSource} pagination={false} />;
+  return (
+    <Table
+      key={planType}
+      id="plan-details-table"
+      columns={columns}
+      dataSource={dataSource}
+      pagination={false}
+      rowClassName={() => "row-item"}
+    />
+  );
 };
