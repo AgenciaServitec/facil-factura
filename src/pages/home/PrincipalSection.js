@@ -27,8 +27,8 @@ export const PrincipalSection = () => {
         <div className="banner__text">
           <h1>Facturación Electrónica para negocios desde S/50</h1>
           <p>
-            Dile adiós a los talonarios y a la complicada web SUNAT, solo con un
-            par de clics podrás emitir los comprobantes más solicitados.
+            Despídete de los talonarios y de la compleja página web SUNAT, con
+            solo unos clics podrás generar los comprobantes más necesarios.
           </p>
           <div className="button_wrapper">
             <Button
