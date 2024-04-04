@@ -17,9 +17,9 @@ export const Home = () => {
       <SummaryApp />
       <Requirements />
       <HomePagePlans />
-      <BrandsSection />
       <FrequentlyQuestions />
       <VerifiedSection />
+      <BrandsSection />
     </Container>
   );
 };
