@@ -1,13 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse, WrapperComponent } from "../../components";
-import { theme, Col, Row } from "antd";
+import { Col, Row } from "antd";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
-import { mediaQuery } from "../../styles/mediaQuery";
+import { mediaQuery } from "../../styles";
 
 export const FrequentlyQuestions = () => {
-  const { token } = theme.useToken();
-
   const getItems = () => [
     [
       {
@@ -27,20 +25,20 @@ export const FrequentlyQuestions = () => {
         children: (
           <p className="response_question">
             Si se puede usar el servicio en cualquier lugar , solo es necesario
-            un dispositivo con internet.
+            un dispositivo celular o laptop con internet.
           </p>
         ),
         style: panelStyle,
       },
       {
         key: "3",
-        label: "¿Puedo acceder a su servicio desde mi computadora?",
+        label: "¿Puedo acceder a su servicio desde mi celular?",
         children: (
           <p className="response_question">
             ¡Absolutamente! Aunque muchos emprendedores prefieren utilizar
-            nuestra aplicación móvil, también puedes acceder y trabajar desde tu
-            computadora sin ningún problema. Además, toda la información que
-            ingreses se sincronizará en tiempo real.
+            nuestra aplicación en laptop, también puedes acceder y trabajar
+            desde tu celular sin ningún problema. Además, toda la información
+            que ingreses se sincronizará en tiempo real.
           </p>
         ),
         style: panelStyle,
@@ -104,10 +102,11 @@ export const FrequentlyQuestions = () => {
           <Row gutter={[20, 20]} wrap={true}>
             <Col xs={24} md={12}>
               <Collapse
+                accordion
                 bordered={false}
                 defaultActiveKey={[]}
                 expandIconPosition="end"
-                accordion
+                className="question-collapse"
                 size="large"
                 expandIcon={({ isActive }) =>
                   isActive ? (
@@ -179,7 +178,10 @@ const Container = styled.section`
         text-align: center;
         padding-bottom: 1em;
       }
-
+      .ant-collapse-header {
+        color: #000;
+        font-size: 1em;
+      }
       .response_question {
         font-size: 0.9em;
         font-weight: 400;

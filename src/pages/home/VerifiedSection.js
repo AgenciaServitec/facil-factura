@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
 import { WrapperComponent } from "../../components";
 import { LogoVerificadoSunat, LogoIsoiec } from "../../images";
+import { lighten } from "polished";
 
 export const VerifiedSection = () => {
   return (
     <Container>
       <WrapperComponent>
         <div className="content">
-          <img src={LogoVerificadoSunat} />
-          <img src={LogoIsoiec} />
+          <img src={LogoVerificadoSunat} alt="sunat logo" />
+          <img src={LogoIsoiec} alt="isoiec logo" />
         </div>
       </WrapperComponent>
     </Container>
@@ -17,7 +18,7 @@ export const VerifiedSection = () => {
 
 const Container = styled.section`
   ${({ theme }) => css`
-    background-color: ${theme.colors.light};
+    background-color: ${lighten(0.1, theme.colors.quaternary)};
     padding: 3em 0;
     .content {
       width: 90%;
@@ -29,7 +30,7 @@ const Container = styled.section`
       gap: 2em;
       img {
         width: 11em;
-        &:last-child{
+        &:last-child {
           width: 8em;
         }
       }
