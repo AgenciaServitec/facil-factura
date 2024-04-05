@@ -2,35 +2,39 @@ import { isBoolean } from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Table } from "../components";
+import { ourPlans } from "../data-list";
 
 export const PlanDetailsTable = ({ planType }) => {
+  const findPlanById = (planId) =>
+    ourPlans.find((plan) => plan.id === planId) || "";
+
   const dataSource = [
     {
       key: "1",
-      id: "micro",
+      id: "",
       comparacionDePlanes: [
         "Comprobantes/mes",
         "Boletas y Facturas",
         "Guías de Remisión",
         "Notas de Crédito y Débito",
       ],
-      micro: 200,
-      emprende: 400,
-      planControl: 500,
-      planPro: 650,
+      micro: findPlanById("micro").tableDetails.amountTikectsByMonth,
+      emprende: findPlanById("emprende").tableDetails.amountTikectsByMonth,
+      planControl: findPlanById("plan-control").tableDetails.amountTikectsByMonth,
+      planPro: findPlanById("plan-pro").tableDetails.amountTikectsByMonth,
     },
     {
       key: "2",
-      id: "",
+      id: "micro",
       comparacionDePlanes: ["Notas de Venta"],
-      micro: "Ilimitado",
-      emprende: "Ilimitado",
-      planControl: "Ilimitado",
-      planPro: "Ilimitado",
+      micro: findPlanById("micro").tableDetails.noteSales,
+      emprende: findPlanById("emprende").tableDetails.noteSales,
+      planControl: findPlanById("plan-control").tableDetails.noteSales,
+      planPro: findPlanById("plan-pro").tableDetails.noteSales,
     },
     {
       key: "3",
-      id: "",
+      id: "emprende",
       comparacionDePlanes: [
         "+ Ticketera 🖨️",
         "Tamaño portátil",
@@ -38,14 +42,14 @@ export const PlanDetailsTable = ({ planType }) => {
         "Incluye 4 contómetros",
         "Conexión Bluetooth y USB para PC",
       ],
-      micro: false,
-      emprende: false,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.ticketera,
+      emprende: findPlanById("emprende").tableDetails.ticketera,
+      planControl: findPlanById("plan-control").tableDetails.ticketera,
+      planPro: findPlanById("plan-pro").tableDetails.ticketera,
     },
     {
       key: "4",
-      id: "",
+      id: "plan-control",
       comparacionDePlanes: [
         "Inventario",
         "Catálogo de productos",
@@ -53,14 +57,14 @@ export const PlanDetailsTable = ({ planType }) => {
         "Tipos y cantidad de unidades",
         "Calculadora de IGV",
       ],
-      micro: true,
-      emprende: true,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.inventory,
+      emprende: findPlanById("emprende").tableDetails.inventory,
+      planControl: findPlanById("plan-control").tableDetails.inventory,
+      planPro: findPlanById("plan-pro").tableDetails.inventory,
     },
     {
       key: "5",
-      id: "",
+      id: "plan-prop",
       comparacionDePlanes: [
         "Reportes",
         "Reporte de Ventas",
@@ -68,10 +72,10 @@ export const PlanDetailsTable = ({ planType }) => {
         "Reporte de Vendedores",
         "Reporte para el Contador",
       ],
-      micro: true,
-      emprende: true,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.reports,
+      emprende: findPlanById("emprende").tableDetails.reports,
+      planControl: findPlanById("plan-control").tableDetails.reports,
+      planPro: findPlanById("plan-pro").tableDetails.reports,
     },
     {
       key: "6",
@@ -83,10 +87,10 @@ export const PlanDetailsTable = ({ planType }) => {
         "Lista de clientes",
         "Lista de proveedores",
       ],
-      micro: true,
-      emprende: true,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.register,
+      emprende: findPlanById("emprende").tableDetails.register,
+      planControl: findPlanById("plan-control").tableDetails.register,
+      planPro: findPlanById("plan-pro").tableDetails.register,
     },
     {
       key: "7",
@@ -97,10 +101,10 @@ export const PlanDetailsTable = ({ planType }) => {
         "Logo en comprobantes",
         "Mensaje extra en comprobantes",
       ],
-      micro: true,
-      emprende: true,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.personalization,
+      emprende: findPlanById("emprende").tableDetails.personalization,
+      planControl: findPlanById("plan-control").tableDetails.personalization,
+      planPro: findPlanById("plan-pro").tableDetails.personalization,
     },
     {
       key: "8",
@@ -113,10 +117,10 @@ export const PlanDetailsTable = ({ planType }) => {
         "Hasta 5 usuarios",
         "Hasta 4 dispositivos por usuario",
       ],
-      micro: true,
-      emprende: true,
-      planControl: true,
-      planPro: true,
+      micro: findPlanById("micro").tableDetails.functionalities,
+      emprende: findPlanById("emprende").tableDetails.functionalities,
+      planControl: findPlanById("plan-control").tableDetails.functionalities,
+      planPro: findPlanById("plan-pro").tableDetails.functionalities,
     },
   ];
   const columns = [
