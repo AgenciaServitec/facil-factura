@@ -21,7 +21,7 @@ export const SummaryApp = () => {
                   <>
                     {reverse ? (
                       <ItemSummaryApp
-                        key={tag}
+                        key={tag.tag}
                         tag={tag}
                         title={title}
                         description={description}
@@ -30,7 +30,7 @@ export const SummaryApp = () => {
                       />
                     ) : (
                       <ItemSummaryAppTwo
-                        key={tag}
+                        key={tag.tag}
                         tag={tag}
                         title={title}
                         description={description}
