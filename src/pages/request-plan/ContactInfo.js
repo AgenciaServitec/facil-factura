@@ -82,7 +82,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         price: selectedPlan.prices.value,
       },
       termsAndConditions: formData?.acceptTermsAndConditions || true,
-      hostname: window.location.hostname || "facturacion-electronica.com",
+      hostname: window.location.hostname || "facturacion-electronica.site",
     },
   });
 

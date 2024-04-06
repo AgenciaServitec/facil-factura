@@ -24,7 +24,6 @@ export const TextArea = ({
       animation={false}
     >
       <InputAntd.TextArea
-        bordered={false}
         value={value}
         disabled={disabled}
         autoComplete="chrome-off"

@@ -25,7 +25,7 @@ export const PrincipalSection = () => {
       />
       <div className="banner">
         <div className="banner__text">
-          <h1>Facturación Electrónica para negocios desde S/50</h1>
+          <h1>Facturación Electrónica para negocios desde S/59.90</h1>
           <p>
             Despídete de los talonarios y de la compleja página web SUNAT, con
             solo unos clics podrás generar los comprobantes más necesarios.
