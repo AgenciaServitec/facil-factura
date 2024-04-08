@@ -39,7 +39,17 @@
         "value": "Todas las demás funciones",
         "bold": false
       }
-    ]
+    ],
+    "tableDetails": {
+      "amountTikectsByMonth": 200,
+      "noteSales": "Ilimitado",
+      "ticketera": false,
+      "inventory": true,
+      "reports": true,
+      "register": true,
+      "personalization": true,
+      "functionalities": true
+    }
   },
   {
     "id": "emprende",
@@ -81,7 +91,17 @@
         "value": "Todas las demás funciones",
         "bold": false
       }
-    ]
+    ],
+    "tableDetails": {
+      "amountTikectsByMonth": 400,
+      "noteSales": "Ilimitado",
+      "ticketera": false,
+      "inventory": true,
+      "reports": true,
+      "register": true,
+      "personalization": true,
+      "functionalities": true
+    }
   },
   {
     "id": "plan-control",
@@ -126,7 +146,17 @@
         "value": "Todas las demás funciones",
         "bold": false
       }
-    ]
+    ],
+    "tableDetails": {
+      "amountTikectsByMonth": 500,
+      "noteSales": "Ilimitado",
+      "ticketera": true,
+      "inventory": true,
+      "reports": true,
+      "register": true,
+      "personalization": true,
+      "functionalities": true
+    }
   },
   {
     "id": "plan-pro",
@@ -168,6 +198,16 @@
         "value": "Todas las demás funciones",
         "bold": false
       }
-    ]
+    ],
+    "tableDetails": {
+      "amountTikectsByMonth": 650,
+      "noteSales": "Ilimitado",
+      "ticketera": true,
+      "inventory": true,
+      "reports": true,
+      "register": true,
+      "personalization": true,
+      "functionalities": true
+    }
   }
 ]
