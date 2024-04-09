@@ -1,13 +1,7 @@
-import {
-  Brand1,
-  Brand2,
-  Brand3,
-  Brand4,
-  Brand5,
-  Brand6,
-  LogoServitec,
-} from "../../images";
 import Carousel from "react-multi-carousel";
+import { brands } from "../../data-list";
+
+console.log(brands);
 
 export const CarouselBrands = ({ isMobile }) => {
   const responsive = {
@@ -57,31 +51,11 @@ export const CarouselBrands = ({ isMobile }) => {
       slidesToSlide={2}
       swipeable
     >
-      <div>
-        <img className="image-shadow" src={Brand1} alt="Logo de Alvillantas" />
-      </div>
-      <div>
-        <img src={Brand2} alt="Logo Hankook Alvillantas" />
-      </div>
-      <div>
-        <img
-          className="image-shadow"
-          src={Brand3}
-          alt="Logo de Servitec Perú"
-        />
-      </div>
-      <div>
-        <img src={Brand4} alt="Logo de Servitec Software" />
-      </div>
-      <div>
-        <img src={Brand5} alt="Logo de Avc Llantas" />
-      </div>
-      <div>
-        <img src={Brand6} alt="Logo de Cobiene" />
-      </div>
-      <div>
-        <img src={LogoServitec} alt="Logo de Servitec Publicidad" />
-      </div>
+      {brands.map((brand) => (
+        <div key={brand.id}>
+          <img src={brand.src} alt={brand.name} />
+        </div>
+      ))}
     </Carousel>
   );
 };
