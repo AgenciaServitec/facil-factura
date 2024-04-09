@@ -1,33 +1,17 @@
 import styled, { css } from "styled-components";
-import { Brand1, Brand2, Brand3, Brand4 } from "../../images";
 import { WrapperComponent } from "../../components";
-import { mediaQuery } from "../../styles";
+import { useDevice } from "../../hooks";
+import { CarouselBrands } from "./CarouselBrands";
 
 export const BrandsSection = () => {
+  const { isMobile } = useDevice();
+
   return (
     <Container>
       <WrapperComponent>
         <div className="content">
-          <div>
-            <img
-              className="image-shadow"
-              src={Brand1}
-              alt="Logo de Alvillantas"
-            />
-          </div>
-          <div>
-            <img src={Brand2} alt="Logo Hankook Alvillantas" />
-          </div>
-          <div>
-            <img
-              className="image-shadow"
-              src={Brand3}
-              alt="Logo de Servitec Perú"
-            />
-          </div>
-          <div>
-            <img src={Brand4} alt="Logo de Servitec Software" />
-          </div>
+          <h2>Ellos confían en nosotros 👍🏼</h2>
+          <CarouselBrands isMobile={isMobile} />
         </div>
       </WrapperComponent>
     </Container>
@@ -36,27 +20,36 @@ export const BrandsSection = () => {
 
 const Container = styled.section`
   ${({ theme }) => css`
-    background-color: ${theme.colors.light};
     padding: 3em 0;
     .content {
       width: 90%;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1em;
-      > div {
-        width: 9em;
-        ${mediaQuery.minDesktop} {
-          width: 14em;
-        }
-        img {
-          width: 100%;
+      background-color: ${theme.colors.light};
+      .carousel-component {
+        .react-multi-carousel-track {
+          display: flex;
+          div {
+            width: 7.5em;
+            height: 7.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 90%;
+              height: 90%;
+              object-fit: contain;
+            }
+          }
         }
         .image-shadow {
           filter: drop-shadow(0 0 0 black);
         }
+      }
+      h2 {
+        font-size: 2.7em;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 1em;
       }
     }
   `}

@@ -34,6 +34,15 @@ export { default as Brand1 } from "./webp/brand-alvillantas.webp";
 export { default as Brand2 } from "./webp/brand-hankook-alvillantas.webp";
 export { default as Brand3 } from "./webp/brand-servitec-peru.webp";
 export { default as Brand4 } from "./webp/brand-servitec-software.webp";
+export { default as Brand5 } from "./webp/brand-avc-llantas.webp";
+export { default as Brand6 } from "./webp/brand-cobiene.webp";
+export { default as Brand7 } from "./webp/brand-servitec-publicidad.webp";
+export { default as Brand8 } from "./webp/brand-trup-ip.webp";
+export { default as Brand9 } from "./webp/brand-deliniart.webp";
+export { default as Brand10 } from "./webp/brand-soinex-fu.webp";
+export { default as Brand11 } from "./webp/brand-markocreativo.webp";
+export { default as Brand12 } from "./webp/brand-servitec-multimedia.webp";
+export { default as Brand13 } from "./webp/brand-servitec-store.webp";
 export { default as LogoVerificadoSunat } from "./webp/logo-verificado-sunat.webp";
 export { default as LogoIsoiec } from "./webp/logo-iso-27001.webp";
 
