@@ -36,10 +36,13 @@ root.render(
             algorithm: true,
           },
           Input: {
-            controlHeightLG: 53,
-            lineHeight: 2.8,
+            controlHeightLG: 42,
             algorithm: true,
-          }
+          },
+          InputNumber: {
+            controlHeightLG: 42,
+            algorithm: true,
+          },
         },
       }}
     >

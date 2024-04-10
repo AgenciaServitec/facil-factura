@@ -12,6 +12,7 @@ export const InputNumber = ({
   variant = "outlined",
   disabled,
   animation,
+  size = null,
   ...props
 }) => {
   const Container = ComponentContainer[variant];
@@ -31,7 +32,7 @@ export const InputNumber = ({
         placeholder=""
         type="number"
         autoComplete="chrome-off"
-        size={isMobile ? "middle" : "large"}
+        size={size ? size : isMobile ? "middle" : "large"}
         value={value}
         disabled={disabled}
         allowClear={!disabled}
