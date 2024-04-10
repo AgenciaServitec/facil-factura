@@ -5,14 +5,15 @@ import { Drawer } from "./Drawer";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { useNavigate } from "react-router";
+import { FormContact } from "../ui";
 
 export const BaseLayout = ({ children }) => {
   const { isMobile } = useDevice();
   const navigate = useNavigate();
 
   const [visibleDrawer, setVisibleDrawer] = useState(false);
+  const [visibleFormContact, setVisibleFormContact] = useState(false);
 
-  const onClickVisibleFormContact = () => setVisibleDrawer(!visibleDrawer);
   const onNavigateGoTo = (pathname = "/") => navigate(pathname);
 
   return (
@@ -20,15 +21,20 @@ export const BaseLayout = ({ children }) => {
       <Drawer
         visibleDrawer={visibleDrawer}
         onSetVisibleDrawer={setVisibleDrawer}
-        onClickVisibleFormContact={onClickVisibleFormContact}
+        onSetVisibleFormContact={setVisibleFormContact}
       />
       <Header
         isMobile={isMobile}
         onNavigateGoTo={onNavigateGoTo}
+        onSetVisibleFormContact={setVisibleFormContact}
         onSetVisibleDrawer={setVisibleDrawer}
       />
       <main className="body">{children}</main>
       <Footer />
+      <FormContact
+        visibleFormContact={visibleFormContact}
+        onClickVisibleFormContact={setVisibleFormContact}
+      />
       {/*<ButtonsFloating*/}
       {/*  onEventGaClickButton={eventGaClickButton}*/}
       {/*  bottom="15%"*/}
