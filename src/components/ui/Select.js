@@ -1,10 +1,9 @@
 import React from "react";
-import AntSelect from "antd/lib/select";
 import { ComponentContainer } from "./component-container";
 import { defaultTo } from "lodash";
-import { SelectOption } from "./SelectOption";
 import { lighten } from "polished";
 import styled, { css } from "styled-components";
+import { AntSelect, SelectOption } from "./index";
 
 const defaultFilterOption = (inputValue, optionLabel) =>
   defaultTo(optionLabel, "").toUpperCase().indexOf(inputValue.toUpperCase()) ===
@@ -24,6 +23,7 @@ export const Select = ({
     defaultFilterOption(inputValue, optionLabel),
   options = [],
   placeholder = "",
+  size = null,
   onChange = (value) => value,
   ...props
 }) => {
@@ -65,7 +65,7 @@ export const Select = ({
             filterOption(inputValue, option?.children)
           }
           showSearch
-          size="large"
+          size={size ? size : isMobile ? "middle" : "large"}
           placeholder=""
           {...props}
         >

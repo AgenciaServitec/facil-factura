@@ -1,6 +1,6 @@
 import React from "react";
-import InputAntd from "antd/lib/input";
 import { ComponentContainer } from "./component-container";
+import { InputAntd } from "./index";
 
 export const Input = ({
   value,

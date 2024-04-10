@@ -12,7 +12,10 @@ import {
   Tag,
   Collapse,
   Carousel,
-  Table
+  Table,
+  Input as InputAntd,
+  InputNumber as InputNumberAntd,
+  Select as AntSelect,
 } from "antd";
 
 export {
@@ -29,7 +32,10 @@ export {
   Tag,
   Collapse,
   Carousel,
-  Table
+  Table,
+  InputAntd,
+  InputNumberAntd,
+  AntSelect,
 };
 // ANTD COMPONENTS
 export * from "./Title";
