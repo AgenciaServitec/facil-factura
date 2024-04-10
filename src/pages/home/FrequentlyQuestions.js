@@ -98,7 +98,7 @@ export const FrequentlyQuestions = () => {
     <Container>
       <WrapperComponent>
         <div className="content">
-          <h2>Preguntas frecuentes 📝</h2>
+          <h2>Preguntas frecuentes 🤔</h2>
           <Row gutter={[20, 20]} wrap={true}>
             <Col xs={24} md={12}>
               <Collapse
