@@ -46,8 +46,11 @@ const Container = styled.section`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     gap: 1em;
     padding: 1em;
+    width: 80%;
+    margin: auto;
     ${mediaQuery.minTablet} {
       flex-direction: row;
       gap: 2em;
@@ -65,30 +68,19 @@ const Container = styled.section`
       }
 
       &__tag {
-        font-size: 0.8em;
+        font-size: 0.85em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
         ${mediaQuery.minDesktop} {
-          font-size: 1em;
-        }
-      }
-
-      h2 {
-        font-size: 1.5em;
-        font-weight: 700;
-        line-height: 1.2;
-        margin: 0.5em 0;
-
-        ${mediaQuery.minDesktop} {
-          font-size: 2.7em;
+          font-size: 0.9em;
         }
       }
 
       p {
         font-weight: 300;
         color: ${theme.colors.font2};
-        margin-bottom: 0.5em;
-        ${mediaQuery.minDesktop} {
-          font-size: 1.2em;
-        }
+        margin-bottom: 1em;
+        min-width: 300px;
       }
 
       ul {
@@ -97,9 +89,8 @@ const Container = styled.section`
         padding: 0;
         font-weight: 400;
         text-align: left;
-        ${mediaQuery.minDesktop} {
-          font-size: 1.2em;
-        }
+        display: grid;
+        gap: 0.2em;
         li {
           display: flex;
           align-items: center;
@@ -118,7 +109,7 @@ const Container = styled.section`
       }
 
       img {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
       }
     }
