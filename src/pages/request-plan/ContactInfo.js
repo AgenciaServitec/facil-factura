@@ -187,7 +187,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                     defaultValue="+51"
                     render={({ field: { onChange, value, name } }) => (
                       <Select
-                        label="Código"
+                        label="Prefijo"
                         size="large"
                         value={value}
                         onChange={(value) => onChange(value)}

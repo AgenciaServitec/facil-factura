@@ -43,6 +43,7 @@ export { default as Brand10 } from "./webp/brand-soinex-fu.webp";
 export { default as Brand11 } from "./webp/brand-markocreativo.webp";
 export { default as Brand12 } from "./webp/brand-servitec-multimedia.webp";
 export { default as Brand13 } from "./webp/brand-servitec-store.webp";
+export { default as BrandLavid } from "./webp/brand-lavid.webp";
 export { default as LogoVerificadoSunat } from "./webp/logo-verificado-sunat.webp";
 export { default as LogoIsoiec } from "./webp/logo-iso-27001.webp";
 
