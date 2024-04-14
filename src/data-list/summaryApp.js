@@ -8,7 +8,7 @@ import {
 export const summaryData = [
   {
     tag: "comprobantes",
-    title: "Boletas, Facturas y más ¡en segundos!",
+    title: "¡Boletas, Facturas y mucho más!",
     description:
       "Despídete de los talonarios y de la compleja página web SUNAT, con solo unos clics podrás generar los comprobantes más necesarios.",
     items: [
