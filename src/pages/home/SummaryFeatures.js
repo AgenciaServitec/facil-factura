@@ -1,11 +1,11 @@
 import { WrapperComponent } from "../../components";
 import styled, { css } from "styled-components";
-import { summaryData } from "../../data-list";
+import { summaryFeatures } from "../../data-list";
 import { CarouselSummaryApp } from "./CarouselSummaryApp";
 import { ItemSummaryApp } from "./ItemSummaryApp";
 import { ItemSummaryAppTwo } from "./ItemSummaryAppTwo";
 
-export const SummaryApp = () => {
+export const SummaryFeatures = () => {
   return (
     <Container id="service">
       <WrapperComponent>
@@ -15,32 +15,30 @@ export const SummaryApp = () => {
             <span>(ahora al alcance de un clic en tu PC y en tu móvil)</span>
           </div>
           <CarouselSummaryApp autoplay>
-            {summaryData.map(
-              ({ tag, title, description, items, images, reverse }) => {
-                return (
-                  <>
-                    {reverse ? (
-                      <ItemSummaryApp
-                        key={tag.tag}
-                        tag={tag}
-                        title={title}
-                        description={description}
-                        items={items}
-                        images={images}
-                      />
-                    ) : (
-                      <ItemSummaryAppTwo
-                        key={tag.tag}
-                        tag={tag}
-                        title={title}
-                        description={description}
-                        items={items}
-                        images={images}
-                      />
-                    )}
-                  </>
-                );
-              }
+            {summaryFeatures.map(
+              ({ tag, title, description, items, images, reverse }) => (
+                <>
+                  {reverse ? (
+                    <ItemSummaryApp
+                      key={tag.tag}
+                      tag={tag}
+                      title={title}
+                      description={description}
+                      items={items}
+                      images={images}
+                    />
+                  ) : (
+                    <ItemSummaryAppTwo
+                      key={tag.tag}
+                      tag={tag}
+                      title={title}
+                      description={description}
+                      items={items}
+                      images={images}
+                    />
+                  )}
+                </>
+              )
             )}
           </CarouselSummaryApp>
         </div>

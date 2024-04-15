@@ -5,30 +5,30 @@ import {
   MobileReports,
 } from "../images";
 
-export const summaryData = [
+export const summaryFeatures = [
   {
     tag: "comprobantes",
     title: "¡Boletas, Facturas y mucho más!",
     description:
-      "Despídete de los talonarios y de la compleja página web SUNAT, con solo unos clics podrás generar los comprobantes más necesarios.",
+      "Di adiós a los antiguos talonarios y al complicado proceso en la página web de SUNAT. Ahora, con tan solo unos simples clics, podrás generar los comprobantes que tanto necesitas de forma rápida y sencilla.",
     items: [
       "Boletas y Facturas",
-      "Guías de Remisión",
       "Notas de Crédito y Débito",
       "Notas de Venta",
+      "Guías de Remisión",
     ],
     images: [MobileReceipts],
     reverse: true,
   },
   {
     tag: "inventario",
-    title: "Administra el inventario de tus productos",
+    title: "Administra tu inventario de manera eficiente.",
     description:
-      "¿Alguna vez te has preguntado cuántos productos te quedan?… ¡No más! Con el Control de existencias conocerás el detalle de tu inventario en todo momento.",
+      "¿Te has preguntado alguna vez cuántos productos te quedan? Con nuestro Control de Existencias, tendrás el detalle de tu inventario en todo momento, sin preocupaciones.",
     items: [
-      "Catálogo de productos",
-      "Lector de códigos de barra",
-      "Tipos y cantidad de unidades",
+      "Lista de productos disponibles",
+      "Códigos de barras",
+      "Variaciones y cantidades de unidades",
       "Calculadora de IGV",
     ],
     images: [MobileInventory],
@@ -36,9 +36,9 @@ export const summaryData = [
   },
   {
     tag: "reportes",
-    title: "Mantente informado sobre tus ventas",
+    title: "Permanece al tanto de tus ventas en todo momento.",
     description:
-      "Nuestra amplia gama de informes te permitirá supervisar los ingresos de tu negocio.",
+      "Con nuestra variedad de informes, podrás monitorear los ingresos de tu negocio de manera efectiva.",
     items: [
       "Reporte de Ventas",
       "Reporte de Inventario",
@@ -50,9 +50,9 @@ export const summaryData = [
   },
   {
     tag: "características",
-    title: "Ahorra tiempo y dinero",
+    title: "Optimiza tu tiempo y ahorra dinero.",
     description:
-      "¡Despídete de sistemas y equipos adicionales! Aquí encontrarás mucho más sin costo extra.",
+      "Di adiós a sistemas y equipos adicionales. Aquí encontrarás mucho más sin costos extras.",
     items: [
       "Cotizaciones",
       "Registro de gastos",

@@ -1,7 +1,7 @@
 export { default as phoneCodes } from "./phoneCodes.json";
 export { default as ourPlans } from "./ourPlans.json";
 export * from "./planDetailsTable";
-export * from "./summaryApp";
+export * from "./summaryFeatures";
 export * from "./brands";
 
 //Example PLAN
