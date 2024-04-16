@@ -127,7 +127,7 @@ export const PlanCard = ({
 const Container = styled.div`
   ${({ theme, planType = "normal", isSelectedPlan = false }) => css`
     width: 100%;
-    min-height: 26em;
+    min-height: 43em;
     min-width: 12em;
     height: auto;
     background: ${planType === "normal"
@@ -137,13 +137,13 @@ const Container = styled.div`
     padding: 1em;
     border-radius: 0.7em;
     font-size: 17px;
-    border: 1.3px solid transparent;
+    border: 1px solid transparent;
     color: ${theme.colors.font1};
 
     ${isSelectedPlan &&
     css`
       background: ${rgba(theme.colors.success, 0.3)};
-      border: 1.3px solid ${theme.colors.success};
+      border: 1px solid ${theme.colors.success};
     `}
 
     .top-header {
