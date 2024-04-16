@@ -10,22 +10,27 @@ export const FrequentlyQuestions = () => {
     [
       {
         key: "1",
-        label: "¿Puedo afiliarme teniendo RUC?",
+        label: "¿Ustedes Manejan Multiples Precios por Cada Producto?",
         children: (
           <p className="response_question">
-            ¡Claro que sí! Si tienes un RUC activo, independientemente del
-            régimen al que pertenezcas, puedes unirte a nuestra plataforma.
+            Sí, actualmente manejamos varios precios por cada producto, si tú
+            eres un distribuidor estamos seguros que esta característica te
+            encantará.
           </p>
         ),
         style: panelStyle,
       },
       {
         key: "2",
-        label: "¿Se puede utilizar el servicio fuera de Lima Metropolitana?",
+        label:
+          "¿Si ya estoy utilizando otro sistema, ¿puedo empezar con ustedes sin problemas?",
         children: (
           <p className="response_question">
-            Si se puede usar el servicio en cualquier lugar , solo es necesario
-            un dispositivo celular o laptop con internet.
+            Sí, puedes empezar con nosotros sin problemas y podrás continuar con
+            la numeración de tus comprobantes electrónicos. Nosotros nos
+            encargaremos de subir el listado de tus productos a nuestros
+            sistemas, lo único que necesitamos es el listado de tus productos en
+            Excel.
           </p>
         ),
         style: panelStyle,
@@ -43,10 +48,41 @@ export const FrequentlyQuestions = () => {
         ),
         style: panelStyle,
       },
+      {
+        key: "4",
+        label: "¿Ustedes son Proveedores Autorizados por SUNAT?",
+        children: (
+          <p className="response_question">
+            Si, somos proveedores autorizados por SUNAT desde el 26 de
+            Septiembre del 2019 mediante resolución N° 064-005-0002737.
+          </p>
+        ),
+        style: panelStyle,
+      },
+      {
+        key: "5",
+        label: "¿Puedo cambiar de Plan luego de afiliarme?",
+        children: (
+          <p className="response_question">
+            ¡Claro que sí! Sabemos que hay meses que vendes más y otros menos,
+            por lo que podrás cambiar tu Plan al comienzo de cada mes sin ningún
+            problema. Solo comunícate con nuestro servicio al cliente desde{" "}
+            <a
+              href="https://api.whatsapp.com/send/?phone=+51972252744&text=Hola,+necesito+soporte+técnico+por+favor&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              aquí
+            </a>
+            .
+          </p>
+        ),
+        style: panelStyle,
+      },
     ],
     [
       {
-        key: "4",
+        key: "5",
         label: "¿Ya no necesitaré un contador?",
         children: (
           <p className="response_question">
@@ -59,7 +95,7 @@ export const FrequentlyQuestions = () => {
         style: panelStyle,
       },
       {
-        key: "5",
+        key: "6",
         label: "¿Ofrecen descuentos si me suscribo por un año completo?",
         children: (
           <p className="response_question">
@@ -71,13 +107,40 @@ export const FrequentlyQuestions = () => {
         style: panelStyle,
       },
       {
-        key: "6",
+        key: "7",
         label: "¿Mis comprobantes serán enviados a SUNAT?",
         children: (
           <p className="response_question">
             ¡Exactamente! Todos los comprobantes que emitas a través de nuestra
             aplicación serán enviados automáticamente a SUNAT. Además, cualquier
             anulación que realices también será comunicada automáticamente.
+          </p>
+        ),
+        style: panelStyle,
+      },
+      {
+        key: "8",
+        label:
+          "¿Tendré que Pagar Costos de Instalación y/o Comprar Equipos Especiales?",
+        children: (
+          <p className="response_question">
+            No tendrás que pagar costos de instalación y tampoco es necesario
+            comprar equipos costosos para iniciar con la emisión de tus
+            comprobantes electrónicos.
+          </p>
+        ),
+        style: panelStyle,
+      },
+      {
+        key: "9",
+        label: "¿Ustedes utilizan contratos que me amarren por 6 o 12 meses?",
+        children: (
+          <p className="response_question">
+            Nosotros no utilizamos contratos que te amarren a nuestro servicio,
+            con nosotros puedes pagar de forma mensual, cada dos meses, tres
+            meses, etc. No tienes obligación de renovar el servicio si no estás
+            contento, en caso decidas cambiarte de servicio podrás llevar los
+            datos de tus productos y comprobantes sin problemas.
           </p>
         ),
         style: panelStyle,
