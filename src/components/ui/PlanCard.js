@@ -75,7 +75,7 @@ export const PlanCard = ({
       <div className="price-item">
         <div className="price">
           {plan?.prices && <h3>S/ {plan.prices.value}</h3>}
-          <span>/mes</span>
+          {plan?.prices && <span>/ {plan.prices.type}</span>}
         </div>
         {plan?.prices?.priceByYear && (
           <div className="legend-item">{`Pago total: S/${plan.prices.priceByYear} /año`}</div>

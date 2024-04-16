@@ -9,8 +9,8 @@ export const HomePagePlans = () => {
       <WrapperComponent>
         <div className="plans">
           <div className="title-items">
-            <h2>Planes que evolucionan contigo 🤝🏼</h2>
-            <p>Sin compromisos ni restricciones de cantidad para tus ventas.</p>
+            <h2>Planes adaptables a tu crecimiento 🤝🏼</h2>
+            <p>Sin contratos ni límites en tus facturaciones.</p>
           </div>
           <div className="planes-wrapper">
             <Plans plans={ourPlans} />
@@ -20,12 +20,12 @@ export const HomePagePlans = () => {
               <strong>
                 Cuota de activación desde el Plan Control o superior: S/50 (pago
                 único).
-              </strong>{" "}
-              Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,
+              </strong>
+              {/*Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,
               Cusco Ciudad y Huancayo. Si te encuentras en otra ubicación puedes
               ver los Planes que tenemos para ti desde <a href="#">aquí</a>. (*)
               Ticketera incluida a modo de préstamo durante tu periodo de
-              afiliación al Plan Control o superior.
+              afiliación al Plan Control o superior.*/}
             </p>
           </div>
         </div>

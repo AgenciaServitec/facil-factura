@@ -6,123 +6,150 @@ import { ourPlans } from "../data-list";
 
 export const PlanDetailsTable = ({ planType }) => {
   const findPlanById = (planId) =>
-    ourPlans.find((plan) => plan.id === planId) || "";
+    ourPlans.find((plan) => plan.id === planId)?.tableDetails || "";
+
+  const getPlansWithData = (fieldType) => {
+    const rowData = [];
+
+    ["micro", "popular", "planControl"].map(
+      (plan) => (rowData[plan] = findPlanById(plan)?.[fieldType])
+    );
+
+    return rowData;
+  };
 
   const dataSource = [
     {
       key: "1",
-      id: "",
+      id: "tickets",
       comparacionDePlanes: [
-        "Comprobantes/mes",
+        "Comprobantes/unidad",
         "Boletas y Facturas",
         "Guías de Remisión",
         "Notas de Crédito y Débito",
       ],
-      micro: findPlanById("micro").tableDetails.amountTikectsByMonth,
-      emprende: findPlanById("emprende").tableDetails.amountTikectsByMonth,
-      planControl: findPlanById("plan-control").tableDetails.amountTikectsByMonth,
-      planPro: findPlanById("plan-pro").tableDetails.amountTikectsByMonth,
+      ...getPlansWithData("vouchers"),
     },
     {
       key: "2",
       id: "micro",
-      comparacionDePlanes: ["Notas de Venta"],
-      micro: findPlanById("micro").tableDetails.noteSales,
-      emprende: findPlanById("emprende").tableDetails.noteSales,
-      planControl: findPlanById("plan-control").tableDetails.noteSales,
-      planPro: findPlanById("plan-pro").tableDetails.noteSales,
+      comparacionDePlanes: ["Sucursales"],
+      ...getPlansWithData("branchOfficesNumber"),
     },
     {
       key: "3",
-      id: "emprende",
-      comparacionDePlanes: [
-        "+ Ticketera 🖨️",
-        "Tamaño portátil",
-        "Batería de larga duración",
-        "Incluye 4 contómetros",
-        "Conexión Bluetooth y USB para PC",
-      ],
-      micro: findPlanById("micro").tableDetails.ticketera,
-      emprende: findPlanById("emprende").tableDetails.ticketera,
-      planControl: findPlanById("plan-control").tableDetails.ticketera,
-      planPro: findPlanById("plan-pro").tableDetails.ticketera,
+      id: "branchOffices",
+      comparacionDePlanes: ["Almacenes"],
+      ...getPlansWithData("wareHousesNumber"),
     },
     {
       key: "4",
-      id: "plan-control",
-      comparacionDePlanes: [
-        "Inventario",
-        "Catálogo de productos",
-        "Lector de códigos de barra",
-        "Tipos y cantidad de unidades",
-        "Calculadora de IGV",
-      ],
-      micro: findPlanById("micro").tableDetails.inventory,
-      emprende: findPlanById("emprende").tableDetails.inventory,
-      planControl: findPlanById("plan-control").tableDetails.inventory,
-      planPro: findPlanById("plan-pro").tableDetails.inventory,
+      id: "usersNumber",
+      comparacionDePlanes: ["Usuarios"],
+      ...getPlansWithData("usersNumber"),
     },
     {
       key: "5",
-      id: "plan-prop",
+      id: "inventory",
       comparacionDePlanes: [
-        "Reportes",
-        "Reporte de Ventas",
-        "Reporte de Inventario",
-        "Reporte de Vendedores",
-        "Reporte para el Contador",
+        "Inventario",
+        "Kardex Valorizado",
+        "Gestion de categorias",
+        "Lo más vendido",
       ],
-      micro: findPlanById("micro").tableDetails.reports,
-      emprende: findPlanById("emprende").tableDetails.reports,
-      planControl: findPlanById("plan-control").tableDetails.reports,
-      planPro: findPlanById("plan-pro").tableDetails.reports,
+      ...getPlansWithData("inventory"),
     },
     {
       key: "6",
-      id: "",
-      comparacionDePlanes: [
-        "Registros",
-        "Cotizaciones",
-        "Gastos y compras",
-        "Lista de clientes",
-        "Lista de proveedores",
-      ],
-      micro: findPlanById("micro").tableDetails.register,
-      emprende: findPlanById("emprende").tableDetails.register,
-      planControl: findPlanById("plan-control").tableDetails.register,
-      planPro: findPlanById("plan-pro").tableDetails.register,
+      id: "searchByRucAndDni",
+      comparacionDePlanes: ["Busqueda por RUC o DNI"],
+      ...getPlansWithData("searchByRucAndDni"),
     },
     {
       key: "7",
-      id: "",
-      comparacionDePlanes: [
-        "Personalización",
-        "Datos de tu negocio",
-        "Logo en comprobantes",
-        "Mensaje extra en comprobantes",
-      ],
-      micro: findPlanById("micro").tableDetails.personalization,
-      emprende: findPlanById("emprende").tableDetails.personalization,
-      planControl: findPlanById("plan-control").tableDetails.personalization,
-      planPro: findPlanById("plan-pro").tableDetails.personalization,
+      id: "reports",
+      comparacionDePlanes: ["Reportes", "Top clientes", "Top colaboradores"],
+      ...getPlansWithData("reports"),
     },
     {
       key: "8",
-      id: "",
+      id: "accountsByPayment",
+      comparacionDePlanes: ["Cuentas por pagar"],
+      ...getPlansWithData("accountsByPayment"),
+    },
+    {
+      key: "9",
+      id: "salesManagement",
+      comparacionDePlanes: ["Gestion de Ventas"],
+      ...getPlansWithData("salesManagement"),
+    },
+    {
+      key: "10",
+      id: "warehouseInputsAndOutputs",
+      comparacionDePlanes: ["Ingresos y Salidas de Almacén"],
+      ...getPlansWithData("warehouseInputsAndOutputs"),
+    },
+    {
+      key: "11",
+      id: "transferBetweenWarehouses",
+      comparacionDePlanes: ["Traslado entre almacénes"],
+      ...getPlansWithData("transferBetweenWarehouses"),
+    },
+    {
+      key: "12",
+      id: "pettyCash",
+      comparacionDePlanes: ["Caja chica"],
+      ...getPlansWithData("pettyCash"),
+    },
+    {
+      key: "13",
+      id: "purchasingManagement",
+      comparacionDePlanes: ["Gestion de Compras"],
+      ...getPlansWithData("purchasingManagement"),
+    },
+    {
+      key: "14",
+      id: "supplierManagement",
+      comparacionDePlanes: ["Gestion de Proveedores "],
+      ...getPlansWithData("supplierManagement"),
+    },
+    {
+      key: "15",
+      id: "referenceGuides",
+      comparacionDePlanes: ["Guías de Remisión "],
+      ...getPlansWithData("referenceGuides"),
+    },
+    {
+      key: "16",
+      id: "accounting",
       comparacionDePlanes: [
-        "+ Funcionalidades",
-        "Envío de comprobantes a SUNAT",
-        "Anulaciones",
-        "Consulta de RUC o DNI",
-        "Hasta 5 usuarios",
-        "Hasta 4 dispositivos por usuario",
+        "Contabilidad",
+        "Libro Electrónico de Compras",
+        "Libro Electrónico de Ventas",
+        "Reporte detalle ventas",
       ],
-      micro: findPlanById("micro").tableDetails.functionalities,
-      emprende: findPlanById("emprende").tableDetails.functionalities,
-      planControl: findPlanById("plan-control").tableDetails.functionalities,
-      planPro: findPlanById("plan-pro").tableDetails.functionalities,
+      ...getPlansWithData("accounting"),
+    },
+    {
+      key: "17",
+      id: "customers",
+      comparacionDePlanes: ["Clientes"],
+      ...getPlansWithData("customers"),
+    },
+    {
+      key: "18",
+      id: "ballotSummary",
+      comparacionDePlanes: ["Resumen de boletas "],
+      ...getPlansWithData("ballotSummary"),
+    },
+    {
+      key: "19",
+      id: "accountsReceivable",
+      comparacionDePlanes: ["Cuentas por cobrar "],
+      ...getPlansWithData("accountsReceivable"),
     },
   ];
+
   const columns = [
     {
       title: "Comparación de planes",
@@ -153,27 +180,19 @@ export const PlanDetailsTable = ({ planType }) => {
       },
     },
     {
-      title: "Emprende",
-      dataIndex: "emprende",
-      key: "emprende",
+      title: "Popular",
+      dataIndex: "popular",
+      key: "popular",
       align: "center",
-      className: planType === "emprende" ? "cell-bg" : "inherit",
+      className: planType === "popular" ? "cell-bg" : "inherit",
       render: (_) => includeBenefit(_),
     },
     {
       title: "Plan Control",
       dataIndex: "planControl",
-      key: "plan-control",
+      key: "planControl",
       align: "center",
       className: planType === "plan-control" ? "cell-bg" : "inherit",
-      render: (_) => includeBenefit(_),
-    },
-    {
-      title: "Plan Pro",
-      dataIndex: "planPro",
-      key: "plan-pro",
-      align: "center",
-      className: planType === "plan-pro" ? "cell-bg" : "inherit",
       render: (_) => includeBenefit(_),
     },
   ];

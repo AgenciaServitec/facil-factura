@@ -34,7 +34,7 @@ const Container = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 87%;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
   gap: 1.5em;
