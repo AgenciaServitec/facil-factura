@@ -192,7 +192,7 @@ export const PlanDetailsTable = ({ planType }) => {
       dataIndex: "planControl",
       key: "planControl",
       align: "center",
-      className: planType === "plan-control" ? "cell-bg" : "inherit",
+      className: planType === "planControl" ? "cell-bg" : "inherit",
       render: (_) => includeBenefit(_),
     },
   ];
