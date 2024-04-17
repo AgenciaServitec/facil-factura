@@ -8,6 +8,10 @@ import {
   InputNumber,
   Select,
   notification,
+  DatePicker,
+  TimePicker,
+  ComponentContainer,
+  RadioGroup,
 } from "../../components";
 import { phoneCodes } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,6 +26,7 @@ import { mediaQuery } from "../../styles";
 import { darken } from "polished";
 import { Link } from "react-router-dom";
 import { servitecSalesApiUrl } from "../../firebase";
+import dayjs from "dayjs";
 
 export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
   const { isMobile } = useDevice();
@@ -33,6 +38,9 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
+    dateToMeet: yup.string().required(),
+    timeToMeet: yup.string().required(),
+    meetingType: yup.string().required(),
     acceptTermsAndConditions: yup.boolean().required(),
   });
 
@@ -76,13 +84,16 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         number: formData.phoneNumber,
         countryCode: formData.countryCode,
       },
+      dateToMeet: formData.dateToMeet,
+      timeToMeet: formData.timeToMeet,
+      meetingType: formData.meetingType,
       plan: {
         id: selectedPlan.id,
         name: selectedPlan.name,
         price: selectedPlan.prices.value,
       },
       termsAndConditions: formData?.acceptTermsAndConditions || true,
-      hostname: window.location.hostname || "facturacion-electronica.site",
+      hostname: window.location.hostname || "factura.servitec.site",
     },
   });
 
@@ -103,6 +114,9 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
       email: "",
       countryCode: "+51",
       phoneNumber: "",
+      dateToMeet: undefined,
+      timeToMeet: undefined,
+      meetingType: "",
       acceptTermsAndConditions: true,
     });
 
@@ -220,6 +234,70 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                     )}
                   />
                 </Col>
+                <ComponentContainer.group label="Fecha y hora para reunirnos">
+                  <Row gutter={[16, 16]}>
+                    <Col xs={24} sm={24} md={14}>
+                      <Controller
+                        name="dateToMeet"
+                        control={control}
+                        defaultValue={undefined}
+                        render={({ field: { onChange, value, name } }) => (
+                          <DatePicker
+                            label="Fecha"
+                            size="large"
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            error={error(name)}
+                            required={required(name)}
+                            minDate={dayjs()}
+                          />
+                        )}
+                      />
+                    </Col>
+                    <Col xs={24} sm={24} md={10}>
+                      <Controller
+                        name="timeToMeet"
+                        control={control}
+                        defaultValue={undefined}
+                        render={({ field: { onChange, value, name } }) => (
+                          <TimePicker
+                            label="Hora"
+                            size="large"
+                            format="HH:mm"
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            error={error(name)}
+                            required={required(name)}
+                            minDate={dayjs()}
+                          />
+                        )}
+                      />
+                    </Col>
+                    <Col span={24}>
+                      <Controller
+                        name="meetingType"
+                        control={control}
+                        defaultValue={undefined}
+                        render={({ field: { onChange, value, name } }) => (
+                          <RadioGroup
+                            label="Tipo de reunion"
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            error={error(name)}
+                            required={required(name)}
+                            options={[
+                              { label: "Presencial", value: "inPerson" },
+                              { label: "Remoto", value: "remote" },
+                            ]}
+                          />
+                        )}
+                      />
+                    </Col>
+                  </Row>
+                </ComponentContainer.group>
                 <Col span={24}>
                   <p className="item-checkbox">
                     <Controller
