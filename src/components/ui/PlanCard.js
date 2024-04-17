@@ -127,7 +127,7 @@ export const PlanCard = ({
 const Container = styled.div`
   ${({ theme, planType = "normal", isSelectedPlan = false }) => css`
     width: 100%;
-    min-height: 43em;
+    min-height: 41em;
     min-width: 12em;
     height: auto;
     background: ${planType === "normal"
@@ -149,7 +149,7 @@ const Container = styled.div`
     .top-header {
       display: grid;
       gap: 0.3em;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
 
       .card-title {
         display: flex;
@@ -158,6 +158,7 @@ const Container = styled.div`
           font-size: 1.4em;
           font-weight: 600;
           color: inherit;
+          margin-bottom: 0.3em;
         }
 
         .tag {
@@ -180,7 +181,7 @@ const Container = styled.div`
     .price-item {
       display: grid;
       gap: 0.3em;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
 
       span {
         font-size: 0.8em;
@@ -206,7 +207,7 @@ const Container = styled.div`
     }
 
     .plan-list {
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
 
       ul {
         list-style: none;
@@ -232,7 +233,7 @@ const Container = styled.div`
     .footer-card {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
     }
 
     .bottom-footer {

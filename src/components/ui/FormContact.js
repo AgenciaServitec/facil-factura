@@ -106,7 +106,7 @@ export const FormContact = ({
     <ModalComponent
       title={
         <div>
-          <h3 style={{ margin: "0" }}>¿Aún tienes algunas dudas a despejar?</h3>
+          <h3 style={{ margin: "0" }}>¿Aún tienes algunas dudas?</h3>
           <small style={{ margin: "0" }}>
             Bríndanos tus datos y nos comunicaremos contigo
           </small>
