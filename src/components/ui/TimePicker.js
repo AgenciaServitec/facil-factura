@@ -16,6 +16,7 @@ export const TimePicker = ({
   animation,
   bgColor,
   size = null,
+  onChange,
   ...props
 }) => {
   const Container = ComponentContainer[variant];
@@ -41,6 +42,7 @@ export const TimePicker = ({
         value={value}
         disabled={disabled}
         allowClear={!disabled}
+        onChange={onChange}
         {...props}
       />
     </Container>

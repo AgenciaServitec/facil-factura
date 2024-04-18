@@ -38,8 +38,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
-    dateToMeet: yup.string().required(),
-    timeToMeet: yup.string().required(),
+    dateToMeet: yup.date().required(),
+    timeToMeet: yup.date().required(),
     meetingType: yup.string().required(),
     acceptTermsAndConditions: yup.boolean().required(),
   });
@@ -84,8 +84,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         number: formData.phoneNumber,
         countryCode: formData.countryCode,
       },
-      dateToMeet: formData.dateToMeet,
-      timeToMeet: formData.timeToMeet,
+      dateToMeet: dayjs(formData.dateToMeet).format("DD/MM/YYYY"),
+      timeToMeet: dayjs(formData.timeToMeet).format("HH:mm"),
       meetingType: formData.meetingType,
       plan: {
         id: selectedPlan.id,
@@ -93,7 +93,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         price: selectedPlan.prices.value,
       },
       termsAndConditions: formData?.acceptTermsAndConditions || true,
-      hostname: window.location.hostname || "factura.servitec.site",
+      hostname: "factura.servitec.site",
     },
   });
 
@@ -380,8 +380,8 @@ const Container = styled.div`
       width: 95%;
       margin: auto;
       gap: 1em;
-      ${mediaQuery.minTablet} {
-        width: 70%;
+      ${mediaQuery.minDesktop} {
+        width: 77%;
         grid-template-columns: 50% 1fr;
       }
       .image-wrapper {
