@@ -142,14 +142,10 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                     <span>{selectedPlan.titleLegend}</span>
                   </div>
                 </div>
-                <div className="card-summary__item">
+                <div className="card-summary__item price">
                   <div>
-                    S/ {selectedPlan.prices.value} <span>/mes</span>
-                  </div>
-                  <div>
-                    <Link to={`/plans-detail?planType=${selectedPlan.id}`}>
-                      Ver detalle del Plan
-                    </Link>
+                    S/ {selectedPlan.prices.value}{" "}
+                    <span>/ {selectedPlan.prices.type}</span>
                   </div>
                 </div>
               </div>
@@ -245,6 +241,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                           <DatePicker
                             label="Fecha"
                             size="large"
+                            placeholder="Fecha"
+                            animation={true}
                             name={name}
                             value={value}
                             onChange={onChange}
@@ -265,6 +263,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                             label="Hora"
                             size="large"
                             format="HH:mm"
+                            placeholder="Hora"
+                            animation={true}
                             name={name}
                             value={value}
                             onChange={onChange}
@@ -424,17 +424,10 @@ const Container = styled.div`
             &__item:first-child {
               justify-content: start;
             }
-            &__item:last-child {
+            .price {
+              display: flex;
+              align-items: center;
               justify-content: end;
-              a {
-                color: ${theme.colors.primary};
-                font-size: 0.6em;
-                font-weight: 500;
-                text-decoration: none;
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
             }
           }
         }
