@@ -1,17 +1,19 @@
 import React from "react";
 import { ComponentContainer } from "./component-container";
-import { InputNumberAntd } from "./index";
+import { DatePickerAntd } from "./index";
 
-export const InputNumber = ({
+export const DatePicker = ({
   value,
   required = false,
   hidden = false,
   isMobile = false,
   error,
   label,
+  format = "DD/MM/YYYY",
   variant = "outlined",
   disabled,
   animation,
+  bgColor,
   size = null,
   ...props
 }) => {
@@ -26,13 +28,14 @@ export const InputNumber = ({
       label={label}
       disabled={disabled}
       animation={animation}
+      bgColor={bgColor}
     >
-      <InputNumberAntd
+      <DatePickerAntd
         bordered={false}
-        placeholder=""
-        type="number"
         autoComplete="chrome-off"
+        format={format}
         size={size ? size : isMobile ? "middle" : "large"}
+        placeholder=""
         value={value}
         disabled={disabled}
         allowClear={!disabled}

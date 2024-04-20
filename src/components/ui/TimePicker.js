@@ -1,18 +1,22 @@
 import React from "react";
 import { ComponentContainer } from "./component-container";
-import { InputNumberAntd } from "./index";
+import { TimePickerAntd } from "./index";
+import dayjs from "dayjs";
 
-export const InputNumber = ({
+export const TimePicker = ({
   value,
   required = false,
   hidden = false,
   isMobile = false,
   error,
   label,
+  format = "HH:mm ss",
   variant = "outlined",
   disabled,
   animation,
+  bgColor,
   size = null,
+  onChange,
   ...props
 }) => {
   const Container = ComponentContainer[variant];
@@ -26,16 +30,19 @@ export const InputNumber = ({
       label={label}
       disabled={disabled}
       animation={animation}
+      bgColor={bgColor}
     >
-      <InputNumberAntd
+      <TimePickerAntd
         bordered={false}
-        placeholder=""
-        type="number"
         autoComplete="chrome-off"
+        defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
+        format={format}
         size={size ? size : isMobile ? "middle" : "large"}
+        placeholder=""
         value={value}
         disabled={disabled}
         allowClear={!disabled}
+        onChange={onChange}
         {...props}
       />
     </Container>

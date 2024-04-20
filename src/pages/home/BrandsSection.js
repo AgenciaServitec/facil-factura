@@ -20,11 +20,10 @@ export const BrandsSection = () => {
 
 const Container = styled.section`
   ${({ theme }) => css`
-    padding: 3em 0;
+    padding: 5em 0;
     .content {
       width: 90%;
       margin: 0 auto;
-      background-color: ${theme.colors.light};
       .carousel-component {
         .react-multi-carousel-track {
           display: flex;

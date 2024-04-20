@@ -16,7 +16,7 @@ export const Requirements = () => {
       <WrapperComponent>
         <div className="requirements">
           <div className="requirements__title">
-            <h2>¿Requisitos? ¡Solo 3! 👇🏼</h2>
+            <h2>¡Solo 3 Requisitos! 🙌🏼</h2>
           </div>
           <ul className="requirements__list">
             <li className="requirements__list__list-item">

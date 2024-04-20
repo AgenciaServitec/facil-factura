@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, FormContact, WrapperComponent } from "../ui";
+import React from "react";
+import { Button, WrapperComponent } from "../ui";
 import { mediaQuery } from "../../styles";
 import { ImgLogoFacturaFacil } from "../../images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,9 +7,12 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-export const Header = ({ isMobile, onNavigateGoTo, onSetVisibleDrawer }) => {
-  const [visibleFormContact, setVisibleFormContact] = useState(false);
-
+export const Header = ({
+  isMobile,
+  onNavigateGoTo,
+  onSetVisibleDrawer,
+  onSetVisibleFormContact,
+}) => {
   const isAbsoluteHeader = window.location.pathname === "/";
 
   return (
@@ -52,10 +55,7 @@ export const Header = ({ isMobile, onNavigateGoTo, onSetVisibleDrawer }) => {
                     <span onClick={() => onNavigateGoTo("/")}>Inicio</span>
                   </li>
                   <li>
-                    <Link to="/plans-detail">Planes</Link>
-                  </li>
-                  <li>
-                    <a href="#service">Servicio</a>
+                    <Link to="/plans-detail">Precios</Link>
                   </li>
                 </ul>
               </nav>
@@ -65,7 +65,7 @@ export const Header = ({ isMobile, onNavigateGoTo, onSetVisibleDrawer }) => {
                   shape="round"
                   size="large"
                   style={{ padding: "0 1.7em" }}
-                  onClick={() => setVisibleFormContact(true)}
+                  onClick={() => onSetVisibleFormContact(true)}
                 >
                   Contácto
                 </Button>
@@ -74,10 +74,6 @@ export const Header = ({ isMobile, onNavigateGoTo, onSetVisibleDrawer }) => {
           )}
         </>
       </WrapperComponent>
-      <FormContact
-        visibleFormContact={visibleFormContact}
-        onClickVisibleFormContact={setVisibleFormContact}
-      />
     </Container>
   );
 };
@@ -120,6 +116,8 @@ const Container = styled.div`
         padding: 0.7em 1em;
         background-color: #fff;
         box-shadow: 0 1px 3px 0 #ccc;
+        width: 19em;
+        margin: auto;
         ul {
           list-style: none;
           padding: 0;
@@ -129,8 +127,9 @@ const Container = styled.div`
           align-items: center;
           gap: 2rem;
           li {
-            min-width: 7em;
+            width: auto;
             text-align: center;
+            padding: 0 1em;
             a,
             span {
               color: #000;

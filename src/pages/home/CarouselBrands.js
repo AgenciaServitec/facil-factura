@@ -1,8 +1,6 @@
 import Carousel from "react-multi-carousel";
 import { brands } from "../../data-list";
 
-console.log(brands);
-
 export const CarouselBrands = ({ isMobile }) => {
   const responsive = {
     desktop: {

@@ -3,6 +3,7 @@ import { CurvedLineBackground, BannerPhones } from "../../images";
 import { mediaQuery } from "../../styles";
 import { Button } from "../../components";
 import { useNavigate } from "react-router";
+import { ourPlans } from "../../data-list";
 
 export const PrincipalSection = () => {
   const navigate = useNavigate();
@@ -25,10 +26,13 @@ export const PrincipalSection = () => {
       />
       <div className="banner">
         <div className="banner__text">
-          <h1>Facturación Electrónica para negocios desde S/50</h1>
+          <h1>
+            Facturación Electrónica para negocios desde S/{" "}
+            {ourPlans[0].prices.value.toFixed(2)} por comprobante
+          </h1>
           <p>
-            Despídete de los talonarios y de la compleja página web SUNAT, con
-            solo unos clics podrás generar los comprobantes más necesarios.
+            Genera comprobantes con unos clics, adiós a talonarios y web
+            complicada de SUNAT
           </p>
           <div className="button_wrapper">
             <Button
@@ -99,7 +103,7 @@ const Container = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2em;
+      gap: 0.8em;
       text-align: center;
       padding: 6.7em 0 0 0;
       z-index: 400;
@@ -109,7 +113,7 @@ const Container = styled.section`
       h1 {
         max-width: 90%;
         font-size: 1.8em;
-        line-height: 1.2;
+        line-height: 1.1;
         margin: 0;
         ${mediaQuery.minDesktop} {
           max-width: 60%;
