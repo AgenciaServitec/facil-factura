@@ -64,22 +64,36 @@ export const PlanCard = ({
       <div className="top-header">
         <div className="card-title">
           <h3 className="strong-sm">{plan.name}</h3>
-          {plan?.tag && (
-            <Tag bordered={false} color={plan.tag.type} className="tag">
-              {plan.tag.value}
-            </Tag>
-          )}
         </div>
         {plan?.titleLegend && <span>{plan?.titleLegend}</span>}
       </div>
-      <div className="price-item">
-        <div className="price">
-          {plan?.prices && <h3>S/ {plan.prices.value}</h3>}
-          {plan?.prices && <span>/ {plan.prices.type}</span>}
+      <div className="prices-items">
+        <div className="prices-items__content">
+          <div className="prices">
+            {plan?.prices && (
+              <div className="items">
+                {plan?.discount && (
+                  <div className="old-price-with-discount">
+                    <h3 className="old-price">
+                      S/ {plan.prices.value.toFixed(2)}
+                    </h3>
+                    <Tag bordered={false} color={plan.tag.type} className="tag">
+                      -{" "}
+                      {plan?.discount.type === "fixed"
+                        ? `S/ ${plan?.discount.value}`
+                        : `${plan?.discount.value}%`}
+                    </Tag>
+                  </div>
+                )}
+                <h3 className="total-neto">S/ {plan?.totalNeto.toFixed(2)}</h3>
+              </div>
+            )}
+            {plan?.prices && <span>/ {plan.prices.type}</span>}
+          </div>
+          {plan?.prices?.priceByYear && (
+            <div className="legend-item">{`Pago total: S/${plan.prices.priceByYear} /año`}</div>
+          )}
         </div>
-        {plan?.prices?.priceByYear && (
-          <div className="legend-item">{`Pago total: S/${plan.prices.priceByYear} /año`}</div>
-        )}
       </div>
       <div className="plan-list">
         <ul>
@@ -160,16 +174,6 @@ const Container = styled.div`
           color: inherit;
           margin-bottom: 0.3em;
         }
-
-        .tag {
-          height: 2.1em;
-          font-size: 0.6em;
-          display: flex;
-          place-items: center;
-          padding: 0.1em 0.5em;
-          margin: 0.5em;
-          font-weight: 700;
-        }
       }
 
       span {
@@ -178,31 +182,59 @@ const Container = styled.div`
       }
     }
 
-    .price-item {
-      display: grid;
+    .prices-items {
+      display: flex;
       gap: 0.3em;
       margin-bottom: 1em;
+      min-height: 3.3em;
+      align-items: center;
 
-      span {
-        font-size: 0.8em;
-        font-weight: 400;
-      }
-
-      .price {
-        display: flex;
-        align-items: center;
-        gap: 0.3em;
-
-        h3 {
-          font-size: 1.7em;
-          font-weight: 900;
-          color: inherit;
+      &__content {
+        span {
+          font-size: 0.8em;
+          font-weight: 400;
+          margin-bottom: 0.3em;
         }
-      }
 
-      .legend-item {
-        font-size: 0.8em;
-        font-weight: 400;
+        .prices {
+          display: flex;
+          align-items: end;
+          gap: 0.3em;
+
+          .items {
+            .old-price-with-discount {
+              display: flex;
+              align-items: center;
+
+              .tag {
+                height: 1.7em;
+                font-size: 0.6em;
+                display: flex;
+                place-items: center;
+                padding: 0.1em 0.5em;
+                margin: 0.5em;
+                font-weight: 700;
+              }
+              .old-price {
+                font-weight: 500;
+                font-size: 0.9em;
+                text-decoration: line-through;
+                margin-bottom: 0;
+              }
+            }
+            .total-neto {
+              font-size: 1.7em;
+              font-weight: 900;
+              color: inherit;
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .legend-item {
+          font-size: 0.8em;
+          font-weight: 400;
+        }
       }
     }
 
