@@ -5,7 +5,7 @@
     "type": "normal",
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "0.30",
+      "value": 0.3,
       "type": "comprobante"
     },
     "benefitsList": [
@@ -101,7 +101,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": "S/ 0.30",
+      "vouchers": 0.30,
       "branchOfficesNumber": 1,
       "wareHousesNumber": 1,
       "usersNumber": 1,
@@ -126,10 +126,17 @@
     "id": "popular",
     "name": "Plan Popular",
     "type": "popular",
+    "tag": {
+      "type": "warning"
+    },
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "0.60",
+      "value": 0.6,
       "type": "comprobante"
+    },
+    "discount": {
+      "type": "percentage",
+      "value": 30
     },
     "benefitsList": [
       {
@@ -224,7 +231,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": "S/ 0.60",
+      "vouchers": 0.60,
       "branchOfficesNumber": 2,
       "wareHousesNumber": 2,
       "usersNumber": 3,
@@ -250,13 +257,16 @@
     "name": "Plan Control",
     "type": "normal",
       "tag": {
-        "value": "-S/118.80",
         "type": "warning"
       },
     "titleLegend": "100% Digital",
     "prices": {
-      "value": "0.80",
+      "value": 0.8,
       "type": "comprobante"
+    },
+    "discount": {
+      "type": "percentage",
+      "value": 30
     },
     "benefitsList": [
       {
@@ -351,7 +361,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": "S/ 0.80",
+      "vouchers": 0.80,
       "branchOfficesNumber": "Ilimitadas",
       "wareHousesNumber": "Ilimitadas",
       "usersNumber": "Ilimitadas",

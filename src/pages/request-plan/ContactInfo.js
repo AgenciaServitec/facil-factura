@@ -3,20 +3,20 @@ import styled, { css } from "styled-components";
 import {
   Button,
   Checkbox,
+  ComponentContainer,
+  DatePicker,
   Form,
   Input,
   InputNumber,
-  Select,
   notification,
-  DatePicker,
-  TimePicker,
-  ComponentContainer,
   RadioGroup,
+  Select,
+  TimePicker,
 } from "../../components";
 import { phoneCodes } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Col, Row } from "../../components/ui";
+import { Col, Row, Tag } from "../../components/ui";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
@@ -24,7 +24,6 @@ import { useDevice, useFormUtils } from "../../hooks";
 import { Contact } from "../../images";
 import { mediaQuery } from "../../styles";
 import { darken } from "polished";
-import { Link } from "react-router-dom";
 import { servitecSalesApiUrl } from "../../firebase";
 import dayjs from "dayjs";
 
@@ -91,6 +90,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         id: selectedPlan.id,
         name: selectedPlan.name,
         price: selectedPlan.prices.value,
+        totalNeto: selectedPlan.totalNeto,
+        discount: selectedPlan?.discount || null,
       },
       termsAndConditions: formData?.acceptTermsAndConditions || true,
       hostname: "factura.servitec.site",
@@ -137,14 +138,35 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
               </div>
               <div className="card-summary">
                 <div className="card-summary__item">
-                  <div>{selectedPlan.name}</div>
+                  <div className="name-item">
+                    {selectedPlan.name}{" "}
+                    {selectedPlan?.discount && (
+                      <Tag
+                        bordered={false}
+                        color={selectedPlan.tag.type}
+                        className="tag"
+                      >
+                        -
+                        {selectedPlan?.discount.type === "fixed"
+                          ? `S/ ${selectedPlan?.discount.value}`
+                          : `${selectedPlan?.discount.value}%`}
+                      </Tag>
+                    )}
+                  </div>
                   <div>
                     <span>{selectedPlan.titleLegend}</span>
                   </div>
                 </div>
-                <div className="card-summary__item price">
-                  <div>
-                    S/ {selectedPlan.prices.value}{" "}
+                <div className="card-summary__item">
+                  <div className="prices-items">
+                    {selectedPlan?.discount && (
+                      <span className="old-price">
+                        S/ {selectedPlan.prices.value.toFixed(2)}
+                      </span>
+                    )}
+                    <span className="total-neto">
+                      S/ {selectedPlan.totalNeto.toFixed(2)}
+                    </span>
                     <span>/ {selectedPlan.prices.type}</span>
                   </div>
                 </div>
@@ -406,28 +428,60 @@ const Container = styled.div`
             background: ${darken(0.03, theme.colors.light)};
             padding: 1em 1.8em;
             border-radius: 1em;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
             margin-bottom: 1em;
+            gap: 0.5em;
+            ${mediaQuery.minDesktop} {
+              grid-template-columns: auto 1fr;
+              grid-template-rows: 1fr;
+            }
             &__item {
-              width: 50%;
-              height: auto;
-              display: grid;
-              justify-content: center;
-              font-size: 1.3em;
-              font-weight: 700;
-              gap: 0.2em;
               span {
                 font-size: 0.7em;
                 font-weight: 400;
               }
             }
             &__item:first-child {
-              justify-content: start;
+              font-size: 1.3em;
+              font-weight: 700;
+              white-space: nowrap;
+
+              .name-item {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                .tag {
+                  height: 1.7em;
+                  font-size: 0.6em;
+                  display: flex;
+                  place-items: center;
+                  padding: 0.1em 0.5em;
+                  margin: 0.5em;
+                  font-weight: 700;
+                }
+              }
             }
-            .price {
+            &__item:last-child {
               display: flex;
-              align-items: center;
               justify-content: end;
+              align-items: center;
+              .prices-items {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 0.5em;
+                .old-price {
+                  font-size: 1em;
+                  text-decoration: line-through;
+                }
+                .total-neto {
+                  font-size: 1.4em;
+                  font-weight: 700;
+                }
+              }
             }
           }
         }

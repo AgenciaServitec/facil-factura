@@ -2,8 +2,14 @@ import styled from "styled-components";
 import { Plans, WrapperComponent } from "../../components";
 import { mediaQuery } from "../../styles";
 import { ourPlans } from "../../data-list";
+import { applyDiscount } from "../../utils";
 
 export const HomePagePlans = () => {
+  const ourPlansWithApplyDiscount = ourPlans.map((plan) => ({
+    ...plan,
+    totalNeto: applyDiscount({ plan }),
+  }));
+
   return (
     <Container id="plans">
       <WrapperComponent>
@@ -13,12 +19,12 @@ export const HomePagePlans = () => {
             <p>Sin contratos ni límites en tus facturaciones.</p>
           </div>
           <div className="planes-wrapper">
-            <Plans plans={ourPlans} />
+            <Plans plans={ourPlansWithApplyDiscount} />
           </div>
           <div className="legend-plans">
             <p>
               <strong>
-                Cuota de activación desde el Plan Control o superior: S/50 (pago
+                Cuota de activación desde el Plan Popular o superior: S/50 (pago
                 único).
               </strong>
               {/*Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,

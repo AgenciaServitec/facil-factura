@@ -3,17 +3,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Table } from "../components";
 import { ourPlans } from "../data-list";
+import { applyDiscount } from "../utils";
 
 export const PlanDetailsTable = ({ planType }) => {
+  const ourPlansWithApplyDiscount = ourPlans.map((plan) => ({
+    ...plan,
+    totalNeto: applyDiscount({ plan }),
+  }));
+
   const findPlanById = (planId) =>
-    ourPlans.find((plan) => plan.id === planId)?.tableDetails || "";
+    ourPlansWithApplyDiscount.find((plan) => plan.id === planId);
 
   const getPlansWithData = (fieldType) => {
     const rowData = [];
 
-    ["micro", "popular", "planControl"].map(
-      (plan) => (rowData[plan] = findPlanById(plan)?.[fieldType])
-    );
+    ["micro", "popular", "planControl"].map((plan) => {
+      if (fieldType === "vouchers") {
+        return (rowData[plan] = `S/ ${
+          findPlanById(plan)?.totalNeto.toFixed(2) || 0
+        }`);
+      }
+
+      return (
+        (rowData[plan] = findPlanById(plan)?.tableDetails?.[fieldType]) || ""
+      );
+    });
 
     return rowData;
   };
