@@ -23,10 +23,9 @@ export const HomePagePlans = () => {
           </div>
           <div className="legend-plans">
             <p>
-              <strong>
-                Cuota de activación desde el Plan Popular o superior: S/50 (pago
-                único).
-              </strong>
+              {/*<strong>*/}
+              {/*  Cuota de activación en todos los planes: S/50 (pago único).*/}
+              {/*</strong>*/}
               {/*Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,
               Cusco Ciudad y Huancayo. Si te encuentras en otra ubicación puedes
               ver los Planes que tenemos para ti desde <a href="#">aquí</a>. (*)
