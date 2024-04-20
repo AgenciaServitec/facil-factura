@@ -57,7 +57,7 @@ const Container = styled.section`
     }
 
     .item-carousel-text {
-      color: ${theme.colors.tertiary};
+      color: ${theme.colors.font1};
       height: 23em;
       flex: 1 1 0;
       text-align: center;
