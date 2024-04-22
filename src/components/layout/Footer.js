@@ -9,7 +9,6 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faBookOpen,
   faCalendar,
   faEnvelope,
   faHeart,
@@ -85,10 +84,20 @@ export const Footer = () => (
                 <strong>Políticas y condiciones</strong>
               </li>
               <li>
-                <a href="#">Términos y condiciones</a>
+                <a
+                  href="https://facilfactura.pe/facturacion/terminoslegales/terminos_del_servicio"
+                  target="_blank"
+                >
+                  Términos y condiciones
+                </a>
               </li>
               <li>
-                <a href="#">Política de privacidad</a>
+                <a
+                  href="https://facilfactura.pe/facturacion/terminoslegales/terminos_del_servicio"
+                  target="_blank"
+                >
+                  Política de privacidad
+                </a>
               </li>
             </ul>
           </div>
@@ -107,12 +116,12 @@ export const Footer = () => (
                   Técnico
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <FontAwesomeIcon icon={faBookOpen} className="icon" />
-                  Libro de reclamaciones
-                </a>
-              </li>
+              {/*<li>*/}
+              {/*  <a href="#">*/}
+              {/*    <FontAwesomeIcon icon={faBookOpen} className="icon" />*/}
+              {/*    Libro de reclamaciones*/}
+              {/*  </a>*/}
+              {/*</li>*/}
               <li>
                 <span>
                   <FontAwesomeIcon icon={faCalendar} className="icon" />
