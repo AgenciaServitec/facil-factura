@@ -96,12 +96,11 @@ export const FrequentlyQuestions = () => {
       },
       {
         key: "6",
-        label: "¿Ofrecen descuentos si me suscribo por un año completo?",
+        label: "¿Brindan algún descuento?",
         children: (
           <p className="response_question">
-            ¡Sí, claro! Si decides suscribirte por un año completo, recibirás un
-            descuento de S/50 en tu cuota de activación, además de los
-            descuentos de hasta S/198.80 que se aplican a los planes anuales.
+            El único descuento que tenemos es el descuento de 30% para los 30
+            primeros.
           </p>
         ),
         style: panelStyle,
