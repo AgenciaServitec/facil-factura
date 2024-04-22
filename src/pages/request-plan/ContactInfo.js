@@ -86,8 +86,9 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
       dateToMeet: dayjs(formData.dateToMeet).format("DD/MM/YYYY"),
       timeToMeet: dayjs(formData.timeToMeet).format("HH:mm"),
       meetingType: formData.meetingType,
-      plan: {
+      product: {
         id: selectedPlan.id,
+        type: "plan",
         name: selectedPlan.name,
         price: selectedPlan.prices.value,
         totalNeto: selectedPlan.totalNeto,
