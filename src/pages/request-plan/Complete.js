@@ -5,12 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { Step3Complete } from "../../images";
 import { mediaQuery } from "../../styles";
+import * as confetti from "confettis";
 
 export const Complete = ({ onNavigateGoTo }) => {
   useEffect(() => {
+    confetti.create({
+      count: 500,
+    });
+
     setTimeout(() => {
       onNavigateGoTo("/");
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (
