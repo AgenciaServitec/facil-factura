@@ -89,7 +89,7 @@ export const FormContact = ({
         countryCode: formData.countryCode,
       },
       message: formData.message,
-      hostname: window.location.hostname || "facturacion-electronica.site",
+      hostname: "factura.servitec.site",
     },
   });
 
