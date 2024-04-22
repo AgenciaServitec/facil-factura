@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { CurvedLineBackground, BannerPhones } from "../../images";
+import {
+  CurvedLineBackground,
+  BannerPhones,
+  StarPurple,
+  GreenCircle,
+} from "../../images";
 import { mediaQuery } from "../../styles";
 import { Button } from "../../components";
 import { useNavigate } from "react-router";
@@ -15,6 +20,12 @@ export const PrincipalSection = () => {
 
   return (
     <Container>
+      <img src={StarPurple} alt="star - facil factura" className="star-item" />
+      <img
+        src={GreenCircle}
+        alt="circulo - facil factura"
+        className="circle-item"
+      />
       <CurvedLineBackground
         style={{
           position: "absolute",
@@ -69,8 +80,40 @@ const Container = styled.section`
   min-height: 85vh;
   height: auto;
   position: relative;
+
   ${mediaQuery.minTablet} {
-    min-height: 48rem;
+    min-height: 50rem;
+  }
+
+  .star-item,
+  .circle-item {
+    width: 1.1em;
+    height: 1.1em;
+    position: absolute;
+    z-index: 200;
+    ${mediaQuery.minTablet} {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  .star-item {
+    top: 20%;
+    right: 7%;
+
+    ${mediaQuery.minTablet} {
+      top: 23%;
+      right: 20%;
+    }
+  }
+  .circle-item {
+    top: 39%;
+    left: 7%;
+
+    ${mediaQuery.minTablet} {
+      top: 36%;
+      left: 20%;
+    }
   }
 
   &::after {

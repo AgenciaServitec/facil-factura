@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ScreenDesktop } from "../../images";
+import { ScreenDesktop2 } from "../../images";
 import { WrapperComponent } from "../../components";
 import { mediaQuery } from "../../styles";
 
@@ -8,7 +8,10 @@ export const DesktopSection = () => {
     <Container>
       <WrapperComponent>
         <div className="content">
-          <img src={ScreenDesktop} alt="Imagen de la vista de Facil Factura en una computadora." />
+          <img
+            src={ScreenDesktop2}
+            alt="Imagen de la vista de Facil Factura en una computadora."
+          />
         </div>
       </WrapperComponent>
     </Container>
@@ -23,7 +26,7 @@ const Container = styled.section`
       width: 90%;
       margin: 0 auto;
       ${mediaQuery.minTablet} {
-          width: 70%;
+        width: 70%;
       }
     }
 
