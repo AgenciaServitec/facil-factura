@@ -101,7 +101,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": 0.30,
+      "vouchers": 0.35,
       "branchOfficesNumber": 1,
       "wareHousesNumber": 1,
       "usersNumber": 1,
@@ -231,7 +231,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": 0.60,
+      "vouchers": 0.6,
       "branchOfficesNumber": 2,
       "wareHousesNumber": 2,
       "usersNumber": 3,
@@ -256,9 +256,9 @@
     "id": "planControl",
     "name": "Plan Control",
     "type": "normal",
-      "tag": {
-        "type": "warning"
-      },
+    "tag": {
+      "type": "warning"
+    },
     "titleLegend": "100% Digital",
     "prices": {
       "value": 0.8,
@@ -361,7 +361,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": 0.80,
+      "vouchers": 0.8,
       "branchOfficesNumber": "Ilimitadas",
       "wareHousesNumber": "Ilimitadas",
       "usersNumber": "Ilimitadas",
