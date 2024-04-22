@@ -37,10 +37,9 @@ export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
           onSetStepNumber={onSetStepNumber}
         />
       </div>
-      <div className="btn-wrapper">
+      <div className="btn-wrapper" id="btn-request-plan-continue">
         <Button
           type="primary"
-          id="btn-request-plan-continue"
           style={{
             padding: "1.5em 2em",
             display: "flex",

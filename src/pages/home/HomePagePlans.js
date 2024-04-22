@@ -16,7 +16,9 @@ export const HomePagePlans = () => {
         <div className="plans">
           <div className="title-items">
             <h2>Planes adaptables a tu crecimiento 🤝🏼</h2>
-            <p>Sin contratos ni límites en tus facturaciones.</p>
+            <p>
+              Paga solo la cantidad de comprobantes emitidos a precios muy bajos
+            </p>
           </div>
           <div className="planes-wrapper">
             <Plans plans={ourPlansWithApplyDiscount} />
