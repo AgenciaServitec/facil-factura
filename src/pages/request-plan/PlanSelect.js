@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button, notification, Plans } from "../../components";
 import { ourPlans } from "../../data-list";
@@ -34,11 +34,13 @@ export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
           plans={ourPlansWithApplyDiscount}
           planType={planType}
           onSetPlanType={onSetPlanType}
+          onSetStepNumber={onSetStepNumber}
         />
       </div>
       <div className="btn-wrapper">
         <Button
           type="primary"
+          id="btn-request-plan-continue"
           style={{
             padding: "1.5em 2em",
             display: "flex",

@@ -81,6 +81,10 @@ const Container = styled.section`
   height: auto;
   position: relative;
 
+  ${mediaQuery.maxMobile} {
+    min-height: 40rem;
+  }
+
   ${mediaQuery.minTablet} {
     min-height: 50rem;
   }

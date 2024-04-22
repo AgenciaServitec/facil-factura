@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import {
   Button,
@@ -31,6 +31,10 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
   const { isMobile } = useDevice();
 
   const [loadingContact, setLoadingContact] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const schema = yup.object({
     fullName: yup.string(),
@@ -312,8 +316,16 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                             error={error(name)}
                             required={required(name)}
                             options={[
-                              { label: "Presencial", value: "inPerson" },
-                              { label: "Remoto", value: "remote" },
+                              {
+                                label: "Presencial",
+                                value: "inPerson",
+                                key: "inPerson",
+                              },
+                              {
+                                label: "Remoto",
+                                value: "remote",
+                                key: "remote",
+                              },
                             ]}
                           />
                         )}

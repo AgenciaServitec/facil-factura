@@ -9,6 +9,8 @@ import * as confetti from "confettis";
 
 export const Complete = ({ onNavigateGoTo }) => {
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     confetti.create({
       count: 500,
     });

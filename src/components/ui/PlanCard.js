@@ -18,6 +18,8 @@ export const PlanCard = ({
   planType,
   onSetPlanType,
   onNavigateGoTo,
+  onSetStepNumber,
+  isMobile,
 }) => {
   const getIconType = (type) => {
     switch (type) {
@@ -111,7 +113,20 @@ export const PlanCard = ({
             <Button
               type="primary"
               size="middle"
-              onClick={() => onSetPlanType(plan.id)}
+              onClick={() => {
+                const btnContinue = document.getElementById(
+                  "btn-request-plan-continue"
+                );
+                btnContinue &&
+                  btnContinue.scrollIntoView({ behavior: "smooth" });
+
+                if (isMobile) {
+                  onSetPlanType(plan.id);
+                  return onSetStepNumber();
+                }
+
+                return onSetPlanType(plan.id);
+              }}
             >
               Seleccionar
             </Button>

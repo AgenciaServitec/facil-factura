@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { mediaQuery } from "../../styles";
 
 export const PromotionComponent = () => {
   const navigate = useNavigate();
@@ -53,7 +54,12 @@ const Container = styled.div`
 
   ${({ visible }) => css`
     transition: all ease-in-out 0.5s;
-    height: ${visible ? "2.2em" : "0px"};
+    height: ${visible ? "3em" : "0px"};
+    ${mediaQuery.minTablet} {
+      ${({ visible }) => css`
+        height: ${visible ? "2.2em" : "0px"};
+      `}
+    }
   `}
   div:nth-child(2) {
     span {
