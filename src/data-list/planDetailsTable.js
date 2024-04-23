@@ -237,6 +237,7 @@ export const PlanDetailsTable = ({ planType }) => {
     <Table
       key={planType}
       id="plan-details-table"
+      virtual
       columns={columns}
       dataSource={dataSource}
       pagination={false}
