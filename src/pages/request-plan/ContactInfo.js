@@ -62,18 +62,15 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     try {
       setLoadingContact(true);
 
-      console.log({ formData });
-
       const contact = mapContactData(formData);
 
-      console.log({ contact });
-      // const response = await fetchSendEmail(contact);
-      //
-      // if (!response.ok) throw new Error(response.statusText);
-      //
-      // resetContactForm();
-      //
-      // onSetStepNumber(2);
+      const response = await fetchSendEmail(contact);
+
+      if (!response.ok) throw new Error(response.statusText);
+
+      resetContactForm();
+
+      onSetStepNumber(2);
     } catch (e) {
       console.error("ErrorSaveBenefit: ", e);
       notification({ type: "error" });
