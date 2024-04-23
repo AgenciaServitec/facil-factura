@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentContainer } from "./component-container";
 import { TimePickerAntd } from "./index";
 import dayjs from "dayjs";
+import styled from "styled-components";
 
 export const TimePicker = ({
   value,
@@ -12,6 +13,7 @@ export const TimePicker = ({
   label,
   format = "HH:mm ss",
   variant = "outlined",
+  placeholder = "",
   disabled,
   animation,
   bgColor,
@@ -32,19 +34,49 @@ export const TimePicker = ({
       animation={animation}
       bgColor={bgColor}
     >
-      <TimePickerAntd
-        bordered={false}
-        autoComplete="chrome-off"
-        defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
-        format={format}
-        size={size ? size : isMobile ? "middle" : "large"}
-        placeholder=""
-        value={value}
-        disabled={disabled}
-        allowClear={!disabled}
-        onChange={onChange}
-        {...props}
-      />
+      <WrapperItem>
+        {isMobile ? (
+          <input
+            type="time"
+            className="timepicker-mobile"
+            placeholder={placeholder}
+            autoComplete="chrome-off"
+            value={value}
+            disabled={disabled}
+            onChange={(e) => onChange(e.target.value)}
+            required={required}
+          />
+        ) : (
+          <TimePickerAntd
+            variant="borderless"
+            mode="time"
+            autoComplete="chrome-off"
+            defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
+            format={format}
+            size={size ? size : isMobile ? "middle" : "large"}
+            placeholder={placeholder}
+            value={value}
+            disabled={disabled}
+            allowClear={!disabled}
+            onChange={onChange}
+            {...props}
+          />
+        )}
+      </WrapperItem>
     </Container>
   );
 };
+
+const WrapperItem = styled.div`
+  width: 100%;
+  height: auto;
+  .timepicker-mobile {
+    background: #fff;
+    width: 100%;
+    height: 2.3em;
+    border: none;
+    margin: 0.1em 0;
+    padding: 0 0.69em;
+    outline: none;
+  }
+`;

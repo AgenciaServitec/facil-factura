@@ -41,8 +41,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
-    dateToMeet: yup.date().required(),
-    timeToMeet: yup.date().required(),
+    dateToMeet: yup.string().required(),
+    timeToMeet: yup.string().required(),
     meetingType: yup.string().required(),
     acceptTermsAndConditions: yup.boolean().required(),
   });
@@ -61,6 +61,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
   const onSubmitRequestSend = async (formData) => {
     try {
       setLoadingContact(true);
+
+      console.log({ formData });
 
       const contact = mapContactData(formData);
 
@@ -88,7 +90,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         countryCode: formData.countryCode,
       },
       dateToMeet: dayjs(formData.dateToMeet).format("DD/MM/YYYY"),
-      timeToMeet: dayjs(formData.timeToMeet).format("HH:mm"),
+      timeToMeet: formData.timeToMeet,
       meetingType: formData.meetingType,
       product: {
         id: selectedPlan.id,
@@ -269,6 +271,7 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                             label="Fecha"
                             size="large"
                             placeholder="Fecha"
+                            isMobile={isMobile}
                             animation={true}
                             name={name}
                             value={value}
@@ -291,13 +294,13 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
                             size="large"
                             format="HH:mm"
                             placeholder="Hora"
+                            isMobile={isMobile}
                             animation={true}
                             name={name}
                             value={value}
                             onChange={onChange}
                             error={error(name)}
                             required={required(name)}
-                            minDate={dayjs()}
                           />
                         )}
                       />
