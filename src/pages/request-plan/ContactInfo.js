@@ -41,8 +41,8 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
     email: yup.string().email().required(),
     countryCode: yup.string().required(),
     phoneNumber: yup.string().min(9).required(),
-    dateToMeet: yup.string().required(),
-    timeToMeet: yup.string().required(),
+    dateToMeet: yup.mixed().required(),
+    timeToMeet: yup.mixed().required(),
     meetingType: yup.string().required(),
     acceptTermsAndConditions: yup.boolean().required(),
   });
@@ -66,13 +66,14 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
 
       const contact = mapContactData(formData);
 
-      const response = await fetchSendEmail(contact);
-
-      if (!response.ok) throw new Error(response.statusText);
-
-      resetContactForm();
-
-      onSetStepNumber(2);
+      console.log({ contact });
+      // const response = await fetchSendEmail(contact);
+      //
+      // if (!response.ok) throw new Error(response.statusText);
+      //
+      // resetContactForm();
+      //
+      // onSetStepNumber(2);
     } catch (e) {
       console.error("ErrorSaveBenefit: ", e);
       notification({ type: "error" });
@@ -90,7 +91,9 @@ export const ContactInfo = ({ selectedPlan, onSetStepNumber }) => {
         countryCode: formData.countryCode,
       },
       dateToMeet: dayjs(formData.dateToMeet).format("DD/MM/YYYY"),
-      timeToMeet: formData.timeToMeet,
+      timeToMeet: isMobile
+        ? formData.timeToMeet
+        : dayjs(formData.timeToMeet).format("HH:mm"),
       meetingType: formData.meetingType,
       product: {
         id: selectedPlan.id,

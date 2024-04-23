@@ -11,7 +11,7 @@ export const TimePicker = ({
   isMobile = false,
   error,
   label,
-  format = "HH:mm ss",
+  format = "HH:mm",
   variant = "outlined",
   placeholder = "",
   disabled,
@@ -49,9 +49,8 @@ export const TimePicker = ({
         ) : (
           <TimePickerAntd
             variant="borderless"
-            mode="time"
             autoComplete="chrome-off"
-            defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
+            defaultOpenValue={dayjs("00:00", "HH:mm")}
             format={format}
             size={size ? size : isMobile ? "middle" : "large"}
             placeholder={placeholder}
