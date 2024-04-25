@@ -41,26 +41,35 @@ const global = css`
   }
 
   h1 {
-    font-size: 2.2rem;
-    font-weight: bold;
-  }
-
-  ${mediaQuery.minTablet} {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    font-weight: 800;
+    ${mediaQuery.minTablet} {
+      font-size: 2.9em;
+    }
   }
 
   h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    font-weight: 700;
 
     ${mediaQuery.minTablet} {
-      font-size: 2rem;
+      font-size: 2.7em;
     }
   }
 
   h3 {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.5em;
+
+    ${mediaQuery.minTablet} {
+      font-size: 1.8rem;
+    }
   }
 
   h4 {
@@ -79,4 +88,4 @@ const global = css`
   }
 `;
 
-export const GlobalStyle = createGlobalStyle(global);
+export const GlobalStyle = createGlobalStyle([global]);

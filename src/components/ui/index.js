@@ -7,12 +7,18 @@ import {
   Alert,
   Row,
   Col,
-  Radio,
   Modal,
   Tag,
   Collapse,
   Carousel,
-  Table
+  Table,
+  Radio as RadioAntd,
+  Input as InputAntd,
+  InputNumber as InputNumberAntd,
+  Select as AntSelect,
+  DatePicker as DatePickerAntd,
+  TimePicker as TimePickerAntd,
+  Checkbox as CheckboxAntd,
 } from "antd";
 
 export {
@@ -24,12 +30,18 @@ export {
   Alert,
   Row,
   Col,
-  Radio,
   Modal,
   Tag,
   Collapse,
   Carousel,
-  Table
+  Table,
+  RadioAntd,
+  InputAntd,
+  InputNumberAntd,
+  AntSelect,
+  DatePickerAntd,
+  TimePickerAntd,
+  CheckboxAntd,
 };
 // ANTD COMPONENTS
 export * from "./Title";
@@ -53,3 +65,6 @@ export * from "./ButtonFloatingContact";
 export * from "./Plans";
 export * from "./PlanCard";
 export * from "./Checkbox";
+export * from "./DatePicker";
+export * from "./TimePicker";
+export * from "./RadioGroup";

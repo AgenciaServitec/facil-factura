@@ -14,6 +14,7 @@ import { useNavigate } from "react-router";
 import { Complete } from "./Complete";
 import { useQueryString } from "../../hooks";
 import { ourPlans } from "../../data-list";
+import { applyDiscount } from "../../utils";
 
 export const RequestPlanIntegration = () => {
   const navigate = useNavigate();
@@ -22,8 +23,14 @@ export const RequestPlanIntegration = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState(null);
 
+  const ourPlansWithApplyDiscount = ourPlans.map((plan) => ({
+    ...plan,
+    totalNeto: applyDiscount({ plan }),
+  }));
+
   useEffect(() => {
-    const _plan = (ourPlans || []).find((plan) => plan.id === planType) || null;
+    const _plan =
+      ourPlansWithApplyDiscount.find((plan) => plan.id === planType) || null;
 
     if (_plan) {
       setSelectedPlan(_plan);

@@ -2,10 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { capitalize, isEmpty, startCase, toString } from "lodash";
 import { classNames, keyframes } from "../../../styles";
-import Typography from "antd/lib/typography";
-import { lighten, darken } from "polished";
-
-const { Text } = Typography;
+import { Text } from "../index";
+import { darken } from "polished";
 
 // interface Props {
 //   value?: string | number | boolean | Record<string, unknown> | Moment;
@@ -181,27 +179,19 @@ const Container = styled.div`
       };
 
       &:focus {
-        -webkit-text-fill-color: ${({ theme }) => theme.colors.primary};
+              -webkit-text-fill-color: ${({ theme }) => theme.colors.primary};
       }
     }
 
     //Styles default
     .ant-input-number,
     .ant-picker,
-    .ant-select {
+    .ant-select,
+    .ant-input-outlined{
       width: 100%;
       box-shadow: none;
       outline: none;
-    }
-
-    .ant-input-affix-wrapper,
-    .ant-input {
-      box-shadow: none;
-    }
-
-    .ant-input-group-addon {
-      border: 0 solid #d9d9d9;
-      border-left: 1px solid #d9d9d9;
+      border: none;
     }
   }
   `}

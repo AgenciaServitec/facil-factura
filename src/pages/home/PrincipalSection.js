@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { CurvedLineBackground, BannerPhones } from "../../images";
+import {
+  CurvedLineBackground,
+  BannerPhones,
+  StarPurple,
+  GreenCircle,
+} from "../../images";
 import { mediaQuery } from "../../styles";
 import { Button } from "../../components";
 import { useNavigate } from "react-router";
+import { ourPlans } from "../../data-list";
 
 export const PrincipalSection = () => {
   const navigate = useNavigate();
@@ -14,6 +20,12 @@ export const PrincipalSection = () => {
 
   return (
     <Container>
+      <img src={StarPurple} alt="star - facil factura" className="star-item" />
+      <img
+        src={GreenCircle}
+        alt="circulo - facil factura"
+        className="circle-item"
+      />
       <CurvedLineBackground
         style={{
           position: "absolute",
@@ -25,10 +37,13 @@ export const PrincipalSection = () => {
       />
       <div className="banner">
         <div className="banner__text">
-          <h1>Facturación Electrónica para negocios desde S/50</h1>
+          <h1>
+            Facturación Electrónica para negocios desde S/{" "}
+            {ourPlans[0].prices.value.toFixed(2)} por comprobante
+          </h1>
           <p>
-            Despídete de los talonarios y de la compleja página web SUNAT, con
-            solo unos clics podrás generar los comprobantes más necesarios.
+            Genera comprobantes con unos clics, adiós a talonarios y web
+            complicada de SUNAT
           </p>
           <div className="button_wrapper">
             <Button
@@ -65,8 +80,44 @@ const Container = styled.section`
   min-height: 85vh;
   height: auto;
   position: relative;
+
+  ${mediaQuery.maxMobile} {
+    min-height: 40rem;
+  }
+
   ${mediaQuery.minTablet} {
-    min-height: 48rem;
+    min-height: 50rem;
+  }
+
+  .star-item,
+  .circle-item {
+    width: 1.1em;
+    height: 1.1em;
+    position: absolute;
+    z-index: 200;
+    ${mediaQuery.minTablet} {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  .star-item {
+    top: 20%;
+    right: 7%;
+
+    ${mediaQuery.minTablet} {
+      top: 23%;
+      right: 20%;
+    }
+  }
+  .circle-item {
+    top: 39%;
+    left: 7%;
+
+    ${mediaQuery.minTablet} {
+      top: 36%;
+      left: 20%;
+    }
   }
 
   &::after {
@@ -99,7 +150,7 @@ const Container = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2em;
+      gap: 0.8em;
       text-align: center;
       padding: 6.7em 0 0 0;
       z-index: 400;
@@ -109,7 +160,7 @@ const Container = styled.section`
       h1 {
         max-width: 90%;
         font-size: 1.8em;
-        line-height: 1.2;
+        line-height: 1.1;
         margin: 0;
         ${mediaQuery.minDesktop} {
           max-width: 60%;

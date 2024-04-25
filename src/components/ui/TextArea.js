@@ -1,6 +1,6 @@
 import React from "react";
-import InputAntd from "antd/lib/input";
 import { ComponentContainer } from "./component-container";
+import { InputAntd } from "./index";
 
 export const TextArea = ({
   value,
@@ -21,10 +21,9 @@ export const TextArea = ({
       disabled={disabled}
       error={error}
       label={label}
-      animation={false}
+      animation={true}
     >
       <InputAntd.TextArea
-        bordered={false}
         value={value}
         disabled={disabled}
         autoComplete="chrome-off"

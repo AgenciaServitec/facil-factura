@@ -2,30 +2,37 @@ import styled from "styled-components";
 import { Plans, WrapperComponent } from "../../components";
 import { mediaQuery } from "../../styles";
 import { ourPlans } from "../../data-list";
+import { applyDiscount } from "../../utils";
 
 export const HomePagePlans = () => {
+  const ourPlansWithApplyDiscount = ourPlans.map((plan) => ({
+    ...plan,
+    totalNeto: applyDiscount({ plan }),
+  }));
+
   return (
     <Container id="plans">
       <WrapperComponent>
         <div className="plans">
           <div className="title-items">
-            <h2>Planes que evolucionan contigo 🤝🏼</h2>
-            <p>Sin compromisos ni restricciones de cantidad para tus ventas.</p>
+            <h2>Planes adaptables a tu crecimiento 🤝🏼</h2>
+            <p>
+              Paga solo la cantidad de comprobantes emitidos a precios muy bajos
+            </p>
           </div>
           <div className="planes-wrapper">
-            <Plans plans={ourPlans} />
+            <Plans plans={ourPlansWithApplyDiscount} />
           </div>
           <div className="legend-plans">
             <p>
-              <strong>
-                Cuota de activación desde el Plan Control o superior: S/50 (pago
-                único).
-              </strong>{" "}
-              Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,
+              {/*<strong>*/}
+              {/*  Cuota de activación en todos los planes: S/50 (pago único).*/}
+              {/*</strong>*/}
+              {/*Planes válidos para Lima Metropolitana, Callao, Arequipa Ciudad,
               Cusco Ciudad y Huancayo. Si te encuentras en otra ubicación puedes
               ver los Planes que tenemos para ti desde <a href="#">aquí</a>. (*)
               Ticketera incluida a modo de préstamo durante tu periodo de
-              afiliación al Plan Control o superior.
+              afiliación al Plan Control o superior.*/}
             </p>
           </div>
         </div>

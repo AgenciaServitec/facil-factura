@@ -17,6 +17,10 @@ export const PlansDetail = () => {
   return (
     <Container>
       <WrapperComponent>
+        <div className="promotion-title">
+          El descuento del 30% solo esta disponible para los siguientes planes:{" "}
+          <strong>Plan Popular</strong> y <strong>Plan Control</strong>
+        </div>
         <HomePagePlans />
         <div className="content">
           <PlanDetailsTable planType={planType} />
@@ -29,6 +33,12 @@ export const PlansDetail = () => {
 const Container = styled.section`
   ${({ theme }) => css`
     padding: 3em 0;
+
+    .promotion-title {
+      text-align: center;
+      color: red;
+      padding: 0 1em;
+    }
 
     .content {
       width: 90%;

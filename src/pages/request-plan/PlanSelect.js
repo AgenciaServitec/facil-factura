@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button, notification, Plans } from "../../components";
 import { ourPlans } from "../../data-list";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { applyDiscount } from "../../utils";
 
 export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
   const onRequestContinue = () => {
@@ -17,6 +18,11 @@ export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
     onSetStepNumber(1);
   };
 
+  const ourPlansWithApplyDiscount = ourPlans.map((plan) => ({
+    ...plan,
+    totalNeto: applyDiscount({ plan }),
+  }));
+
   return (
     <Container>
       <div className="request-plan__title">
@@ -25,12 +31,13 @@ export const PlanSelect = ({ planType, onSetPlanType, onSetStepNumber }) => {
       <div className="request-plan__plans">
         <Plans
           type="selection"
-          plans={ourPlans}
+          plans={ourPlansWithApplyDiscount}
           planType={planType}
           onSetPlanType={onSetPlanType}
+          onSetStepNumber={onSetStepNumber}
         />
       </div>
-      <div className="btn-wrapper">
+      <div className="btn-wrapper" id="btn-request-plan-continue">
         <Button
           type="primary"
           style={{

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 export const Drawer = ({
   visibleDrawer,
   onSetVisibleDrawer,
-  onClickVisibleFormContact,
+  onSetVisibleFormContact,
 }) => {
   const navigate = useNavigate();
   return (
@@ -21,15 +21,12 @@ export const Drawer = ({
         <span onClick={() => navigate("/")}>Inicio</span>
       </MenuItem>
       <MenuItem onClick={() => onSetVisibleDrawer(false)}>
-        <a href="#about-us">Nosotros</a>
-      </MenuItem>
-      <MenuItem onClick={() => onSetVisibleDrawer(false)}>
-        <a href="#services">Servicios</a>
+        <span onClick={() => navigate("/plans-detail")}>Precios</span>
       </MenuItem>
       <MenuItem
         onClick={() => {
           onSetVisibleDrawer(false);
-          onClickVisibleFormContact();
+          onSetVisibleFormContact(true);
         }}
       >
         <span>Contácto</span>

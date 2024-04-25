@@ -89,7 +89,7 @@ export const FormContact = ({
         countryCode: formData.countryCode,
       },
       message: formData.message,
-      hostname: window.location.hostname || "facturacion-electronica.site",
+      hostname: "factura.servitec.site",
     },
   });
 
@@ -104,7 +104,14 @@ export const FormContact = ({
 
   return (
     <ModalComponent
-      title={<h3 style={{ margin: "0" }}>Contáctanos</h3>}
+      title={
+        <div>
+          <h3 style={{ margin: "0" }}>¿Aún tienes algunas dudas?</h3>
+          <small style={{ margin: "0" }}>
+            Bríndanos tus datos y nos comunicaremos contigo
+          </small>
+        </div>
+      }
       visible={visibleFormContact}
       onOk={() => onClickVisibleFormContact()}
       onCancel={() => onClickVisibleFormContact()}
@@ -153,7 +160,7 @@ export const FormContact = ({
               defaultValue="+51"
               render={({ field: { onChange, value, name } }) => (
                 <Select
-                  label="Código"
+                  label="Prefijo"
                   value={value}
                   onChange={(value) => onChange(value)}
                   error={error(name)}

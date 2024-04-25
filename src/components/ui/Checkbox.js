@@ -1,7 +1,7 @@
 import React from "react";
-import { Checkbox as CheckboxAntd } from "antd";
 import styled, { css } from "styled-components";
 import { classNames, keyframes } from "../../styles";
+import { CheckboxAntd } from "./index";
 
 export const Checkbox = ({
   name,

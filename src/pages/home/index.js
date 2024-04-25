@@ -4,7 +4,7 @@ import { PrincipalSection } from "./PrincipalSection";
 import { HomePagePlans } from "./HomePagePlans";
 import { Requirements } from "./Requirements";
 import { FrequentlyQuestions } from "./FrequentlyQuestions";
-import { SummaryApp } from "./SummaryApp";
+import { SummaryFeatures } from "./SummaryFeatures";
 import { DesktopSection } from "./DesktopSection";
 import { BrandsSection } from "./BrandsSection";
 import { VerifiedSection } from "./VerifiedSection";
@@ -14,12 +14,12 @@ export const Home = () => {
     <Container>
       <PrincipalSection />
       <DesktopSection />
-      <SummaryApp />
+      <SummaryFeatures />
       <Requirements />
       <HomePagePlans />
-      <BrandsSection />
       <FrequentlyQuestions />
       <VerifiedSection />
+      <BrandsSection />
     </Container>
   );
 };
