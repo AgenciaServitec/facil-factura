@@ -17,7 +17,7 @@ export const Complete = ({ onNavigateGoTo }) => {
 
     setTimeout(() => {
       onNavigateGoTo("/");
-    }, 5000);
+    }, 10000);
   }, []);
 
   return (
