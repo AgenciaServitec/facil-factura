@@ -141,17 +141,17 @@
     "benefitsList": [
       {
         "type": "check",
-        "value": "2 Sucursal",
+        "value": "2 Sucursales",
         "bold": true
       },
       {
         "type": "check",
-        "value": "2 Almacén",
+        "value": "2 Almacenes",
         "bold": true
       },
       {
         "type": "check",
-        "value": "3 Usuario",
+        "value": "3 Usuarios",
         "bold": true
       },
       {

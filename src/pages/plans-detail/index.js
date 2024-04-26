@@ -36,7 +36,7 @@ const Container = styled.section`
 
     .promotion-title {
       text-align: center;
-      color: red;
+      color: #f81414;
       padding: 0 1em;
     }
 
