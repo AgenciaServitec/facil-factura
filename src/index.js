@@ -10,50 +10,53 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle, theme } from "./styles";
 import { ConfigProvider } from "antd";
 import { App } from "./App";
+import { GoogleAnalyticsProvider } from "./providers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <ThemeProvider theme={theme}>
-    <ConfigProvider
-      theme={{
-        token: {
-          fontSize: 16,
-          colorPrimary: theme.colors.primary,
-          colorInfo: theme.colors.primary,
-          colorTextBase: theme.colors.font2,
-        },
-        components: {
-          Typography: {
-            fontSize: 15,
-            fontSizeHeading1: 36,
-            fontSizeHeading2: 28,
-            fontSizeHeading3: 22,
-            fontSizeHeading4: 18,
-            fontSizeHeading5: 14,
-            colorTextHeading: theme.colors.font1,
-            colorText: theme.colors.font2,
-            algorithm: true,
+  <GoogleAnalyticsProvider>
+    <ThemeProvider theme={theme}>
+      <ConfigProvider
+        theme={{
+          token: {
+            fontSize: 16,
+            colorPrimary: theme.colors.primary,
+            colorInfo: theme.colors.primary,
+            colorTextBase: theme.colors.font2,
           },
-          Input: {
-            controlHeightLG: 42,
-            algorithm: true,
+          components: {
+            Typography: {
+              fontSize: 15,
+              fontSizeHeading1: 36,
+              fontSizeHeading2: 28,
+              fontSizeHeading3: 22,
+              fontSizeHeading4: 18,
+              fontSizeHeading5: 14,
+              colorTextHeading: theme.colors.font1,
+              colorText: theme.colors.font2,
+              algorithm: true,
+            },
+            Input: {
+              controlHeightLG: 42,
+              algorithm: true,
+            },
+            InputNumber: {
+              controlHeightLG: 42,
+              algorithm: true,
+            },
           },
-          InputNumber: {
-            controlHeightLG: 42,
-            algorithm: true,
-          },
-        },
-      }}
-    >
-      <GlobalStyle />
-      <BrowserRouter>
-        <ScrollTop>
-          <App />
-        </ScrollTop>
-      </BrowserRouter>
-    </ConfigProvider>
-  </ThemeProvider>
+        }}
+      >
+        <GlobalStyle />
+        <BrowserRouter>
+          <ScrollTop>
+            <App />
+          </ScrollTop>
+        </BrowserRouter>
+      </ConfigProvider>
+    </ThemeProvider>
+  </GoogleAnalyticsProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
