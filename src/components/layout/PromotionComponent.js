@@ -17,7 +17,7 @@ export const PromotionComponent = () => {
       <div />
       <div>
         <span>
-          Quiero mi descuento del 30% por ser uno de los primeros 30 clientes
+          Quiero mi descuento del 10% por ser uno de los primeros 30 clientes
           nuevos.{" "}
           <span
             onClick={() => {
