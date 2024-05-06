@@ -47,7 +47,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  background: #f81414;
+  background: #049f6b;
   font-size: 1em;
   color: #fff;
   width: 100%;
