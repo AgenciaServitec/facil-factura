@@ -131,12 +131,12 @@
     },
     "titleLegend": "100% Digital",
     "prices": {
-      "value": 0.6,
+      "value": 0.42,
       "type": "comprobante"
     },
     "discount": {
       "type": "percentage",
-      "value": 30
+      "value": 10
     },
     "benefitsList": [
       {
@@ -231,7 +231,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": 0.6,
+      "vouchers": 0.42,
       "branchOfficesNumber": 2,
       "wareHousesNumber": 2,
       "usersNumber": 3,
@@ -261,12 +261,12 @@
     },
     "titleLegend": "100% Digital",
     "prices": {
-      "value": 0.8,
+      "value": 0.45,
       "type": "comprobante"
     },
     "discount": {
       "type": "percentage",
-      "value": 30
+      "value": 10
     },
     "benefitsList": [
       {
@@ -361,7 +361,7 @@
       }
     ],
     "tableDetails": {
-      "vouchers": 0.8,
+      "vouchers": 0.45,
       "branchOfficesNumber": "Ilimitadas",
       "wareHousesNumber": "Ilimitadas",
       "usersNumber": "Ilimitadas",

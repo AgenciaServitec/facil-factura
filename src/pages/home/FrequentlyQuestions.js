@@ -99,7 +99,7 @@ export const FrequentlyQuestions = () => {
         label: "¿Brindan algún descuento?",
         children: (
           <p className="response_question">
-            El único descuento que tenemos es el descuento de 30% para los 30
+            El único descuento que tenemos es el descuento de 10% para los 30
             primeros.
           </p>
         ),

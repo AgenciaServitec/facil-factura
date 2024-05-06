@@ -2,7 +2,7 @@ import { applyDiscount } from "../applyDiscount";
 import { createPlanMicro, createPlanPopular } from "./ObjectFactory";
 
 test("ApplyDiscount - return of discount empty", () => {
-  expect(applyDiscount({ plan: createPlanMicro() })).toEqual(0.3);
+  expect(applyDiscount({ plan: createPlanMicro() })).toEqual(0.35);
 });
 
 test("ApplyDiscount - return of discount fixed", () => {
@@ -11,37 +11,24 @@ test("ApplyDiscount - return of discount fixed", () => {
       plan: createPlanPopular({
         discount: {
           type: "fixed",
-          value: 0.1,
+          value: 0.01,
         },
       }),
     })
-  ).toEqual(0.5);
+  ).toEqual(0.41);
 });
 
-test("ApplyDiscount - return of discount fixed", () => {
-  expect(
-    applyDiscount({
-      plan: createPlanPopular({
-        discount: {
-          type: "fixed",
-          value: 0.3,
-        },
-      }),
-    })
-  ).toEqual(0.3);
-});
-
-test("ApplyDiscount - return of 30% discount percentage", () => {
+test("ApplyDiscount - return of 10% discount percentage", () => {
   expect(
     applyDiscount({
       plan: createPlanPopular({
         discount: {
           type: "percentage",
-          value: 30,
+          value: 10,
         },
       }),
     })
-  ).toEqual(0.18);
+  ).toEqual(0.38);
 });
 
 test("ApplyDiscount - return of 50% discount percentage", () => {
@@ -54,5 +41,5 @@ test("ApplyDiscount - return of 50% discount percentage", () => {
         },
       }),
     })
-  ).toEqual(0.3);
+  ).toEqual(0.21);
 });

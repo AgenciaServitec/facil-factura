@@ -18,7 +18,7 @@ export const PlansDetail = () => {
     <Container>
       <WrapperComponent>
         <div className="promotion-title">
-          El descuento del 30% solo esta disponible para los siguientes planes:{" "}
+          El descuento del 10% solo esta disponible para los siguientes planes:{" "}
           <strong>Plan Popular</strong> y <strong>Plan Control</strong>
         </div>
         <HomePagePlans />
