@@ -18,8 +18,6 @@ export const GoogleAnalyticsContext = createContext({
 export const GoogleAnalyticsProvider = ({ children }) => {
   const gaClientId = getGaClientId();
 
-  console.log({ googleAnalytics });
-
   ReactGA.initialize(googleAnalytics.measurementId, {
     gaOptions: {
       clientId: gaClientId,
