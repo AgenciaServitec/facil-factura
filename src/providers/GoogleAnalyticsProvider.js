@@ -33,6 +33,7 @@ export const GoogleAnalyticsProvider = ({ children }) => {
     </GoogleAnalyticsContext.Provider>
   );
 };
+
 export const useGoogleAnalytics = () => useContext(GoogleAnalyticsContext);
 
 const getGaClientId = () => {
