@@ -17,7 +17,7 @@
       }
     },
     "googleAnalytics": {
-      "measurementId": "G-QPQZVVXB6M"
+      "measurementId": "G-7EN1V6BT7X"
     }
   },
   "development": {
@@ -44,7 +44,8 @@
       "projectId": "electronic-invoice-web",
       "storageBucket": "electronic-invoice-web.appspot.com",
       "messagingSenderId": "926276845654",
-      "appId": "1:926276845654:web:0a1ab6dac4c8e9f5a07bf7"
+      "appId": "1:926276845654:web:0a1ab6dac4c8e9f5a07bf7",
+      "measurementId": "G-7EN1V6BT7X"
     },
     "buckets": {},
     "apiUrl": "-",
