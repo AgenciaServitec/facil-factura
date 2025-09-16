@@ -149,12 +149,12 @@ export const Footer = () => (
               </li>
               <li>
                 <a
-                  href="https://maps.app.goo.gl/hVPjLrPbXQXzHYX97"
+                  href="https://maps.app.goo.gl/VY4eWmsWgVAb3gyp7"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLocationDot} className="icon" />
-                  Calle Vargas 179 Piso 1 - Chorrillos - Lima
+                  Ca. Nestor Bermudez 113, Esquina con Av. Fernando Teran, Chorrillos - Lima
                 </a>
               </li>
               <li>
