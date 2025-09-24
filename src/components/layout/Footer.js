@@ -1,23 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { WrapperComponent } from "../ui";
-import { ImgLogoFacturaFacil } from "../../images";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTiktok,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faCalendar,
-  faEnvelope,
-  faHeart,
-  faLocation,
-  faLocationDot,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import { mediaQuery } from "../../styles";
-import { contactData } from "../../config";
+import {WrapperComponent} from "../ui";
+import {ImgLogoFacturaFacil} from "../../images";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebook, faTiktok, faWhatsapp,} from "@fortawesome/free-brands-svg-icons";
+import {faCalendar, faEnvelope, faHeart, faLocationDot, faPhone,} from "@fortawesome/free-solid-svg-icons";
+import {mediaQuery} from "../../styles";
+import {contactData} from "../../config";
 
 export const Footer = () => (
   <Container id="footer">
