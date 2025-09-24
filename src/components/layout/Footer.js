@@ -144,7 +144,7 @@ export const Footer = () => (
               <li>
                 <a href={`mailto:${contactData.emails.sales}`} rel="noreferrer">
                   <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                  contactos@servitec-peru.com
+                  contacto@facil-factura.com
                 </a>
               </li>
               <li>
@@ -154,7 +154,7 @@ export const Footer = () => (
                   rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLocationDot} className="icon" />
-                  Ca. Nestor Bermudez 113, Esquina con Av. Fernando Teran, Chorrillos - Lima
+                  Néstor Bermúdez 113, Chorrillos, Lima, Perú
                 </a>
               </li>
               <li>
