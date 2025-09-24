@@ -157,12 +157,6 @@ export const Footer = () => (
                   Néstor Bermúdez 113, Chorrillos, Lima, Perú
                 </a>
               </li>
-              <li>
-                <span>
-                  <FontAwesomeIcon icon={faLocation} className="icon" />
-                  Chorrillos, Lima - Perú
-                </span>
-              </li>
             </ul>
           </div>
         </div>
